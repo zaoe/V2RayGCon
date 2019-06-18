@@ -133,6 +133,7 @@ namespace V2RayGCon.Views.WinForms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButtonPager = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripStatusLabelPrePage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNextPage = new System.Windows.Forms.ToolStripStatusLabel();
@@ -174,6 +175,7 @@ namespace V2RayGCon.Views.WinForms
             // toolStrip1
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonSelectAllCurPage,
             this.toolStripButtonInverseSelectionCurPage,
@@ -774,8 +776,10 @@ namespace V2RayGCon.Views.WinForms
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelTotal,
+            this.toolStripStatusLabel1,
             this.toolStripDropDownButtonPager,
             this.toolStripStatusLabelPrePage,
             this.toolStripStatusLabelNextPage});
@@ -786,6 +790,12 @@ namespace V2RayGCon.Views.WinForms
             // 
             this.toolStripStatusLabelTotal.Name = "toolStripStatusLabelTotal";
             resources.ApplyResources(this.toolStripStatusLabelTotal, "toolStripStatusLabelTotal");
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+            this.toolStripStatusLabel1.Spring = true;
             // 
             // toolStripDropDownButtonPager
             // 
@@ -942,5 +952,6 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripSeparator toolStripMenuItem4;
         private ToolStripMenuItem toolStripMenuItemResize;
         private ToolStripMenuItem toolStripMenuItemCopyAsVeeSubscription;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

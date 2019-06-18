@@ -826,10 +826,8 @@ namespace V2RayGCon.Lib
                 var url = subItem.url;
                 var mark = subItem.isSetMark ? subItem.alias : null;
 
-                var subsString = Lib.Utils.Fetch(
-                    url,
-                    proxyPort,
-                    VgcApis.Models.Consts.Import.ParseImportTimeout);
+                var subsString = Fetch(
+                    url, proxyPort, VgcApis.Models.Consts.Import.ParseImportTimeout);
 
                 if (string.IsNullOrEmpty(subsString))
                 {
@@ -1270,8 +1268,7 @@ namespace V2RayGCon.Lib
         public static string GenPattern(
             VgcApis.Models.Datas.Enum.LinkTypes linkType)
         {
-            string pattern = "";
-
+            string pattern;
             switch (linkType)
             {
                 case VgcApis.Models.Datas.Enum.LinkTypes.ss:
@@ -1279,7 +1276,7 @@ namespace V2RayGCon.Lib
                 case VgcApis.Models.Datas.Enum.LinkTypes.v2cfg:
                 case VgcApis.Models.Datas.Enum.LinkTypes.v:
                     pattern = GenLinkPrefix(linkType) + "://" +
-                        VgcApis.Models.Consts.Patterns.Base64Standard;
+                        VgcApis.Models.Consts.Patterns.Base64NonStandard;
                     break;
                 case VgcApis.Models.Datas.Enum.LinkTypes.http:
                 case VgcApis.Models.Datas.Enum.LinkTypes.https:
