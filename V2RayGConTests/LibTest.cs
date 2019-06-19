@@ -362,15 +362,15 @@ namespace V2RayGCon.Test
         }
 
 
-        [TestMethod]
-        public void ExtractLinks_FromString()
+        [DataTestMethod]
+        [DataRow("ss://ZHVtbXkwMA==", "ss://ZHVtbXkwMA==")]
+        [DataRow("ss://ZHVtbXkwMA", "ss://ZHVtbXkwMA")]
+        [DataRow("ss://ZHVtbXkwMA===============", "ss://ZHVtbXkwMA===")]
+        public void ExtractLinks_FromString(string source, string expect)
         {
-            // var content = testData("links");
-            var content = "ss://ZHVtbXkwMA==";
-            var links = Lib.Utils.ExtractLinks(content, VgcApis.Models.Datas.Enum.LinkTypes.ss);
-            var expact = "ss://ZHVtbXkwMA==";
-            Assert.AreEqual(links.Count, 1);
-            Assert.AreEqual(expact, links[0]);
+            var result = ExtractLinks(source, VgcApis.Models.Datas.Enum.LinkTypes.ss);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(expect, result[0]);
         }
 
         [TestMethod]
