@@ -559,16 +559,16 @@ Otherwise operations involving the network may fail.</value>
     <value>Total</value>
   </data>
   <data name="StatusBarTplSelectedItem" xml:space="preserve">
-    <value>Selecte {0}/{1} item(s)</value>
+    <value>Selected {0}/{1}</value>
   </data>
   <data name="StatusBarPagerMenuTpl" xml:space="preserve">
-    <value>Show page {0}.</value>
+    <value>Page {0}</value>
   </data>
   <data name="StatusBarPagerInfoTpl" xml:space="preserve">
-    <value>Page {0} of {1}</value>
+    <value>Page {0}/{1}</value>
   </data>
   <data name="StatusBarServerCountTpl" xml:space="preserve">
-    <value>Total {0} of {1} server(s).</value>
+    <value>Total {0}/{1}</value>
   </data>
   <data name="SysProxyRequireHttpOrSocksMode" xml:space="preserve">
     <value>Set mode to HTTP or SOCKS first, please!</value>
