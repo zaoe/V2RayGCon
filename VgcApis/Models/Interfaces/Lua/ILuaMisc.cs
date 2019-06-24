@@ -2,12 +2,20 @@
 {
     public interface ILuaMisc
     {
+        // share among all scripts
         string ReadLocalStorage(string key);
+
+        // share among all scripts
         void WriteLocalStorage(string key, string value);
 
         #region encode decode
+        // v2cfg://(b64Str)
         string AddV2cfgPrefix(string b64Str);
+
+        // v://(b64Str)
         string AddVeePrefix(string b64Str);
+
+        // vmess://(b64Str)
         string AddVmessPrefix(string b64Str);
 
         string Base64Encode(string text);
@@ -18,11 +26,16 @@
         string Config2VmessLink(string config);
 
         string ShareLink2ConfigString(string shareLink);
+
+        // links = "vmess://... ss://...  (...)"
         int ImportLinks(string links, string mark);
         #endregion
 
         string GetAppDir();
+
+        // GetLinkBody("vmess://abcdefg") == "abcdefg"
         string GetLinkBody(string link);
+
         string PredefinedFunctions();
         void Print(params object[] contents);
         string ScanQrcode();
