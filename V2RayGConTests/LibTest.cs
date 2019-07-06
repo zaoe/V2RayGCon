@@ -139,7 +139,10 @@ namespace V2RayGCon.Test
         [DataRow("http://www.baidu.com")]
         public void VisitWebPageSpeedTestTest(string url)
         {
-            var time = Lib.Utils.VisitWebPageSpeedTest(url, -1, -1);
+            var time = VisitWebPageSpeedTest(url, -1, 1024 * 1024, -1);
+            Assert.AreEqual(long.MaxValue, time);
+
+            time = VisitWebPageSpeedTest(url, -1, -1, -1);
             Assert.AreEqual(true, time < long.MaxValue);
         }
 

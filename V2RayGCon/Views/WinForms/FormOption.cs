@@ -76,7 +76,13 @@ namespace V2RayGCon.Views.WinForms
                     chkSetUseV4,
                     chkSetServStatistics,
                     chkSetUpgradeUseProxy,
-                    chkSetCheckWhenStart));
+                    chkSetCheckWhenStart,
+
+                    // speedtest 
+                    chkSetSpeedtestIsUse,
+                    tboxSetSpeedtestUrl,
+                    tboxSetSpeedtestCycles,
+                    tboxSetSpeedtestExpectedSize));
 
             return ctrl;
         }

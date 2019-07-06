@@ -21,14 +21,21 @@ namespace V2RayGCon.Service
         public long RunCustomSpeedTest(string rawConfig, string testUrl, int testTimeout) =>
             RunSpeedTestWorker(rawConfig, "Custom speed-test", testUrl, testTimeout, false, false, false, null);
 
-        public long RunSpeedTest(string rawConfig) =>
-           RunSpeedTestWorker(rawConfig, "Default speed-test", "", -1, false, false, false, null);
+        public long RunSpeedTest(string rawConfig)
+        {
+            var url = GetDefaultSpeedtestUrl();
+            return RunSpeedTestWorker(rawConfig, "Default speed-test", "", -1, false, false, false, null);
+        }
 
         public long RunDefaultSpeedTest(
             string rawConfig,
             string title,
-            EventHandler<VgcApis.Models.Datas.StrEvent> logDeliever) =>
-            RunSpeedTestWorker(rawConfig, title, "", -1, true, true, false, logDeliever);
+            EventHandler<VgcApis.Models.Datas.StrEvent> logDeliever)
+        {
+            var url = GetDefaultSpeedtestUrl();
+            return RunSpeedTestWorker(rawConfig, title, url, -1, true, true, false, logDeliever);
+        }
+
 
         public string InjectImportTpls(
             string config,
@@ -333,6 +340,11 @@ namespace V2RayGCon.Service
         #endregion
 
         #region private methods
+        string GetDefaultSpeedtestUrl() =>
+          setting.isUseCustomSpeedtestSettings ?
+          setting.CustomSpeedtestUrl :
+          VgcApis.Models.Consts.Webs.GoogleDotCom;
+
         JObject GetGlobalImportConfigForPacking()
         {
             var imports = Lib.Utils.ImportItemList2JObject(
@@ -342,14 +354,14 @@ namespace V2RayGCon.Service
         }
 
         long RunSpeedTestWorker(
-          string rawConfig,
-          string title,
-          string testUrl,
-          int testTimeout,
-          bool isUseCache,
-          bool isInjectSpeedTestTpl,
-          bool isInjectActivateTpl,
-          EventHandler<VgcApis.Models.Datas.StrEvent> logDeliever)
+            string rawConfig,
+            string title,
+            string testUrl,
+            int testTimeout,
+            bool isUseCache,
+            bool isInjectSpeedTestTpl,
+            bool isInjectActivateTpl,
+            EventHandler<VgcApis.Models.Datas.StrEvent> logDeliever)
         {
             var port = VgcApis.Libs.Utils.GetFreeTcpPort();
             var speedTestConfig = CreateSpeedTestConfig(
@@ -360,10 +372,6 @@ namespace V2RayGCon.Service
                 logDeliever?.Invoke(this, new VgcApis.Models.Datas.StrEvent(I18N.DecodeImportFail));
                 return long.MaxValue;
             }
-
-            var url = string.IsNullOrEmpty(testUrl) ?
-                VgcApis.Models.Consts.Webs.GoogleDotCom :
-                testUrl;
 
             var speedTester = new V2RayGCon.Lib.V2Ray.Core(setting)
             {
@@ -385,7 +393,12 @@ namespace V2RayGCon.Service
                 speedTester.ReleaseToken();
             }
 
-            long testResult = Lib.Utils.VisitWebPageSpeedTest(url, port, testTimeout);
+            var expectedSizeInKib = 0;
+            if (setting.isUseCustomSpeedtestSettings)
+            {
+                expectedSizeInKib = setting.CustomSpeedtestExpectedSizeInKib;
+            }
+            long testResult = Lib.Utils.VisitWebPageSpeedTest(testUrl, port, expectedSizeInKib, testTimeout);
 
             speedTester.WaitForTokenHurry();
             try

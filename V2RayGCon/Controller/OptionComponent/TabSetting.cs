@@ -13,7 +13,13 @@ namespace V2RayGCon.Controller.OptionComponent
             chkSetUseV4 = null,
             chkSetEnableStat = null,
             chkSetUpdateUseProxy = null,
-            chkSetCheckWhenAppStart = null;
+            chkSetCheckWhenAppStart = null,
+            chkSetSpeedtestIsUse = null;
+
+        TextBox tboxSetSpeedtestUrl = null,
+            tboxSetSpeedtestCycles = null,
+            tboxSetSpeedtestExpectedSize = null;
+
 
         public TabSetting(
             ComboBox cboxLanguage,
@@ -23,7 +29,12 @@ namespace V2RayGCon.Controller.OptionComponent
             CheckBox chkSetUseV4,
             CheckBox chkSetEnableStat,
             CheckBox chkSetUpdateUseProxy,
-            CheckBox chkSetCheckWhenAppStart)
+            CheckBox chkSetCheckWhenAppStart,
+
+            CheckBox chkSetSpeedtestIsUse,
+            TextBox tboxSetSpeedtestUrl,
+            TextBox tboxSetSpeedtestCycles,
+            TextBox tboxSetSpeedtestExpectedSize)
         {
             this.setting = Service.Setting.Instance;
             this.servers = Service.Servers.Instance;
@@ -38,11 +49,23 @@ namespace V2RayGCon.Controller.OptionComponent
             this.chkSetCheckWhenAppStart = chkSetCheckWhenAppStart;
             this.chkSetUpdateUseProxy = chkSetUpdateUseProxy;
 
+            this.chkSetSpeedtestIsUse = chkSetSpeedtestIsUse;
+            this.tboxSetSpeedtestCycles = tboxSetSpeedtestCycles;
+            this.tboxSetSpeedtestExpectedSize = tboxSetSpeedtestExpectedSize;
+            this.tboxSetSpeedtestUrl = tboxSetSpeedtestUrl;
+
             InitElement();
         }
 
         private void InitElement()
         {
+            // speedtest
+            chkSetSpeedtestIsUse.Checked = setting.isUseCustomSpeedtestSettings;
+            tboxSetSpeedtestCycles.Text = setting.CustomSpeedtestCycles.ToString();
+            tboxSetSpeedtestUrl.Text = setting.CustomSpeedtestUrl;
+            tboxSetSpeedtestExpectedSize.Text = setting.CustomSpeedtestExpectedSizeInKib.ToString();
+
+
             chkSetUpdateUseProxy.Checked = setting.isUpdateUseProxy;
             chkSetCheckWhenAppStart.Checked = setting.isCheckUpdateWhenAppStart;
 
@@ -62,6 +85,12 @@ namespace V2RayGCon.Controller.OptionComponent
             {
                 return false;
             }
+
+            // speedtest
+            setting.isUseCustomSpeedtestSettings = chkSetSpeedtestIsUse.Checked;
+            setting.CustomSpeedtestUrl = tboxSetSpeedtestUrl.Text;
+            setting.CustomSpeedtestCycles = VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestCycles.Text);
+            setting.CustomSpeedtestExpectedSizeInKib = VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestExpectedSize.Text);
 
             var pageSize = Lib.Utils.Str2Int(cboxPageSize.Text);
             if (pageSize != setting.serverPanelPageSize)
@@ -106,6 +135,12 @@ namespace V2RayGCon.Controller.OptionComponent
         public override bool IsOptionsChanged()
         {
             if (setting.isUseV4 != chkSetUseV4.Checked
+
+                || setting.isUseCustomSpeedtestSettings != chkSetSpeedtestIsUse.Checked
+                || setting.CustomSpeedtestUrl != tboxSetSpeedtestUrl.Text
+                || setting.CustomSpeedtestExpectedSizeInKib != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestExpectedSize.Text)
+                || setting.CustomSpeedtestCycles != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestCycles.Text)
+
                 || setting.isUpdateUseProxy != chkSetUpdateUseProxy.Checked
                 || setting.isCheckUpdateWhenAppStart != chkSetCheckWhenAppStart.Checked
                 || setting.isEnableStatistics != chkSetEnableStat.Checked

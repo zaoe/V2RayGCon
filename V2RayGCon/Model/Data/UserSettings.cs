@@ -6,6 +6,12 @@ namespace V2RayGCon.Model.Data
     {
         #region public properties
 
+        // FormOption->Settings->Speedtest
+        public string CustomSpeedtestUrl { get; set; }
+        public bool IsUseCustomSpeedtestSettings { get; set; }
+        public int CustomSpeedtestCycles { get; set; }
+        public int CustomSpeedtestExpectedSize { get; set; }
+
         // FormDownloadCore
         public bool isDownloadWin32V2RayCore { get; set; } = true;
         public List<string> V2RayCoreDownloadVersionList = null;
@@ -35,6 +41,13 @@ namespace V2RayGCon.Model.Data
 
         public UserSettings()
         {
+            // FormOption -> Settings -> Speedtest
+            CustomSpeedtestUrl = VgcApis.Models.Consts.Webs.GoogleDotCom;
+            IsUseCustomSpeedtestSettings = false;
+            CustomSpeedtestCycles = 3;
+            CustomSpeedtestExpectedSize = 0;
+
+
             ServerPanelPageSize = 7;
 
             isCheckUpdateWhenAppStart = false;

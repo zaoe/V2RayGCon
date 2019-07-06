@@ -923,6 +923,7 @@ namespace V2RayGCon.Lib
         public static long VisitWebPageSpeedTest(
             string url,
             int port,
+            int expectedSizeInKiB,
             int timeout)
         {
             if (string.IsNullOrEmpty(url))
@@ -931,14 +932,13 @@ namespace V2RayGCon.Lib
             }
 
             var maxTimeout = timeout > 0 ? timeout : VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
-
             long elasped = long.MaxValue;
             Stopwatch sw = new Stopwatch();
             sw.Reset();
             sw.Start();
             var html = Fetch(url, port, maxTimeout);
             sw.Stop();
-            if (!string.IsNullOrEmpty(html))
+            if (!string.IsNullOrEmpty(html) && html.Length >= Math.Max(0, expectedSizeInKiB * 1024))
             {
                 elasped = sw.ElapsedMilliseconds;
             }

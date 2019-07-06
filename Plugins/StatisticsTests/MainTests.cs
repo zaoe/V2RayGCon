@@ -6,8 +6,10 @@ namespace StatisticsTests
     public class MainTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void PlaceHolder()
         {
+            var a = 1;
+            Assert.AreEqual(1, a);
         }
     }
 }

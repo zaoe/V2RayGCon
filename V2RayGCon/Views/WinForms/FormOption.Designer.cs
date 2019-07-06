@@ -40,6 +40,14 @@
             this.btnAddSubsUrl = new System.Windows.Forms.Button();
             this.flySubsUrlContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPageSetting = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tboxSetSpeedtestExpectedSize = new System.Windows.Forms.TextBox();
+            this.tboxSetSpeedtestCycles = new System.Windows.Forms.TextBox();
+            this.tboxSetSpeedtestUrl = new System.Windows.Forms.TextBox();
+            this.chkSetSpeedtestIsUse = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkSetCheckWhenStart = new System.Windows.Forms.CheckBox();
             this.chkSetUpgradeUseProxy = new System.Windows.Forms.CheckBox();
@@ -67,6 +75,7 @@
             this.tabPageImport.SuspendLayout();
             this.tabPageSubscribe.SuspendLayout();
             this.tabPageSetting.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -146,6 +155,7 @@
             // 
             // tabPageSetting
             // 
+            this.tabPageSetting.Controls.Add(this.groupBox3);
             this.tabPageSetting.Controls.Add(this.groupBox2);
             this.tabPageSetting.Controls.Add(this.groupBox6);
             this.tabPageSetting.Controls.Add(this.groupBox5);
@@ -153,6 +163,62 @@
             resources.ApplyResources(this.tabPageSetting, "tabPageSetting");
             this.tabPageSetting.Name = "tabPageSetting";
             this.tabPageSetting.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Controls.Add(this.tboxSetSpeedtestExpectedSize);
+            this.groupBox3.Controls.Add(this.tboxSetSpeedtestCycles);
+            this.groupBox3.Controls.Add(this.tboxSetSpeedtestUrl);
+            this.groupBox3.Controls.Add(this.chkSetSpeedtestIsUse);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // tboxSetSpeedtestExpectedSize
+            // 
+            resources.ApplyResources(this.tboxSetSpeedtestExpectedSize, "tboxSetSpeedtestExpectedSize");
+            this.tboxSetSpeedtestExpectedSize.Name = "tboxSetSpeedtestExpectedSize";
+            this.toolTip1.SetToolTip(this.tboxSetSpeedtestExpectedSize, resources.GetString("tboxSetSpeedtestExpectedSize.ToolTip"));
+            // 
+            // tboxSetSpeedtestCycles
+            // 
+            resources.ApplyResources(this.tboxSetSpeedtestCycles, "tboxSetSpeedtestCycles");
+            this.tboxSetSpeedtestCycles.Name = "tboxSetSpeedtestCycles";
+            this.toolTip1.SetToolTip(this.tboxSetSpeedtestCycles, resources.GetString("tboxSetSpeedtestCycles.ToolTip"));
+            // 
+            // tboxSetSpeedtestUrl
+            // 
+            resources.ApplyResources(this.tboxSetSpeedtestUrl, "tboxSetSpeedtestUrl");
+            this.tboxSetSpeedtestUrl.Name = "tboxSetSpeedtestUrl";
+            this.toolTip1.SetToolTip(this.tboxSetSpeedtestUrl, resources.GetString("tboxSetSpeedtestUrl.ToolTip"));
+            // 
+            // chkSetSpeedtestIsUse
+            // 
+            resources.ApplyResources(this.chkSetSpeedtestIsUse, "chkSetSpeedtestIsUse");
+            this.chkSetSpeedtestIsUse.Name = "chkSetSpeedtestIsUse";
+            this.toolTip1.SetToolTip(this.chkSetSpeedtestIsUse, resources.GetString("chkSetSpeedtestIsUse.ToolTip"));
+            this.chkSetSpeedtestIsUse.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            this.toolTip1.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            this.toolTip1.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            this.toolTip1.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
             // 
             // groupBox2
             // 
@@ -336,6 +402,8 @@
             this.tabPageSubscribe.ResumeLayout(false);
             this.tabPageSubscribe.PerformLayout();
             this.tabPageSetting.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -385,5 +453,13 @@
         private System.Windows.Forms.CheckBox chkSubsIsUseProxy;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chkSetCheckWhenStart;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox tboxSetSpeedtestExpectedSize;
+        private System.Windows.Forms.TextBox tboxSetSpeedtestCycles;
+        private System.Windows.Forms.TextBox tboxSetSpeedtestUrl;
+        private System.Windows.Forms.CheckBox chkSetSpeedtestIsUse;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

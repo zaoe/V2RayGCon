@@ -71,6 +71,46 @@ namespace V2RayGCon.Service
             }
         }
 
+        public string CustomSpeedtestUrl
+        {
+            get => userSettings.CustomSpeedtestUrl;
+            set
+            {
+                userSettings.CustomSpeedtestUrl = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public int CustomSpeedtestExpectedSizeInKib
+        {
+            get => userSettings.CustomSpeedtestExpectedSize;
+            set
+            {
+                userSettings.CustomSpeedtestExpectedSize = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public int CustomSpeedtestCycles
+        {
+            get => userSettings.CustomSpeedtestCycles;
+            set
+            {
+                userSettings.CustomSpeedtestCycles = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool isUseCustomSpeedtestSettings
+        {
+            get => userSettings.IsUseCustomSpeedtestSettings;
+            set
+            {
+                userSettings.IsUseCustomSpeedtestSettings = value;
+                LazySaveUserSettings();
+            }
+        }
+
         public bool isUpdateUseProxy
         {
             get => userSettings.isUpdateUseProxy;

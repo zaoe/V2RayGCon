@@ -14,6 +14,53 @@ namespace VgcApisTests
     [TestClass]
     public class UtilsTests
     {
+        [TestMethod]
+        public void AreEqualTest()
+        {
+            var minVal = VgcApis.Models.Consts.Config.FloatPointNumberTolerance;
+            var a = 0.1;
+            var b1 = a + minVal * 2;
+            var b2 = a - minVal * 2;
+            var c1 = a + minVal / 2;
+            var c2 = a - minVal / 2;
+
+            Assert.IsFalse(AreEqual(a, b1));
+            Assert.IsFalse(AreEqual(a, b2));
+            Assert.IsTrue(AreEqual(a, c1));
+            Assert.IsTrue(AreEqual(a, c2));
+        }
+
+
+        [DataTestMethod]
+        [DataRow(1, 2, 0.6, (long)(0.6 * 1 + 0.4 * 2))]
+        [DataRow(-1, 2, 0.6, 2)]
+        [DataRow(1, -2, 0.6, 1)]
+        [DataRow(-1, -2, 0.6, -1)]
+        public void IntegerSpeedtestMeanTest(
+            long first,
+            long second,
+            double weight,
+            long expect)
+        {
+            var result = SpeedtestMean(first, second, weight);
+            Assert.AreEqual(expect, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(0.1, 0.2, 0.3, 0.1 * 0.3 + 0.2 * 0.7)]
+        [DataRow(-0.1, 0.2, 0.3, 0.2)]
+        [DataRow(0.1, -0.2, 0.3, 0.1)]
+        [DataRow(-0.1, -0.2, 0.3, -0.1)]
+        public void DoubleSpeedtestMeanTest(
+            double first,
+            double second,
+            double weight,
+            double expect)
+        {
+            var result = SpeedtestMean(first, second, weight);
+            Assert.IsTrue(AreEqual(expect, result));
+        }
+
         [DataTestMethod]
         [DataRow(@"o,o.14,o.11,o.1,o.3,o.4", @"o,o.1,o.3,o.4,o.11,o.14")]
         [DataRow(@"b3.2,b3.1.3,a1", @"a1,b3.1.3,b3.2")]
