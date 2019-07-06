@@ -457,7 +457,7 @@
     <value>True</value>
   </data>
   <data name="chkSetSpeedtestIsUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 20</value>
+    <value>399, 20</value>
   </data>
   <data name="chkSetSpeedtestIsUse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>

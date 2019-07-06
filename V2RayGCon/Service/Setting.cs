@@ -25,6 +25,7 @@ namespace V2RayGCon.Service
         }
 
         #region Properties
+
         public VgcApis.Models.Datas.Enum.ShutdownReasons ShutdownReason { get; set; } =
             VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser;
 
@@ -618,7 +619,9 @@ namespace V2RayGCon.Service
         {
             var result = LoadUserSettingsFromFile() ?? LoadUserSettingsFromPorperties();
 
-            if (result == null && !Lib.UI.Confirm(I18N.ConfirmLoadDefaultUserSettings))
+            if (result == null
+                && !VgcApis.Models.Consts.Config.IsRunningUnitTest
+                && !Lib.UI.Confirm(I18N.ConfirmLoadDefaultUserSettings))
             {
                 ShutdownReason = VgcApis.Models.Datas.Enum.ShutdownReasons.Abort;
             }

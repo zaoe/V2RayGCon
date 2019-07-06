@@ -1,4 +1,6 @@
-﻿using ScintillaNET;
+﻿using Luna.Resources.Langs;
+using Newtonsoft.Json;
+using ScintillaNET;
 using System.Collections.Generic;
 
 namespace Luna.Services

@@ -28,6 +28,22 @@ namespace Luna.Services
         }
 
         #region public methods
+        public List<string> GetAllScriptsName() =>
+            luaCoreCtrls.Select(c => c.name).ToList();
+
+        public List<string[]> GetAllScripts()
+        {
+            var scripts = new List<string[]>();
+            foreach (var luaCore in luaCoreCtrls)
+            {
+                scripts.Add(new string[] {
+                    luaCore.name,
+                    luaCore.GetScript(),
+                });
+            }
+            return scripts;
+        }
+
         public List<Controllers.LuaCoreCtrl> GetAllLuaCoreCtrls()
         {
             var list = luaCoreCtrls ?? new List<Controllers.LuaCoreCtrl>();
@@ -100,7 +116,7 @@ namespace Luna.Services
 
             foreach (var ctrl in luaCoreCtrls)
             {
-                ctrl.Kill();
+                ctrl.Cleanup();
             }
         }
         #endregion
