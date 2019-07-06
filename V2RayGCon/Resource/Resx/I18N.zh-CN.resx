@@ -644,4 +644,9 @@ https://github.com/v2ray/v2ray-core</value>
   <data name="WarningColon" xml:space="preserve">
     <value>警告：</value>
   </data>
+  <data name="ConfirmLoadDefaultUserSettings" xml:space="preserve">
+    <value>加载用户配置失败！是否使用默认配置？
+是：使用默认配置
+否：结束程序</value>
+  </data>
 </root>

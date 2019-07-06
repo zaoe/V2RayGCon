@@ -653,4 +653,9 @@ If last update fail, please restart this software and try again.</value>
   <data name="WarningColon" xml:space="preserve">
     <value>Warning:</value>
   </data>
+  <data name="ConfirmLoadDefaultUserSettings" xml:space="preserve">
+    <value>Load user settings fail! Use default settings?
+Yes, use default settings.
+No, abort.</value>
+  </data>
 </root>

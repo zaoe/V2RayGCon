@@ -813,7 +813,13 @@ namespace V2RayGCon.Service
         protected override void Cleanup()
         {
             setting.isServerTrackerOn = false;
-            if (setting.IsShutdown())
+
+            if (setting.ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.Abort)
+            {
+                return;
+            }
+
+            if (setting.ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.Poweroff)
             {
                 VgcApis.Libs.Sys.FileLogger.Info("Services.Servers skip cleanup in shutdown");
                 StopAllServersThen();

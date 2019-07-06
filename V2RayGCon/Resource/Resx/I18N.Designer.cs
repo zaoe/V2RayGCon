@@ -323,6 +323,17 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 Load user settings fail! Use default settings?
+        ///Yes, use default settings.
+        ///No, abort. 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmLoadDefaultUserSettings {
+            get {
+                return ResourceManager.GetString("ConfirmLoadDefaultUserSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Current config will be cleared!
         ///Load new config? 的本地化字符串。
         /// </summary>
