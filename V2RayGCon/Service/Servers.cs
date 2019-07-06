@@ -44,8 +44,8 @@ namespace V2RayGCon.Service
         Servers()
         {
             serverSaver = new VgcApis.Libs.Tasks.LazyGuy(
-                SaveCurrentServerList,
-                VgcApis.Models.Consts.Intervals.SaveServerListIntreval);
+                SaveServersSettingsNow,
+                VgcApis.Models.Consts.Intervals.LazySaveServerListIntreval);
         }
 
         public void Run(
@@ -233,6 +233,19 @@ namespace V2RayGCon.Service
         #endregion
 
         #region public method
+
+        // expose to launcher for shutdown
+        public void SaveServersSettingsNow()
+        {
+            lock (serverListWriteLock)
+            {
+                var coreInfoList = coreServList
+                    .Select(s => s.GetCoreStates().GetAllRawCoreInfo())
+                    .ToList();
+                setting.SaveServerList(coreInfoList);
+            }
+        }
+
         /// <summary>
         /// Add new only.
         /// </summary>
@@ -779,17 +792,6 @@ namespace V2RayGCon.Service
             }
         }
 
-        void SaveCurrentServerList()
-        {
-            lock (serverListWriteLock)
-            {
-                var coreInfoList = coreServList
-                    .Select(s => s.GetCoreStates().GetAllRawCoreInfo())
-                    .ToList();
-                setting.SaveServerList(coreInfoList);
-            }
-        }
-
         void RemoveServerItemFromListThen(int index, Action next = null)
         {
             var server = coreServList[index];
@@ -811,6 +813,14 @@ namespace V2RayGCon.Service
         protected override void Cleanup()
         {
             setting.isServerTrackerOn = false;
+            if (setting.IsShutdown())
+            {
+                VgcApis.Libs.Sys.FileLogger.Info("Services.Servers skip cleanup in shutdown");
+                StopAllServersThen();
+                return;
+            }
+
+            VgcApis.Libs.Sys.FileLogger.Info("Services.Servers.Cleanup()");
             serverSaver.DoItNow();
             serverSaver.Quit();
             lazyServerTrackingTimer?.Release();

@@ -90,7 +90,7 @@ namespace V2RayGCon.Service
             {
                 if (AutoUpdater.DownloadUpdate())
                 {
-                    setting.isShutdown = true;
+                    setting.IsShutdown(false);
                     Application.Exit();
                 }
             }

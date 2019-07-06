@@ -36,7 +36,7 @@ namespace V2RayGCon.Service
             }
         }
 
-        public bool isShutdown { get; set; }
+        bool isShutdown { get; set; }
 
         public string decodeCache
         {
@@ -231,6 +231,8 @@ namespace V2RayGCon.Service
         // ISettingService thing
         public bool IsShutdown() => isShutdown;
 
+        public void IsShutdown(bool isShutdown) => this.isShutdown = isShutdown;
+
         /// <summary>
         /// return null if fail
         /// </summary>
@@ -317,7 +319,7 @@ namespace V2RayGCon.Service
             {
                 lazyGCTimer = new Lib.Sys.CancelableTimeout(
                     () => GC.Collect(),
-                    VgcApis.Models.Consts.Intervals.LazyGCDelay);
+                    VgcApis.Models.Consts.Intervals.LazyGcDelay);
             }
 
             lazyGCTimer.Start();
@@ -653,7 +655,10 @@ namespace V2RayGCon.Service
         {
             lazyGCTimer?.Release();
             lazySaveUserSettingsTimer?.Release();
-            SaveUserSettingsNow();
+            if (!isShutdown)
+            {
+                SaveUserSettingsNow();
+            }
             qLogger.Dispose();
         }
         #endregion

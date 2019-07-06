@@ -1497,7 +1497,8 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
-        ///   查找类似 Checking for update, please wait... 的本地化字符串。
+        ///   查找类似 Checking for update, please wait.
+        ///If last update fail, please restart this software and try again. 的本地化字符串。
         /// </summary>
         internal static string UpdatingPleaseWait {
             get {

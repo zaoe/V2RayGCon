@@ -146,9 +146,18 @@ namespace V2RayGCon.Service
                     return;
                 }
 
-                if (!setting.isShutdown)
+                if (!setting.IsShutdown())
                 {
-                    setting.isShutdown = isShutdown;
+                    setting.IsShutdown(isShutdown);
+                }
+
+                if (setting.IsShutdown())
+                {
+                    VgcApis.Libs.Sys.FileLogger.Info("Saving settings before services desposed");
+                    VgcApis.Libs.Sys.FileLogger.Info("servers.SaveServersSettingsNow()");
+                    servers.SaveServersSettingsNow();
+                    VgcApis.Libs.Sys.FileLogger.Info("setting.SaveUserSettingsNow()");
+                    setting.SaveUserSettingsNow();
                 }
 
                 foreach (var service in services)
@@ -204,7 +213,7 @@ namespace V2RayGCon.Service
                 // Why must I write sth. here?
             }
 
-            if (!setting.isShutdown)
+            if (!setting.IsShutdown())
             {
                 VgcApis.Libs.Sys.NotepadHelper.ShowMessage(log, "V2RayGCon bug report");
                 MessageBox.Show(I18N.LooksLikeABug);

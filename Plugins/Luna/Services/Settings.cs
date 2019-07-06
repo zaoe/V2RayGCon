@@ -10,7 +10,6 @@ namespace Luna.Services
         VgcApis.Models.IServices.ISettingsService vgcSetting;
         readonly string pluginName = Properties.Resources.Name;
         Models.Data.UserSettings userSettings;
-        VgcApis.Libs.Tasks.LazyGuy bookKeeper;
         Libs.LuaSnippet.LuaAcm luaAcm;
 
         public Settings() { }
@@ -43,11 +42,6 @@ namespace Luna.Services
                     pluginName, vgcSetting);
 
             userSettings.NormalizeData();
-
-            bookKeeper = new VgcApis.Libs.Tasks.LazyGuy(
-                SaveUserSettingsNow, 30000);
-
-            bookKeeper.DoItLater();
         }
 
         public string GetLuaShareMemory(string key)
@@ -66,27 +60,21 @@ namespace Luna.Services
             {
                 userSettings.luaShareMemory[key] = value;
             }
-            SaveSettings();
+            SaveUserSettingsNow();
         }
 
         public List<Models.Data.LuaCoreSetting> GetLuaCoreSettings() =>
             userSettings.luaServers;
 
-        public void SaveSettings() =>
-            bookKeeper.DoItLater();
         #endregion
 
         #region protected methods
         protected override void Cleanup()
         {
             luaAcm?.Dispose();
-            bookKeeper.DoItNow();
-            bookKeeper.Quit();
         }
-        #endregion
 
-        #region private methods
-        void SaveUserSettingsNow() =>
+        public void SaveUserSettingsNow() =>
             VgcApis.Libs.Utils.SavePluginSetting(
                 pluginName, userSettings, vgcSetting);
 

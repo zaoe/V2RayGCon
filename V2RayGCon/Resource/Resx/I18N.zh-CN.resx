@@ -635,7 +635,8 @@ https://github.com/v2ray/v2ray-core</value>
     <value>确定要清空日志？</value>
   </data>
   <data name="UpdatingPleaseWait" xml:space="preserve">
-    <value>正在检查更新，请稍等！</value>
+    <value>正在检查更新，请稍等！
+如果上次更新期间出错而中断，请重启本软件再尝试更新。</value>
   </data>
   <data name="ChangesColon" xml:space="preserve">
     <value>变动：</value>

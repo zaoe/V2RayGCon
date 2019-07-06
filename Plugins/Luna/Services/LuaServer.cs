@@ -115,7 +115,7 @@ namespace Luna.Services
             catch { }
         }
 
-        void Save() => settings.SaveSettings();
+        void Save() => settings.SaveUserSettingsNow();
 
         void WakeUpAutoRunScripts()
         {

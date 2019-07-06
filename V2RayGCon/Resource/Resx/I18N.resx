@@ -644,7 +644,8 @@ Switch to direct download.</value>
     <value>Are you sure to clear logs?</value>
   </data>
   <data name="UpdatingPleaseWait" xml:space="preserve">
-    <value>Checking for update, please wait...</value>
+    <value>Checking for update, please wait.
+If last update fail, please restart this software and try again.</value>
   </data>
   <data name="ChangesColon" xml:space="preserve">
     <value>Changes:</value>
