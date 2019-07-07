@@ -428,9 +428,6 @@ https://github.com/v2ray/v2ray-core</value>
   <data name="ConfirmDeleteControl" xml:space="preserve">
     <value>删除此项？</value>
   </data>
-  <data name="ConfirmAllOptionWillBeReplaced" xml:space="preserve">
-    <value>所有选项将被覆盖。确定要继续？</value>
-  </data>
   <data name="ConfirmImportServers" xml:space="preserve">
     <value>从备份文件中导入服务器（客户端）配置？</value>
   </data>
@@ -648,5 +645,17 @@ https://github.com/v2ray/v2ray-core</value>
     <value>加载用户配置失败！是否使用默认配置？
 是：使用默认配置
 否：结束程序</value>
+  </data>
+  <data name="ConfirmRestorePluginsSetting" xml:space="preserve">
+    <value>导入插件设置并重启所有插件？</value>
+  </data>
+  <data name="ConfirmOriginalSettingWillBeReset" xml:space="preserve">
+    <value>原有配置将被重置，真的要继续吗？</value>
+  </data>
+  <data name="ConfirmRestoreGlobalImportSettings" xml:space="preserve">
+    <value>导入全局Import设置？</value>
+  </data>
+  <data name="ConfirmRestoreSubscriptionSettings" xml:space="preserve">
+    <value>导入订阅设置？</value>
   </data>
 </root>

@@ -232,16 +232,6 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
-        ///   查找类似 All options will be replaced!
-        ///Are you sure want to continue? 的本地化字符串。
-        /// </summary>
-        internal static string ConfirmAllOptionWillBeReplaced {
-            get {
-                return ResourceManager.GetString("ConfirmAllOptionWillBeReplaced", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Are you sure to clear logs? 的本地化字符串。
         /// </summary>
         internal static string ConfirmClearLog {
@@ -344,6 +334,15 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 The original settings will be reset. Do you really want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmOriginalSettingWillBeReset {
+            get {
+                return ResourceManager.GetString("ConfirmOriginalSettingWillBeReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Remove v2ray-core from this computer? 的本地化字符串。
         /// </summary>
         internal static string ConfirmRemoveV2RayCore {
@@ -376,6 +375,33 @@ namespace V2RayGCon.Resource.Resx {
         internal static string ConfirmRestartAllServer {
             get {
                 return ResourceManager.GetString("ConfirmRestartAllServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Restore global import settings? 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmRestoreGlobalImportSettings {
+            get {
+                return ResourceManager.GetString("ConfirmRestoreGlobalImportSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Restore plugins setting and restart all plugins? 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmRestorePluginsSetting {
+            get {
+                return ResourceManager.GetString("ConfirmRestorePluginsSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Restore subscription settings? 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmRestoreSubscriptionSettings {
+            get {
+                return ResourceManager.GetString("ConfirmRestoreSubscriptionSettings", resourceCulture);
             }
         }
         

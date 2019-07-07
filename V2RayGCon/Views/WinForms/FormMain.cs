@@ -16,14 +16,12 @@ namespace V2RayGCon.Views.WinForms
 
         Controller.FormMainCtrl formMainCtrl;
         Service.Setting setting;
-        Service.Servers servers;
         Timer updateTitleTimer = null;
         string formTitle = "";
 
         public FormMain()
         {
             setting = Service.Setting.Instance;
-            servers = Service.Servers.Instance;
 
             InitializeComponent();
             VgcApis.Libs.UI.AutoSetFormIcon(this);

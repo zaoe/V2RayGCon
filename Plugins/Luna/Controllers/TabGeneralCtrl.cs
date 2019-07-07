@@ -44,12 +44,7 @@ namespace Luna.Controllers
                 {
                     return;
                 }
-
-                var scriptNames = luaServer.GetAllScriptsName();
-                foreach (var scriptName in scriptNames)
-                {
-                    luaServer.RemoveScriptByName(scriptName);
-                }
+                luaServer.RemoveAllScripts();
             };
 
             btnImport.Click += (s, a) =>
@@ -68,10 +63,7 @@ namespace Luna.Controllers
                     var scripts = JsonConvert.DeserializeObject<List<string[]>>(serializedScripts);
                     if (scripts != null && scripts.Count > 0)
                     {
-                        foreach (var script in scripts)
-                        {
-                            luaServer.AddOrReplaceScript(script[0], script[1]);
-                        }
+                        luaServer.ImportScripts(scripts);
                         MessageBox.Show(I18N.ImportScriptsSuccess);
                         return;
                     }

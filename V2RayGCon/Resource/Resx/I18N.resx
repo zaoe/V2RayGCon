@@ -433,10 +433,6 @@ Please check server configuration and log.</value>
   <data name="SaveChangeFirst" xml:space="preserve">
     <value>Please save the modified option first!</value>
   </data>
-  <data name="ConfirmAllOptionWillBeReplaced" xml:space="preserve">
-    <value>All options will be replaced!
-Are you sure want to continue?</value>
-  </data>
   <data name="ConfirmImportServers" xml:space="preserve">
     <value>Import server/client configs from backup file?</value>
   </data>
@@ -657,5 +653,17 @@ If last update fail, please restart this software and try again.</value>
     <value>Load user settings fail! Use default settings?
 Yes, use default settings.
 No, abort.</value>
+  </data>
+  <data name="ConfirmRestorePluginsSetting" xml:space="preserve">
+    <value>Restore plugins setting and restart all plugins?</value>
+  </data>
+  <data name="ConfirmOriginalSettingWillBeReset" xml:space="preserve">
+    <value>The original settings will be reset. Do you really want to continue?</value>
+  </data>
+  <data name="ConfirmRestoreGlobalImportSettings" xml:space="preserve">
+    <value>Restore global import settings?</value>
+  </data>
+  <data name="ConfirmRestoreSubscriptionSettings" xml:space="preserve">
+    <value>Restore subscription settings?</value>
   </data>
 </root>

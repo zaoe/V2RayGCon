@@ -25,6 +25,15 @@ namespace V2RayGCon.Service
         }
 
         #region Properties
+        public string AllPluginsSetting
+        {
+            get => userSettings.PluginsSetting;
+            set
+            {
+                userSettings.PluginsSetting = value;
+                LazySaveUserSettings();
+            }
+        }
 
         public VgcApis.Models.Datas.Enum.ShutdownReasons ShutdownReason { get; set; } =
             VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser;
@@ -270,26 +279,6 @@ namespace V2RayGCon.Service
             LazySaveUserSettings();
         }
 
-        private Dictionary<string, string> DeserializePluginsSetting()
-        {
-            var empty = new Dictionary<string, string>();
-            Dictionary<string, string> pluginsSetting = null;
-
-            try
-            {
-                pluginsSetting = JsonConvert
-                    .DeserializeObject<Dictionary<string, string>>(
-                        userSettings.PluginsSetting);
-            }
-            catch { }
-            if (pluginsSetting == null)
-            {
-                pluginsSetting = empty;
-            }
-
-            return pluginsSetting;
-        }
-
         readonly object saveUserSettingsLocker = new object();
         public void SaveUserSettingsNow()
         {
@@ -508,6 +497,26 @@ namespace V2RayGCon.Service
         #endregion
 
         #region private method
+        Dictionary<string, string> DeserializePluginsSetting()
+        {
+            var empty = new Dictionary<string, string>();
+            Dictionary<string, string> pluginsSetting = null;
+
+            try
+            {
+                pluginsSetting = JsonConvert
+                    .DeserializeObject<Dictionary<string, string>>(
+                        userSettings.PluginsSetting);
+            }
+            catch { }
+            if (pluginsSetting == null)
+            {
+                pluginsSetting = empty;
+            }
+
+            return pluginsSetting;
+        }
+
         void SetUserSettingFileIsPortableToFalse()
         {
             var filename = Lib.Utils.GetUserSettingsFullFileName();

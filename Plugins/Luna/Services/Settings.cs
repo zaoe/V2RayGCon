@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ScintillaNET;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Luna.Services
 {
@@ -56,6 +57,25 @@ namespace Luna.Services
         }
 
         readonly object shareMemoryLocker = new object();
+        public bool RemoveShareMemory(string key)
+        {
+            bool success;
+            lock (shareMemoryLocker)
+            {
+                success = userSettings.luaShareMemory.Remove(key);
+            }
+            SaveUserSettingsNow();
+            return success;
+        }
+
+        public List<string> ShareMemoryKeys()
+        {
+            lock (shareMemoryLocker)
+            {
+                return userSettings.luaShareMemory.Keys.ToList();
+            }
+        }
+
         public void SetLuaShareMemory(string key, string value)
         {
             lock (shareMemoryLocker)
