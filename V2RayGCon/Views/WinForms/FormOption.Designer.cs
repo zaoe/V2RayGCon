@@ -92,15 +92,13 @@
             this.tabControl1.Controls.Add(this.tabPagePlugins);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.toolTip1.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
             // 
             // tabPageImport
             // 
-            resources.ApplyResources(this.tabPageImport, "tabPageImport");
             this.tabPageImport.Controls.Add(this.btnImportAdd);
             this.tabPageImport.Controls.Add(this.flyImportPanel);
+            resources.ApplyResources(this.tabPageImport, "tabPageImport");
             this.tabPageImport.Name = "tabPageImport";
-            this.toolTip1.SetToolTip(this.tabPageImport, resources.GetString("tabPageImport.ToolTip"));
             this.tabPageImport.UseVisualStyleBackColor = true;
             // 
             // btnImportAdd
@@ -112,21 +110,19 @@
             // 
             // flyImportPanel
             // 
-            resources.ApplyResources(this.flyImportPanel, "flyImportPanel");
             this.flyImportPanel.AllowDrop = true;
+            resources.ApplyResources(this.flyImportPanel, "flyImportPanel");
             this.flyImportPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flyImportPanel.Name = "flyImportPanel";
-            this.toolTip1.SetToolTip(this.flyImportPanel, resources.GetString("flyImportPanel.ToolTip"));
             // 
             // tabPageSubscribe
             // 
-            resources.ApplyResources(this.tabPageSubscribe, "tabPageSubscribe");
             this.tabPageSubscribe.Controls.Add(this.chkSubsIsUseProxy);
             this.tabPageSubscribe.Controls.Add(this.btnUpdateViaSubscription);
             this.tabPageSubscribe.Controls.Add(this.btnAddSubsUrl);
             this.tabPageSubscribe.Controls.Add(this.flySubsUrlContainer);
+            resources.ApplyResources(this.tabPageSubscribe, "tabPageSubscribe");
             this.tabPageSubscribe.Name = "tabPageSubscribe";
-            this.toolTip1.SetToolTip(this.tabPageSubscribe, resources.GetString("tabPageSubscribe.ToolTip"));
             this.tabPageSubscribe.UseVisualStyleBackColor = true;
             // 
             // chkSubsIsUseProxy
@@ -152,22 +148,20 @@
             // 
             // flySubsUrlContainer
             // 
-            resources.ApplyResources(this.flySubsUrlContainer, "flySubsUrlContainer");
             this.flySubsUrlContainer.AllowDrop = true;
+            resources.ApplyResources(this.flySubsUrlContainer, "flySubsUrlContainer");
             this.flySubsUrlContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flySubsUrlContainer.Name = "flySubsUrlContainer";
-            this.toolTip1.SetToolTip(this.flySubsUrlContainer, resources.GetString("flySubsUrlContainer.ToolTip"));
             // 
             // tabPageSetting
             // 
-            resources.ApplyResources(this.tabPageSetting, "tabPageSetting");
             this.tabPageSetting.Controls.Add(this.groupBox3);
             this.tabPageSetting.Controls.Add(this.groupBox2);
             this.tabPageSetting.Controls.Add(this.groupBox6);
             this.tabPageSetting.Controls.Add(this.groupBox5);
             this.tabPageSetting.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPageSetting, "tabPageSetting");
             this.tabPageSetting.Name = "tabPageSetting";
-            this.toolTip1.SetToolTip(this.tabPageSetting, resources.GetString("tabPageSetting.ToolTip"));
             this.tabPageSetting.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -182,7 +176,6 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // tboxSetSpeedtestExpectedSize
             // 
@@ -234,7 +227,6 @@
             this.groupBox2.Controls.Add(this.chkSetUpgradeUseProxy);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // chkSetCheckWhenStart
             // 
@@ -257,7 +249,6 @@
             this.groupBox6.Controls.Add(this.chkSetSysPortable);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // chkSetUseV4
             // 
@@ -280,7 +271,6 @@
             this.groupBox5.Controls.Add(this.chkSetServAutotrack);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // chkSetServStatistics
             // 
@@ -306,11 +296,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // cboxSettingPageSize
             // 
-            resources.ApplyResources(this.cboxSettingPageSize, "cboxSettingPageSize");
             this.cboxSettingPageSize.FormattingEnabled = true;
             this.cboxSettingPageSize.Items.AddRange(new object[] {
             resources.GetString("cboxSettingPageSize.Items"),
@@ -318,14 +306,13 @@
             resources.GetString("cboxSettingPageSize.Items2"),
             resources.GetString("cboxSettingPageSize.Items3"),
             resources.GetString("cboxSettingPageSize.Items4")});
+            resources.ApplyResources(this.cboxSettingPageSize, "cboxSettingPageSize");
             this.cboxSettingPageSize.Name = "cboxSettingPageSize";
-            this.toolTip1.SetToolTip(this.cboxSettingPageSize, resources.GetString("cboxSettingPageSize.ToolTip"));
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.toolTip1.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // label2
             // 
@@ -335,43 +322,38 @@
             // 
             // cboxSettingLanguage
             // 
-            resources.ApplyResources(this.cboxSettingLanguage, "cboxSettingLanguage");
             this.cboxSettingLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxSettingLanguage.FormattingEnabled = true;
             this.cboxSettingLanguage.Items.AddRange(new object[] {
             resources.GetString("cboxSettingLanguage.Items"),
             resources.GetString("cboxSettingLanguage.Items1"),
             resources.GetString("cboxSettingLanguage.Items2")});
+            resources.ApplyResources(this.cboxSettingLanguage, "cboxSettingLanguage");
             this.cboxSettingLanguage.Name = "cboxSettingLanguage";
-            this.toolTip1.SetToolTip(this.cboxSettingLanguage, resources.GetString("cboxSettingLanguage.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // tabPagePlugins
             // 
-            resources.ApplyResources(this.tabPagePlugins, "tabPagePlugins");
             this.tabPagePlugins.Controls.Add(this.label4);
             this.tabPagePlugins.Controls.Add(this.flyPluginsItemsContainer);
+            resources.ApplyResources(this.tabPagePlugins, "tabPagePlugins");
             this.tabPagePlugins.Name = "tabPagePlugins";
-            this.toolTip1.SetToolTip(this.tabPagePlugins, resources.GetString("tabPagePlugins.ToolTip"));
             this.tabPagePlugins.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // flyPluginsItemsContainer
             // 
             resources.ApplyResources(this.flyPluginsItemsContainer, "flyPluginsItemsContainer");
             this.flyPluginsItemsContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flyPluginsItemsContainer.Name = "flyPluginsItemsContainer";
-            this.toolTip1.SetToolTip(this.flyPluginsItemsContainer, resources.GetString("flyPluginsItemsContainer.ToolTip"));
             // 
             // btnBakBackup
             // 
@@ -401,7 +383,6 @@
             // 
             resources.ApplyResources(this.btnOptionExit, "btnOptionExit");
             this.btnOptionExit.Name = "btnOptionExit";
-            this.toolTip1.SetToolTip(this.btnOptionExit, resources.GetString("btnOptionExit.ToolTip"));
             this.btnOptionExit.UseVisualStyleBackColor = true;
             this.btnOptionExit.Click += new System.EventHandler(this.btnOptionExit_Click);
             // 
@@ -415,7 +396,6 @@
             this.Controls.Add(this.btnOptionSave);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormOption";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Shown += new System.EventHandler(this.FormOption_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPageImport.ResumeLayout(false);

@@ -46,30 +46,25 @@ namespace VgcApis.Libs
 
         #region Json
         /// <summary>
-        /// file not exist: new Tuple&lt;T>("",null)
-        /// parse success: new Tuple&lt;T>(content, T object)
-        /// parse fail: new Tuple&lt;T>(content, null)
+        /// return parsed T object
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public static Tuple<string, T> LoadAndParseJsonFile<T>(string filename)
+        public static T LoadAndParseJsonFile<T>(string filename)
            where T : class
         {
-            var empty = new Tuple<string, T>("", null);
-            if (!File.Exists(filename))
+            if (File.Exists(filename))
             {
-                return empty;
+                try
+                {
+                    var content = File.ReadAllText(filename);
+                    var result = JsonConvert.DeserializeObject<T>(content);
+                    return result;
+                }
+                catch { }
             }
-
-            try
-            {
-                var content = File.ReadAllText(filename);
-                var result = JsonConvert.DeserializeObject<T>(content);
-                return new Tuple<string, T>(content, result);
-            }
-            catch { }
-            return empty;
+            return null;
         }
 
 

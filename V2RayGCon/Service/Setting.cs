@@ -12,14 +12,11 @@ using V2RayGCon.Resource.Resx;
 
 namespace V2RayGCon.Service
 {
-
-
     public class Setting :
         Model.BaseClass.SingletonService<Setting>,
         VgcApis.Models.IServices.ISettingsService
     {
         Model.Data.UserSettings userSettings;
-        string mainUserSettingsCache = @"";
 
         // Singleton need this private ctor.
         Setting()
@@ -282,30 +279,27 @@ namespace V2RayGCon.Service
             LazySaveUserSettings();
         }
 
-        readonly object saveUserSettingsLocker = new object();
+        VgcApis.Libs.Tasks.Bar saveUserSettingsBar = new VgcApis.Libs.Tasks.Bar();
         public void SaveUserSettingsNow()
         {
-            lock (saveUserSettingsLocker)
+            if (!saveUserSettingsBar.Install())
             {
-                var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
-                if (serializedUserSettings.Equals(mainUserSettingsCache))
-                {
-                    // already saved!
-                    VgcApis.Libs.Sys.FileLogger.Info("setting already saved, pass.");
-                    return;
-                }
+                return;
+            }
 
-                if (userSettings.isPortable)
-                {
-                    DebugSendLog("Try save settings to file.");
-                    SaveUserSettingsToFile(serializedUserSettings);
-                    return;
-                }
-
+            var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
+            if (userSettings.isPortable)
+            {
+                DebugSendLog("Try save settings to file.");
+                SaveUserSettingsToFile(serializedUserSettings);
+            }
+            else
+            {
                 DebugSendLog("Try save settings to properties");
                 SetUserSettingFileIsPortableToFalse();
                 SaveUserSettingsToProperties(serializedUserSettings);
             }
+            saveUserSettingsBar.Remove();
         }
 
         /*
@@ -538,7 +532,6 @@ namespace V2RayGCon.Service
             {
                 var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
                 File.WriteAllText(mainUsFilename, serializedUserSettings);
-                mainUserSettingsCache = serializedUserSettings;
                 File.WriteAllText(bakUsFilename, serializedUserSettings);
                 DebugSendLog("set portable option done");
                 return;
@@ -571,7 +564,6 @@ namespace V2RayGCon.Service
             try
             {
                 File.WriteAllText(Constants.Strings.MainUserSettingsFilename, content);
-                mainUserSettingsCache = content;
                 File.WriteAllText(Constants.Strings.BackupUserSettingsFilename, content);
                 return;
             }
@@ -612,22 +604,19 @@ namespace V2RayGCon.Service
             // try to load userSettings.json
             var result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
                 Constants.Strings.MainUserSettingsFilename);
-            mainUserSettingsCache = result.Item1;
 
             // try to load userSettings.bak
-            if (result.Item2 == null)
+            if (result == null)
             {
                 result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
-                Constants.Strings.BackupUserSettingsFilename);
+                    Constants.Strings.BackupUserSettingsFilename);
             }
 
-            var us = result.Item2;
-            if (us == null)
+            if (result != null && result.isPortable)
             {
-                return null;
+                return result;
             }
-
-            return us.isPortable ? us : null;
+            return null;
         }
 
         Model.Data.UserSettings LoadUserSettings()
