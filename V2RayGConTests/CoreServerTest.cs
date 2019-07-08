@@ -10,7 +10,6 @@ namespace V2RayGCon.Test
 
         public CoreServerTest()
         {
-            VgcApis.Models.Consts.Config.IsRunningUnitTest = true;
             var setting = Service.Setting.Instance;
             core = new Lib.V2Ray.Core(setting);
         }

@@ -1064,13 +1064,6 @@ namespace V2RayGCon.Lib
         #endregion
 
         #region files
-        public static string GetUserSettingsFullFileName()
-        {
-            var appDir = VgcApis.Libs.Utils.GetAppDir();
-            var fileName = Properties.Resources.PortableUserSettingsFilename;
-            var fullFileName = Path.Combine(appDir, fileName);
-            return fullFileName;
-        }
 
         public static string GetSha256SumFromFile(string file)
         {

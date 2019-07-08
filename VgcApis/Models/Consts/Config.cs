@@ -4,8 +4,6 @@ namespace VgcApis.Models.Consts
 {
     public static class Config
     {
-        public static bool IsRunningUnitTest = false;
-
         public static double CustomSpeedtestMeanWeight = 0.6;
         public static double FloatPointNumberTolerance = 0.000001;
 

@@ -12,11 +12,14 @@ using V2RayGCon.Resource.Resx;
 
 namespace V2RayGCon.Service
 {
+
+
     public class Setting :
         Model.BaseClass.SingletonService<Setting>,
         VgcApis.Models.IServices.ISettingsService
     {
         Model.Data.UserSettings userSettings;
+        string mainUserSettingsCache = @"";
 
         // Singleton need this private ctor.
         Setting()
@@ -285,7 +288,7 @@ namespace V2RayGCon.Service
             lock (saveUserSettingsLocker)
             {
                 var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
-                if (serializedUserSettings.Equals(serializedUserSettingsCache))
+                if (serializedUserSettings.Equals(mainUserSettingsCache))
                 {
                     // already saved!
                     VgcApis.Libs.Sys.FileLogger.Info("setting already saved, pass.");
@@ -333,22 +336,22 @@ namespace V2RayGCon.Service
         public Model.Data.ServerTracker GetServerTrackerSetting()
         {
             var empty = new Model.Data.ServerTracker();
-            Model.Data.ServerTracker r = null;
+            Model.Data.ServerTracker result;
             try
             {
-                r = JsonConvert
+                result = JsonConvert
                     .DeserializeObject<Model.Data.ServerTracker>(
                         userSettings.ServerTracker);
-                if (r.serverList == null)
+                if (result != null && result.serverList == null)
                 {
-                    r.serverList = new List<string>();
+                    result.serverList = new List<string>();
                 }
             }
             catch
             {
                 return empty;
             }
-            return r ?? empty;
+            return result ?? empty;
         }
 
         public List<VgcApis.Models.Datas.CoreInfo> LoadCoreInfoList()
@@ -519,38 +522,34 @@ namespace V2RayGCon.Service
 
         void SetUserSettingFileIsPortableToFalse()
         {
-            var filename = Lib.Utils.GetUserSettingsFullFileName();
-            if (!File.Exists(filename))
+            DebugSendLog("Read user setting file");
+
+            var mainUsFilename = Constants.Strings.MainUserSettingsFilename;
+            var bakUsFilename = Constants.Strings.BackupUserSettingsFilename;
+            if (!File.Exists(mainUsFilename) && !File.Exists(bakUsFilename))
             {
                 DebugSendLog("setting file not exists");
                 return;
             }
 
+            DebugSendLog("set portable to false");
+            userSettings.isPortable = false;
             try
             {
-                var s = JsonConvert
-                    .DeserializeObject<Model.Data.UserSettings>(
-                    File.ReadAllText(filename));
-
-                DebugSendLog("Read user setting file");
-
-                if (s.isPortable)
-                {
-                    s.isPortable = false;
-                    DebugSendLog("set portable to false");
-                    File.WriteAllText(filename, JsonConvert.SerializeObject(s));
-                }
-
+                var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
+                File.WriteAllText(mainUsFilename, serializedUserSettings);
+                mainUserSettingsCache = serializedUserSettings;
+                File.WriteAllText(bakUsFilename, serializedUserSettings);
                 DebugSendLog("set portable option done");
+                return;
             }
-            catch
+            catch { }
+
+            if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
-                if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
-                {
-                    // this is important do not use task
-                    var msg = string.Format(I18N.UnsetPortableModeFail, filename);
-                    MessageBox.Show(msg);
-                }
+                // this is important do not use task
+                var msg = string.Format(I18N.UnsetPortableModeFail, mainUsFilename);
+                MessageBox.Show(msg);
             }
         }
 
@@ -560,7 +559,6 @@ namespace V2RayGCon.Service
             {
                 Properties.Settings.Default.UserSettings = content;
                 Properties.Settings.Default.Save();
-                serializedUserSettingsCache = content;
             }
             catch
             {
@@ -570,19 +568,22 @@ namespace V2RayGCon.Service
 
         void SaveUserSettingsToFile(string content)
         {
-            var filename = Lib.Utils.GetUserSettingsFullFileName();
             try
             {
-                File.WriteAllText(filename, content);
-                serializedUserSettingsCache = content;
+                File.WriteAllText(Constants.Strings.MainUserSettingsFilename, content);
+                mainUserSettingsCache = content;
+                File.WriteAllText(Constants.Strings.BackupUserSettingsFilename, content);
+                return;
             }
-            catch
+            catch { }
+
+            if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
-                if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
-                {
-                    // this is important do not use task!
-                    MessageBox.Show(I18N.SaveUserSettingsToFileFail);
-                }
+                // 兄弟只能帮你到这了
+                VgcApis.Libs.Sys.NotepadHelper.ShowMessage(content, Properties.Resources.PortableUserSettingsFilename);
+
+                // this is important do not use task!
+                MessageBox.Show(I18N.SaveUserSettingsToFileFail);
             }
         }
 
@@ -595,7 +596,6 @@ namespace V2RayGCon.Service
                 if (us != null)
                 {
                     DebugSendLog("Read user settings from Properties.Usersettings");
-                    serializedUserSettingsCache = serializedUserSettings;
                     return us;
                 }
             }
@@ -604,32 +604,37 @@ namespace V2RayGCon.Service
             return null;
         }
 
-        string serializedUserSettingsCache = @"";
-
         Model.Data.UserSettings LoadUserSettingsFromFile()
         {
-            DebugSendLog("Try read setting from file");
-            var filename = Lib.Utils.GetUserSettingsFullFileName();
-            if (File.Exists(filename))
+            // try to load userSettings.json
+            var result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
+                Constants.Strings.MainUserSettingsFilename);
+            mainUserSettingsCache = result.Item1;
+
+            // try to load userSettings.bak
+            if (result.Item2 == null)
             {
-                try
-                {
-                    var serializedUserSettings = File.ReadAllText(filename);
-                    var result = JsonConvert.DeserializeObject<Model.Data.UserSettings>(serializedUserSettings);
-                    serializedUserSettingsCache = serializedUserSettings;
-                    return result.isPortable ? result : null;
-                }
-                catch { }
+                result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
+                Constants.Strings.BackupUserSettingsFilename);
             }
-            return null;
+
+            var us = result.Item2;
+            if (us == null)
+            {
+                return null;
+            }
+
+            return us.isPortable ? us : null;
         }
 
         Model.Data.UserSettings LoadUserSettings()
         {
-            var result = LoadUserSettingsFromFile() ?? LoadUserSettingsFromPorperties();
+            var mainUsFile = Constants.Strings.MainUserSettingsFilename;
+            var bakUsFile = Constants.Strings.BackupUserSettingsFilename;
 
+            var result = LoadUserSettingsFromFile() ?? LoadUserSettingsFromPorperties();
             if (result == null
-                && !VgcApis.Models.Consts.Config.IsRunningUnitTest
+                && (File.Exists(mainUsFile) || File.Exists(bakUsFile))
                 && !Lib.UI.Confirm(I18N.ConfirmLoadDefaultUserSettings))
             {
                 ShutdownReason = VgcApis.Models.Datas.Enum.ShutdownReasons.Abort;
