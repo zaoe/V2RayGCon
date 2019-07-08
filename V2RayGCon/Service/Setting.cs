@@ -579,8 +579,11 @@ namespace V2RayGCon.Service
 
             if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
-                // 兄弟只能帮你到这了
-                VgcApis.Libs.Sys.NotepadHelper.ShowMessage(content, Properties.Resources.PortableUserSettingsFilename);
+                if (isShutdown)
+                {
+                    // 兄弟只能帮你到这了
+                    VgcApis.Libs.Sys.NotepadHelper.ShowMessage(content, Properties.Resources.PortableUserSettingsFilename);
+                }
 
                 // this is important do not use task!
                 MessageBox.Show(I18N.SaveUserSettingsToFileFail);
