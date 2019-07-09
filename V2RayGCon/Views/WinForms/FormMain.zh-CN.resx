@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="toolStripContainer2.BottomToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="flyServerListContainer.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer2.ContentPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer2.LeftToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer2.RightToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripButtonSelectAllCurPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -267,6 +285,12 @@
   </data>
   <data name="toolStripLabelMarkFilter.ToolTipText" xml:space="preserve">
     <value>过滤服务器列表，点击清除过滤参数</value>
+  </data>
+  <data name="toolStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripContainer2.TopToolStripPanel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="toolMenuItemSimAddVmessServer.Size" type="System.Drawing.Size, System.Drawing">
     <value>241, 34</value>
@@ -551,7 +575,7 @@
     <value>完整的服务器面板</value>
   </data>
   <data name="toolStripMenuItemModifySelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemModifySelected.Text" xml:space="preserve">
     <value>调整选中</value>
@@ -593,16 +617,16 @@
     <value>将选中的服务器编码为订阅内容（支持vmess及shadowsocks服务器）</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>复制选中</value>
   </data>
   <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 6</value>
+    <value>267, 6</value>
   </data>
   <data name="toolStripMenuItemRestartSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemRestartSelected.Text" xml:space="preserve">
     <value>重启选中</value>
@@ -611,7 +635,7 @@
     <value>重启选中的服务器</value>
   </data>
   <data name="toolStripMenuItemStopSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemStopSelected.Text" xml:space="preserve">
     <value>停止选中</value>
@@ -620,7 +644,7 @@
     <value>停止选中的服务器</value>
   </data>
   <data name="toolStripMenuItemSpeedTestOnSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemSpeedTestOnSelected.Text" xml:space="preserve">
     <value>速度测试</value>
@@ -629,34 +653,10 @@
     <value>对选中的服务器运行速度测试</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 6</value>
-  </data>
-  <data name="toolStripMenuItemDeleteAllServer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 34</value>
-  </data>
-  <data name="toolStripMenuItemDeleteAllServer.Text" xml:space="preserve">
-    <value>删除全部</value>
-  </data>
-  <data name="toolStripMenuItemDeleteAllServer.ToolTipText" xml:space="preserve">
-    <value>删除全部服务器</value>
-  </data>
-  <data name="toolStripMenuItemDeleteSelectedServers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 34</value>
-  </data>
-  <data name="toolStripMenuItemDeleteSelectedServers.Text" xml:space="preserve">
-    <value>删除选中</value>
-  </data>
-  <data name="toolStripMenuItemDeleteSelectedServers.ToolTipText" xml:space="preserve">
-    <value>删除选中的服务器</value>
-  </data>
-  <data name="toolStripMenuItemDeleteServers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
-  </data>
-  <data name="toolStripMenuItemDeleteServers.Text" xml:space="preserve">
-    <value>删除服务器</value>
+    <value>267, 6</value>
   </data>
   <data name="refreshSummaryToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="refreshSummaryToolStripMenuItem.Text" xml:space="preserve">
     <value>刷新摘要</value>
@@ -664,38 +664,29 @@
   <data name="refreshSummaryToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>刷新全部服务器的摘要信息</value>
   </data>
+  <data name="deleteSelectedServersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="deleteSelectedServersToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除选中的服务器</value>
+  </data>
+  <data name="deleteSelectedServersToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>删除选中的服务器</value>
+  </data>
   <data name="toolMenuItemServer.Text" xml:space="preserve">
     <value>服务器</value>
-  </data>
-  <data name="toolMenuItemConfigEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
   </data>
   <data name="toolMenuItemConfigEditor.Text" xml:space="preserve">
     <value>配置编辑器</value>
   </data>
-  <data name="toolMenuItemQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
-  </data>
   <data name="toolMenuItemQRCode.Text" xml:space="preserve">
     <value>二维码</value>
-  </data>
-  <data name="toolMenuItemLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
   </data>
   <data name="toolMenuItemLog.Text" xml:space="preserve">
     <value>日志</value>
   </data>
-  <data name="toolMenuItemOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
-  </data>
   <data name="toolMenuItemOptions.Text" xml:space="preserve">
     <value>选项</value>
-  </data>
-  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 6</value>
-  </data>
-  <data name="toolStripMenuItemResize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 34</value>
   </data>
   <data name="toolStripMenuItemResize.Text" xml:space="preserve">
     <value>调整大小</value>
@@ -710,13 +701,34 @@
     <value>窗口</value>
   </data>
   <data name="toolStripMenuItemDownLoadV2rayCore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemDownLoadV2rayCore.Text" xml:space="preserve">
     <value>下载v2ray-core</value>
   </data>
+  <data name="toolMenuItemCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="toolMenuItemCheckUpdate.Text" xml:space="preserve">
+    <value>检查V2RayGCon更新</value>
+  </data>
+  <data name="toolMenuItemAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="toolMenuItemAbout.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="toolMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="toolMenuItemHelp.Text" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 6</value>
+  </data>
   <data name="toolStripMenuItemRemoveV2rayCore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolStripMenuItemRemoveV2rayCore.Text" xml:space="preserve">
     <value>删除v2ray-core</value>
@@ -724,29 +736,23 @@
   <data name="toolStripMenuItemRemoveV2rayCore.ToolTipText" xml:space="preserve">
     <value>删除%ProgramData%中的V2RayGCon文件夹</value>
   </data>
-  <data name="toolMenuItemCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
+  <data name="deleteAllServersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="toolMenuItemCheckUpdate.Text" xml:space="preserve">
-    <value>检查V2RayGCon更新</value>
+  <data name="deleteAllServersToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除所有服务器</value>
   </data>
-  <data name="toolMenuItemAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
-  </data>
-  <data name="toolMenuItemAbout.Text" xml:space="preserve">
-    <value>关于</value>
-  </data>
-  <data name="toolMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
-  </data>
-  <data name="toolMenuItemHelp.Text" xml:space="preserve">
-    <value>帮助</value>
+  <data name="deleteAllServersToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>删除所有服务器</value>
   </data>
   <data name="aboutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 22</value>
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>关于</value>
+  </data>
+  <data name="mainMneuStrip.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 24</value>
@@ -760,10 +766,6 @@
         DzbVaGzAe1o5RvxkQJRl2cH71QZpmkIYht36lQHNII7jLvZOFEVscrKpRmODqnr01YkkSdZ1wGhlvsbq
         GczBZ2YNlp7yOzQXNJD4kDY21QiDiz8TQ4VwFTZtKHKl1pYYVnacJx54Q9vZOMyzAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripDropDownButtonPager.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
   </data>
   <data name="toolStripDropDownButtonPager.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 28</value>
@@ -783,6 +785,7 @@
         8KU9GoGYc5/X4kZbjSCHMQ9lJvJxt4hIvQH8YJzAMwuHCAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripStatusLabelPrePage.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
@@ -813,7 +816,16 @@
   <data name="toolStripStatusLabelNextPage.ToolTipText" xml:space="preserve">
     <value>后一页</value>
   </data>
+  <data name="statusStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>主窗口</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

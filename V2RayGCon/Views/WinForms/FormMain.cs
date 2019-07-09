@@ -229,8 +229,8 @@ namespace V2RayGCon.Views.WinForms
                 //ToolStripMenuItem deleteAllServers,
                 //ToolStripMenuItem deleteSelected,
                 refreshSummaryToolStripMenuItem,
-                toolStripMenuItemDeleteAllServer,
-                toolStripMenuItemDeleteSelectedServers,
+                deleteAllServersToolStripMenuItem,
+                deleteSelectedServersToolStripMenuItem,
 
                 //// copy
                 //ToolStripMenuItem copyAsV2cfgLinks,
