@@ -14,6 +14,21 @@ namespace VgcApisTests
     [TestClass]
     public class UtilsTests
     {
+        [DataTestMethod]
+        [DataRow("a::b:123", true, "a::b", 123)]
+        [DataRow("ab123", false, "127.0.0.1", 1080)]
+        [DataRow("ab123:", false, "127.0.0.1", 1080)]
+        [DataRow(":123", false, "127.0.0.1", 1080)]
+        [DataRow(":", false, "127.0.0.1", 1080)]
+        public void TryParseIPAddrTest(string address, bool expResult, string expIp, int expPort)
+        {
+            var result = VgcApis.Libs.Utils.TryParseIPAddr(address, out string ip, out int port);
+            Assert.AreEqual(expResult, result);
+            Assert.AreEqual(expIp, ip);
+            Assert.AreEqual(expPort, port);
+
+        }
+
         [TestMethod]
         public void AreEqualTest()
         {

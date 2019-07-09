@@ -81,6 +81,29 @@ namespace V2RayGCon.Service
             }
         }
 
+        public int CustomDefImportMode
+        {
+            get => VgcApis.Libs.Utils.Clamp(userSettings.CustomDefImportMode, 0, 4);
+            set
+            {
+                userSettings.CustomDefImportMode =
+                    VgcApis.Libs.Utils.Clamp(value, 0, 4);
+            }
+        }
+
+        public string CustomDefImportIp
+        {
+            get => userSettings.CustomDefImportIp;
+            set => userSettings.CustomDefImportIp = value;
+        }
+
+        public int CustomDefImportPort
+        {
+            get => userSettings.CustomDefImportPort;
+            set => userSettings.CustomDefImportPort = value;
+        }
+
+
         public string CustomSpeedtestUrl
         {
             get => userSettings.CustomSpeedtestUrl;

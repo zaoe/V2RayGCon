@@ -1229,31 +1229,6 @@ namespace V2RayGCon.Lib
             return 0;
         }
 
-        public static bool TryParseIPAddr(string address, out string ip, out int port)
-        {
-            ip = VgcApis.Models.Consts.Webs.LoopBackIP;
-            port = 1080;
-
-            int index = address.LastIndexOf(':');
-            if (index < 0)
-            {
-                return false;
-            }
-
-            var ipStr = address.Substring(0, index);
-            var portStr = address.Substring(index + 1);
-            var portInt = Clamp(Str2Int(portStr), 0, 65536);
-
-            if (string.IsNullOrEmpty(ipStr) || portInt == 0)
-            {
-                return false;
-            }
-
-            ip = ipStr;
-            port = portInt;
-            return true;
-        }
-
         static string GenLinkPrefix(
             VgcApis.Models.Datas.Enum.LinkTypes linkType) =>
             $"{linkType.ToString()}";

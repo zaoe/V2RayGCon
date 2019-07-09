@@ -6,7 +6,12 @@ namespace V2RayGCon.Model.Data
     {
         #region public properties
 
-        // FormOption->Settings->Speedtest
+        // FormOption->Defaults->Mode
+        public int CustomDefImportMode { get; set; } // Model.Data.Enum.ProxyTypes
+        public string CustomDefImportIp { get; set; }
+        public int CustomDefImportPort { get; set; }
+
+        // FormOption->Defaults->Speedtest
         public string CustomSpeedtestUrl { get; set; }
         public bool IsUseCustomSpeedtestSettings { get; set; }
         public int CustomSpeedtestCycles { get; set; }
@@ -41,7 +46,12 @@ namespace V2RayGCon.Model.Data
 
         public UserSettings()
         {
-            // FormOption -> Settings -> Speedtest
+            // FormOption -> Defaults -> Mode
+            CustomDefImportMode = (int)Enum.ProxyTypes.HTTP;
+            CustomDefImportIp = VgcApis.Models.Consts.Webs.LoopBackIP;
+            CustomDefImportPort = VgcApis.Models.Consts.Webs.DefaultProxyPort;
+
+            // FormOption -> Defaults -> Speedtest
             CustomSpeedtestUrl = VgcApis.Models.Consts.Webs.GoogleDotCom;
             IsUseCustomSpeedtestSettings = false;
             CustomSpeedtestCycles = 3;

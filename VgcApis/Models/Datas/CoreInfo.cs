@@ -42,9 +42,9 @@
             uid = string.Empty;
 
 
-            customInbType = 1;
-            inbIp = VgcApis.Models.Consts.Webs.LoopBackIP;
-            inbPort = 1080;
+            customInbType = (int)Models.Datas.Enum.ProxyTypes.HTTP;
+            inbIp = Consts.Webs.LoopBackIP;
+            inbPort = Consts.Webs.DefaultProxyPort;
         }
     }
 }

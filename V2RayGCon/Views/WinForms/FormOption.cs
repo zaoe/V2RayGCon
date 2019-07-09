@@ -76,13 +76,20 @@ namespace V2RayGCon.Views.WinForms
                     chkSetUseV4,
                     chkSetServStatistics,
                     chkSetUpgradeUseProxy,
-                    chkSetCheckWhenStart,
+                    chkSetCheckWhenStart));
+            ctrl.Plug(
+                new Controller.OptionComponent.TabDefaults(
+
+                    // def import share link mode
+                    cboxDefImportMode,
+                    tboxDefImportAddr,
 
                     // speedtest 
-                    chkSetSpeedtestIsUse,
-                    tboxSetSpeedtestUrl,
-                    tboxSetSpeedtestCycles,
-                    tboxSetSpeedtestExpectedSize));
+                    chkDefSpeedtestIsUse,
+                    tboxDefSpeedtestUrl,
+                    tboxDefSpeedtestCycles,
+                    tboxDefSpeedtestExpectedSize)
+            );
 
             return ctrl;
         }

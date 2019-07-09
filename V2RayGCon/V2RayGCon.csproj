@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Strings.cs" />
+    <Compile Include="Controller\OptionComponent\TabDefaults.cs" />
     <Compile Include="Model\Data\UpdateInfo.cs" />
     <Compile Include="Service\Caches\JsonAcm.cs" />
     <Compile Include="Controller\ConfigerComponent\MenuUpdater.cs" />

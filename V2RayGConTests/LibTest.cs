@@ -100,21 +100,6 @@ namespace V2RayGCon.Test
         }
 
         [DataTestMethod]
-        [DataRow("a::b:123", true, "a::b", 123)]
-        [DataRow("ab123", false, "127.0.0.1", 1080)]
-        [DataRow("ab123:", false, "127.0.0.1", 1080)]
-        [DataRow(":123", false, "127.0.0.1", 1080)]
-        [DataRow(":", false, "127.0.0.1", 1080)]
-        public void TryParseIPAddrTest(string address, bool expResult, string expIp, int expPort)
-        {
-            var result = Lib.Utils.TryParseIPAddr(address, out string ip, out int port);
-            Assert.AreEqual(expResult, result);
-            Assert.AreEqual(expIp, ip);
-            Assert.AreEqual(expPort, port);
-
-        }
-
-        [DataTestMethod]
         [DataRow("", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")]
         [DataRow(null, "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")]
         [DataRow("1234", "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4")]

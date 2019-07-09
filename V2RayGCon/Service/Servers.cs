@@ -633,6 +633,9 @@ namespace V2RayGCon.Service
             var newServer = new Controller.CoreServerCtrl(
                 new VgcApis.Models.Datas.CoreInfo
                 {
+                    customInbType = setting.CustomDefImportMode,
+                    inbIp = setting.CustomDefImportIp,
+                    inbPort = setting.CustomDefImportPort,
                     config = config,
                     customMark = mark,
                 });
