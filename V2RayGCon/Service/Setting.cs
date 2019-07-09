@@ -249,8 +249,7 @@ namespace V2RayGCon.Service
         public void SaveV2RayCoreVersionList(List<string> versions)
         {
             // clone version list
-            userSettings.V2RayCoreDownloadVersionList =
-                new List<string>(versions);
+            userSettings.V2RayCoreDownloadVersionList = new List<string>(versions);
             LazySaveUserSettings();
         }
 
@@ -262,9 +261,9 @@ namespace V2RayGCon.Service
         }
 
         // ISettingService thing
-        bool isShutdown = false;
-        public bool IsShutdown() => isShutdown;
-        public bool SetIsShutdown(bool isShutdown) => this.isShutdown = isShutdown;
+        bool isClosing = false;
+        public bool IsClosing() => isClosing;
+        public bool SetIsShutdown(bool isShutdown) => this.isClosing = isShutdown;
 
         /// <summary>
         /// return null if fail
@@ -311,16 +310,27 @@ namespace V2RayGCon.Service
             }
 
             var serializedUserSettings = JsonConvert.SerializeObject(userSettings);
-            if (userSettings.isPortable)
+            if (ValidateSerializedUserSettings(serializedUserSettings))
             {
-                DebugSendLog("Try save settings to file.");
-                SaveUserSettingsToFile(serializedUserSettings);
+                if (userSettings.isPortable)
+                {
+                    DebugSendLog("Try save settings to file.");
+                    SaveUserSettingsToFile(serializedUserSettings);
+                }
+                else
+                {
+                    DebugSendLog("Try save settings to properties");
+                    SetUserSettingFileIsPortableToFalse();
+                    SaveUserSettingsToProperties(serializedUserSettings);
+                }
             }
             else
             {
-                DebugSendLog("Try save settings to properties");
-                SetUserSettingFileIsPortableToFalse();
-                SaveUserSettingsToProperties(serializedUserSettings);
+                if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
+                {
+                    SendLog("UserSettings: " + Environment.NewLine + serializedUserSettings);
+                    throw new ArgumentException("Validate serialized user settings fail!");
+                }
             }
             saveUserSettingsBar.Remove();
         }
@@ -517,6 +527,26 @@ namespace V2RayGCon.Service
         #endregion
 
         #region private method
+        bool ValidateSerializedUserSettings(string serializedUserSettings)
+        {
+            if (string.IsNullOrEmpty(serializedUserSettings))
+            {
+                return false;
+            }
+            try
+            {
+                var json = JsonConvert.DeserializeObject<Model.Data.UserSettings>(
+                    serializedUserSettings);
+                if (json != null)
+                {
+                    return true;
+                }
+            }
+            catch { }
+            return false;
+        }
+
+
         Dictionary<string, string> DeserializePluginsSetting()
         {
             var empty = new Dictionary<string, string>();
@@ -584,24 +614,34 @@ namespace V2RayGCon.Service
 
         void SaveUserSettingsToFile(string content)
         {
+            string mainFilename = Constants.Strings.MainUserSettingsFilename;
+            string bakFilename = Constants.Strings.BackupUserSettingsFilename;
+
             try
             {
-                File.WriteAllText(Constants.Strings.MainUserSettingsFilename, content);
-                File.WriteAllText(Constants.Strings.BackupUserSettingsFilename, content);
-                return;
+                File.WriteAllText(mainFilename, content);
+                var readMain = File.ReadAllText(mainFilename);
+                if (content.Equals(readMain))
+                {
+                    File.WriteAllText(bakFilename, content);
+                    return;
+                }
             }
             catch { }
 
             if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
-                if (isShutdown)
+                var msg = I18N.SaveUserSettingsToFileFail;
+                if (isClosing)
                 {
                     // 兄弟只能帮你到这了
                     VgcApis.Libs.Sys.NotepadHelper.ShowMessage(content, Properties.Resources.PortableUserSettingsFilename);
+                    msg += Environment.NewLine + string.Format(I18N.AndThenSaveThisFileAs, Properties.Resources.PortableUserSettingsFilename);
                 }
 
                 // this is important do not use task!
-                MessageBox.Show(I18N.SaveUserSettingsToFileFail);
+                msg += Environment.NewLine + I18N.OrDisablePortableMode;
+                MessageBox.Show(msg);
             }
         }
 
@@ -701,10 +741,7 @@ namespace V2RayGCon.Service
         {
             lazyGCTimer?.Release();
             lazySaveUserSettingsTimer?.Release();
-            if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
-            {
-                SaveUserSettingsNow();
-            }
+            SaveUserSettingsNow();
             qLogger.Dispose();
         }
         #endregion

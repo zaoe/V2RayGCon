@@ -22,7 +22,7 @@ namespace Statistics.Services
         #endregion
 
         #region public method
-        public bool IsShutdown() => vgcSetting.IsShutdown();
+        public bool IsShutdown() => vgcSetting.IsClosing();
 
         public void RequireHistoryStatsDataUpdate()
         {

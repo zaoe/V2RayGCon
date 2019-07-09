@@ -163,15 +163,6 @@ namespace V2RayGCon.Service
                 }
 
                 setting.SetIsShutdown(true);
-                if (setting.ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.Poweroff)
-                {
-                    VgcApis.Libs.Sys.FileLogger.Info("Saving settings before services desposed");
-                    VgcApis.Libs.Sys.FileLogger.Info("servers.SaveServersSettingsNow()");
-                    servers.SaveServersSettingsNow();
-                    VgcApis.Libs.Sys.FileLogger.Info("setting.SaveUserSettingsNow()");
-                    setting.SaveUserSettingsNow();
-                }
-
                 foreach (var service in services)
                 {
                     service.Dispose();
@@ -179,7 +170,6 @@ namespace V2RayGCon.Service
                 isCleanupDone = true;
             }
         }
-
 
         void SetCulture(Model.Data.Enum.Cultures culture)
         {

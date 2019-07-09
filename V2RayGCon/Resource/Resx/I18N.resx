@@ -587,7 +587,7 @@ Please take a look at log.</value>
   </data>
   <data name="SaveUserSettingsToFileFail" xml:space="preserve">
     <value>Save settings to file fail!
-Try move this app to writeable folder or disable portable mode.</value>
+Please move this app to a writeable folder.</value>
   </data>
   <data name="UnsetPortableModeFail" xml:space="preserve">
     <value>Unset partable mode fail!
@@ -665,5 +665,11 @@ No, abort.</value>
   </data>
   <data name="ConfirmRestoreSubscriptionSettings" xml:space="preserve">
     <value>Restore subscription settings?</value>
+  </data>
+  <data name="AndThenSaveThisFileAs" xml:space="preserve">
+    <value>And then save this text file as {0}.</value>
+  </data>
+  <data name="OrDisablePortableMode" xml:space="preserve">
+    <value>or disable portable mode.</value>
   </data>
 </root>

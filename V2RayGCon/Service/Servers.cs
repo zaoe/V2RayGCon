@@ -822,13 +822,6 @@ namespace V2RayGCon.Service
                 return;
             }
 
-            if (setting.ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.Poweroff)
-            {
-                VgcApis.Libs.Sys.FileLogger.Info("Services.Servers skip cleanup in shutdown");
-                StopAllServersThen();
-                return;
-            }
-
             VgcApis.Libs.Sys.FileLogger.Info("Services.Servers.Cleanup()");
             serverSaver.DoItNow();
             serverSaver.Quit();

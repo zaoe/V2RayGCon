@@ -30,7 +30,7 @@ namespace Luna.Services
         }
 
         bool isDisposing = false;
-        public bool IsShutdown() => isDisposing || vgcSetting.IsShutdown();
+        public bool IsShutdown() => isDisposing || vgcSetting.IsClosing();
 
         public void SetIsDisposing(bool value) => isDisposing = value;
 

@@ -580,8 +580,7 @@ https://github.com/v2ray/v2ray-core</value>
     <value>访问以下网址？</value>
   </data>
   <data name="SaveUserSettingsToFileFail" xml:space="preserve">
-    <value>保存配置失败!
-请将本软件移至可写入目录或禁用便携模式。</value>
+    <value>保存配置失败!请将本软件移至可写入目录。</value>
   </data>
   <data name="UnsetPortableModeFail" xml:space="preserve">
     <value>取消便携模式失败，请删除本软件目录中的{0}。</value>
@@ -657,5 +656,11 @@ https://github.com/v2ray/v2ray-core</value>
   </data>
   <data name="ConfirmRestoreSubscriptionSettings" xml:space="preserve">
     <value>导入订阅设置？</value>
+  </data>
+  <data name="AndThenSaveThisFileAs" xml:space="preserve">
+    <value>然后将此文本另存为 {0}。</value>
+  </data>
+  <data name="OrDisablePortableMode" xml:space="preserve">
+    <value>或禁用便携模式。</value>
   </data>
 </root>

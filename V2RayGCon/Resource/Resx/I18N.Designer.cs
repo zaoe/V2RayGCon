@@ -124,6 +124,15 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 And then save this text file as {0}. 的本地化字符串。
+        /// </summary>
+        internal static string AndThenSaveThisFileAs {
+            get {
+                return ResourceManager.GetString("AndThenSaveThisFileAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Attach to v2ray-core process fail! 的本地化字符串。
         /// </summary>
         internal static string AttachToV2rayCoreProcessFail {
@@ -1129,6 +1138,15 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 or disable portable mode. 的本地化字符串。
+        /// </summary>
+        internal static string OrDisablePortableMode {
+            get {
+                return ResourceManager.GetString("OrDisablePortableMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Can not find original config!
         ///Please use [Add new server] or [Replace server]. 的本地化字符串。
         /// </summary>
@@ -1275,7 +1293,7 @@ namespace V2RayGCon.Resource.Resx {
         
         /// <summary>
         ///   查找类似 Save settings to file fail!
-        ///Try move this app to writeable folder or disable portable mode. 的本地化字符串。
+        ///Please move this app to a writeable folder. 的本地化字符串。
         /// </summary>
         internal static string SaveUserSettingsToFileFail {
             get {
