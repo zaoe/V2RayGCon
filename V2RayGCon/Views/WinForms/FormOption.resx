@@ -897,6 +897,9 @@
   <data name="&gt;&gt;tabPageSetting.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="tboxDefImportAddr.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 17</value>
   </data>

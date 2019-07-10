@@ -11,12 +11,6 @@
 
 仅自用  
 Self-use only!  
-  
-使用前注意备份服务器数据！  
-这个版本数据格式和原作`v1.1.7`有所不同，旧服务器信息会丢失。  
-  
-Please backup servers config first!  
-This version use a different data format (compare to `v1.1.7`).  
 
 ### 演示 Demo
 ![Demo v1.1.10 GIF](https://github.com/UudrSgMEZ/V2RayGCon/raw/master/screenshot/demo1.1.10.gif)  
