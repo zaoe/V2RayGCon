@@ -14,7 +14,8 @@ namespace V2RayGCon.Controller.OptionComponent
         TextBox tboxDefImportAddr = null,
             tboxSetSpeedtestUrl = null,
             tboxSetSpeedtestCycles = null,
-            tboxSetSpeedtestExpectedSize = null;
+            tboxSetSpeedtestExpectedSize = null,
+            tboxSetSpeedtestTimeout = null;
 
         public TabDefaults(
             ComboBox cboxDefImportMode,
@@ -23,7 +24,8 @@ namespace V2RayGCon.Controller.OptionComponent
             CheckBox chkSetSpeedtestIsUse,
             TextBox tboxSetSpeedtestUrl,
             TextBox tboxSetSpeedtestCycles,
-            TextBox tboxSetSpeedtestExpectedSize)
+            TextBox tboxSetSpeedtestExpectedSize,
+            TextBox tboxSetSpeedtestTimeout)
         {
             this.setting = Service.Setting.Instance;
 
@@ -35,6 +37,7 @@ namespace V2RayGCon.Controller.OptionComponent
             this.tboxSetSpeedtestUrl = tboxSetSpeedtestUrl;
             this.tboxSetSpeedtestCycles = tboxSetSpeedtestCycles;
             this.tboxSetSpeedtestExpectedSize = tboxSetSpeedtestExpectedSize;
+            this.tboxSetSpeedtestTimeout = tboxSetSpeedtestTimeout;
 
             InitElement();
         }
@@ -54,6 +57,7 @@ namespace V2RayGCon.Controller.OptionComponent
             tboxSetSpeedtestCycles.Text = setting.CustomSpeedtestCycles.ToString();
             tboxSetSpeedtestUrl.Text = setting.CustomSpeedtestUrl;
             tboxSetSpeedtestExpectedSize.Text = setting.CustomSpeedtestExpectedSizeInKib.ToString();
+            tboxSetSpeedtestTimeout.Text = setting.CustomSpeedtestTimeout.ToString();
         }
 
         #region public method
@@ -77,6 +81,7 @@ namespace V2RayGCon.Controller.OptionComponent
             setting.CustomSpeedtestUrl = tboxSetSpeedtestUrl.Text;
             setting.CustomSpeedtestCycles = VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestCycles.Text);
             setting.CustomSpeedtestExpectedSizeInKib = VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestExpectedSize.Text);
+            setting.CustomSpeedtestTimeout = VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestTimeout.Text);
 
             setting.SaveUserSettingsNow();
             return true;
@@ -93,7 +98,8 @@ namespace V2RayGCon.Controller.OptionComponent
                 || setting.isUseCustomSpeedtestSettings != chkSetSpeedtestIsUse.Checked
                 || setting.CustomSpeedtestUrl != tboxSetSpeedtestUrl.Text
                 || setting.CustomSpeedtestExpectedSizeInKib != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestExpectedSize.Text)
-                || setting.CustomSpeedtestCycles != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestCycles.Text))
+                || setting.CustomSpeedtestCycles != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestCycles.Text)
+                || setting.CustomSpeedtestTimeout != VgcApis.Libs.Utils.Str2Int(tboxSetSpeedtestTimeout.Text))
             {
                 return true;
             }

@@ -114,6 +114,16 @@ namespace V2RayGCon.Service
             }
         }
 
+        public int CustomSpeedtestTimeout
+        {
+            get => userSettings.CustomSpeedtestTimeout;
+            set
+            {
+                userSettings.CustomSpeedtestTimeout = value;
+                LazySaveUserSettings();
+            }
+        }
+
         public int CustomSpeedtestExpectedSizeInKib
         {
             get => userSettings.CustomSpeedtestExpectedSize;
@@ -314,12 +324,12 @@ namespace V2RayGCon.Service
             {
                 if (userSettings.isPortable)
                 {
-                    DebugSendLog("Try save settings to file.");
+                    // DebugSendLog("Try save settings to file.");
                     SaveUserSettingsToFile(serializedUserSettings);
                 }
                 else
                 {
-                    DebugSendLog("Try save settings to properties");
+                    // DebugSendLog("Try save settings to properties");
                     SetUserSettingFileIsPortableToFalse();
                     SaveUserSettingsToProperties(serializedUserSettings);
                 }
@@ -614,20 +624,13 @@ namespace V2RayGCon.Service
 
         void SaveUserSettingsToFile(string content)
         {
-            string mainFilename = Constants.Strings.MainUserSettingsFilename;
-            string bakFilename = Constants.Strings.BackupUserSettingsFilename;
-
-            try
+            if (VgcApis.Libs.Utils.ClumsyWriter(
+                content,
+                Constants.Strings.MainUserSettingsFilename,
+                Constants.Strings.BackupUserSettingsFilename))
             {
-                File.WriteAllText(mainFilename, content);
-                var readMain = File.ReadAllText(mainFilename);
-                if (content.Equals(readMain))
-                {
-                    File.WriteAllText(bakFilename, content);
-                    return;
-                }
+                return;
             }
-            catch { }
 
             if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {

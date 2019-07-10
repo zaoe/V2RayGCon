@@ -24,7 +24,7 @@ namespace V2RayGCon.Service
         public long RunSpeedTest(string rawConfig)
         {
             var url = GetDefaultSpeedtestUrl();
-            return RunSpeedTestWorker(rawConfig, "Default speed-test", "", -1, false, false, false, null);
+            return RunSpeedTestWorker(rawConfig, "Default speed-test", "", GetDefaultTimeout(), false, false, false, null);
         }
 
         public long RunDefaultSpeedTest(
@@ -33,9 +33,8 @@ namespace V2RayGCon.Service
             EventHandler<VgcApis.Models.Datas.StrEvent> logDeliever)
         {
             var url = GetDefaultSpeedtestUrl();
-            return RunSpeedTestWorker(rawConfig, title, url, -1, true, true, false, logDeliever);
+            return RunSpeedTestWorker(rawConfig, title, url, GetDefaultTimeout(), true, true, false, logDeliever);
         }
-
 
         public string InjectImportTpls(
             string config,
@@ -340,6 +339,16 @@ namespace V2RayGCon.Service
         #endregion
 
         #region private methods
+        int GetDefaultTimeout()
+        {
+            var customTimeout = setting.CustomSpeedtestTimeout;
+            if (customTimeout > 0)
+            {
+                return customTimeout;
+            }
+            return VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
+        }
+
         string GetDefaultSpeedtestUrl() =>
           setting.isUseCustomSpeedtestSettings ?
           setting.CustomSpeedtestUrl :
@@ -373,7 +382,7 @@ namespace V2RayGCon.Service
                 return long.MaxValue;
             }
 
-            var speedTester = new V2RayGCon.Lib.V2Ray.Core(setting)
+            var speedTester = new Lib.V2Ray.Core(setting)
             {
                 title = title
             };

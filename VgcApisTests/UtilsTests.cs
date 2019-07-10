@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -14,6 +15,54 @@ namespace VgcApisTests
     [TestClass]
     public class UtilsTests
     {
+        [TestMethod]
+        public void ClumsyWriterTest()
+        {
+            var rand = new Random();
+            var mainFile = "mainClumsyWriterTest.txt";
+            var bakFile = "bakClumsyWriterTest.txt";
+
+            int failCounter = 0;
+            int successCounter = 1;
+
+            string lastSuccess = null;
+
+            var cts = new CancellationTokenSource(1000);
+            Task.WaitAll(
+                Task.Run(() =>
+                {
+                    while (!cts.Token.IsCancellationRequested)
+                    {
+                        var content = rand.Next().ToString();
+                        if (ClumsyWriter(content, mainFile, bakFile))
+                        {
+                            successCounter++;
+                            lastSuccess = content;
+                        }
+                        else
+                        {
+                            failCounter++;
+                        };
+                    }
+                }),
+                Task.Run(() =>
+                {
+                    while (!cts.Token.IsCancellationRequested)
+                    {
+                        var content = rand.Next().ToString();
+                        try
+                        {
+                            File.WriteAllText(mainFile, content);
+                        }
+                        catch { }
+                    }
+                }));
+
+            Console.WriteLine($"success: {successCounter}, fail: {failCounter}");
+            var read = File.ReadAllText(bakFile);
+            Assert.IsTrue(read.Equals(lastSuccess));
+        }
+
         [DataTestMethod]
         [DataRow("a::b:123", true, "a::b", 123)]
         [DataRow("ab123", false, "127.0.0.1", 1080)]

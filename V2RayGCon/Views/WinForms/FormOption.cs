@@ -88,7 +88,8 @@ namespace V2RayGCon.Views.WinForms
                     chkDefSpeedtestIsUse,
                     tboxDefSpeedtestUrl,
                     tboxDefSpeedtestCycles,
-                    tboxDefSpeedtestExpectedSize)
+                    tboxDefSpeedtestExpectedSize,
+                    tboxDefSpeedtestTimeout)
             );
 
             return ctrl;

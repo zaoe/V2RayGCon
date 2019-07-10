@@ -80,9 +80,6 @@
     <Content Include="Resource\Data\links.txt" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resource\Resx\TestConst.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TestConst.Designer.cs</LastGenOutput>

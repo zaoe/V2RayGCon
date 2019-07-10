@@ -70,6 +70,23 @@ namespace VgcApis.Libs
         #endregion
 
         #region Json
+        public static bool ClumsyWriter(string content, string mainFilename, string bakFilename)
+        {
+            try
+            {
+                File.WriteAllText(mainFilename, content);
+                var read = File.ReadAllText(mainFilename);
+                if (content.Equals(read))
+                {
+                    File.WriteAllText(bakFilename, content);
+                    read = File.ReadAllText(bakFilename);
+                    return content.Equals(read);
+                }
+            }
+            catch { }
+            return false;
+        }
+
         /// <summary>
         /// return parsed T object
         /// </summary>

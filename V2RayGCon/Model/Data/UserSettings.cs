@@ -16,6 +16,7 @@ namespace V2RayGCon.Model.Data
         public bool IsUseCustomSpeedtestSettings { get; set; }
         public int CustomSpeedtestCycles { get; set; }
         public int CustomSpeedtestExpectedSize { get; set; }
+        public int CustomSpeedtestTimeout { get; set; }
 
         // FormDownloadCore
         public bool isDownloadWin32V2RayCore { get; set; } = true;
@@ -56,7 +57,7 @@ namespace V2RayGCon.Model.Data
             IsUseCustomSpeedtestSettings = false;
             CustomSpeedtestCycles = 3;
             CustomSpeedtestExpectedSize = 0;
-
+            CustomSpeedtestTimeout = VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
 
             ServerPanelPageSize = 7;
 
