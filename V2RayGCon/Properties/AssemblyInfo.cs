@@ -33,22 +33,7 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.12")]
+[assembly: AssemblyVersion("1.2.1.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-/*
- * 1.2.0.12 Refactoring.
- * 1.2.0.11 Revert commit 786dff8.
- * 1.2.0.10 Adjust form main menu.
- * 1.2.0.9 Support customize mode and address when importing share link.
- * 1.2.0.8 Revert commit 748bd7d.
- * 1.2.0.7 Show user setting only when app exits.
- * 1.2.0.6 (issue #4) Add userSettings.bak to prevent data corruption.
- * 1.2.0.5 Improve backup/restore functionality in form option.
- * 1.2.0.4 Luna plug-in supports import/export scripts.
- * 1.2.0.3 (issue #4) Modify save user settings logic.
- * 1.2.0.2 Try to fix issue #4.
- * 1.2.0.1 Support custom speedtest settings.
- */
 
 
