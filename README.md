@@ -9,8 +9,7 @@
 [7]: https://img.shields.io/github/license/UudrSgMEZ/V2RayGCon.svg "Licence Badge"
 [8]: https://github.com/UudrSgMEZ/V2RayGCon/blob/master/LICENSE "Licence"
 
-仅自用  
-Self-use only!  
+仅自用。Self-use only!  
 
 ### 演示 Demo
 ![Demo v1.1.10 GIF](https://github.com/UudrSgMEZ/V2RayGCon/raw/master/screenshot/demo1.1.10.gif)  

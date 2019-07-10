@@ -348,7 +348,6 @@
             // groupBox3
             // 
             resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.tboxDefSpeedtestTimeout);
             this.groupBox3.Controls.Add(this.tboxDefSpeedtestExpectedSize);
             this.groupBox3.Controls.Add(this.tboxDefSpeedtestCycles);
@@ -357,6 +356,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
