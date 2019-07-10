@@ -12,7 +12,6 @@ namespace V2RayGCon.Views.UserControls
         Model.BaseClass.IFormMainFlyPanelComponent,
         VgcApis.Models.Interfaces.IDropableControl
     {
-        Service.Setting setting;
         Service.Servers servers;
         Service.ShareLinkMgr slinkMgr;
         VgcApis.Models.Interfaces.ICoreServCtrl coreServCtrl;
@@ -24,7 +23,6 @@ namespace V2RayGCon.Views.UserControls
         public ServerUI(
             VgcApis.Models.Interfaces.ICoreServCtrl serverItem)
         {
-            setting = Service.Setting.Instance;
             servers = Service.Servers.Instance;
             slinkMgr = Service.ShareLinkMgr.Instance;
 
@@ -151,7 +149,7 @@ namespace V2RayGCon.Views.UserControls
 
         void UpdateInboundAddrOndemand()
         {
-            if (!Lib.Utils.TryParseIPAddr(
+            if (!VgcApis.Libs.Utils.TryParseIPAddr(
                 tboxInboundAddr.Text, out string ip, out int port))
             {
                 return;
@@ -358,21 +356,10 @@ namespace V2RayGCon.Views.UserControls
 
         private void tboxInboundAddr_TextChanged(object sender, EventArgs e)
         {
-            if (Lib.Utils.TryParseIPAddr(tboxInboundAddr.Text, out string ip, out int port))
+            if (VgcApis.Libs.UI.TryParseAddressFromTextBox(
+                tboxInboundAddr, out string ip, out int port))
             {
-                if (tboxInboundAddr.ForeColor != Color.Black)
-                {
-                    tboxInboundAddr.ForeColor = Color.Black;
-                }
                 coreServCtrl.GetCoreStates().SetInboundAddr(ip, port);
-            }
-            else
-            {
-                // UI operation is expansive
-                if (tboxInboundAddr.ForeColor != Color.Red)
-                {
-                    tboxInboundAddr.ForeColor = Color.Red;
-                }
             }
         }
 

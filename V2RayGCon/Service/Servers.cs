@@ -44,8 +44,8 @@ namespace V2RayGCon.Service
         Servers()
         {
             serverSaver = new VgcApis.Libs.Tasks.LazyGuy(
-                SaveCurrentServerList,
-                VgcApis.Models.Consts.Intervals.SaveServerListIntreval);
+                SaveServersSettingsNow,
+                VgcApis.Models.Consts.Intervals.LazySaveServerListIntreval);
         }
 
         public void Run(
@@ -233,6 +233,19 @@ namespace V2RayGCon.Service
         #endregion
 
         #region public method
+
+        // expose to launcher for shutdown
+        public void SaveServersSettingsNow()
+        {
+            lock (serverListWriteLock)
+            {
+                var coreInfoList = coreServList
+                    .Select(s => s.GetCoreStates().GetAllRawCoreInfo())
+                    .ToList();
+                setting.SaveServerList(coreInfoList);
+            }
+        }
+
         /// <summary>
         /// Add new only.
         /// </summary>
@@ -620,6 +633,9 @@ namespace V2RayGCon.Service
             var newServer = new Controller.CoreServerCtrl(
                 new VgcApis.Models.Datas.CoreInfo
                 {
+                    customInbType = setting.CustomDefImportMode,
+                    inbIp = setting.CustomDefImportIp,
+                    inbPort = setting.CustomDefImportPort,
                     config = config,
                     customMark = mark,
                 });
@@ -779,17 +795,6 @@ namespace V2RayGCon.Service
             }
         }
 
-        void SaveCurrentServerList()
-        {
-            lock (serverListWriteLock)
-            {
-                var coreInfoList = coreServList
-                    .Select(s => s.GetCoreStates().GetAllRawCoreInfo())
-                    .ToList();
-                setting.SaveServerList(coreInfoList);
-            }
-        }
-
         void RemoveServerItemFromListThen(int index, Action next = null)
         {
             var server = coreServList[index];
@@ -811,6 +816,13 @@ namespace V2RayGCon.Service
         protected override void Cleanup()
         {
             setting.isServerTrackerOn = false;
+
+            if (setting.ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.Abort)
+            {
+                return;
+            }
+
+            VgcApis.Libs.Sys.FileLogger.Info("Services.Servers.Cleanup()");
             serverSaver.DoItNow();
             serverSaver.Quit();
             lazyServerTrackingTimer?.Release();

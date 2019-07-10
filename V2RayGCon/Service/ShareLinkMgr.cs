@@ -12,7 +12,6 @@ namespace V2RayGCon.Service
     {
         Setting setting;
         Servers servers;
-        Cache cache;
 
         ShareLinkComponents.Codecs codecs;
 
@@ -140,7 +139,6 @@ namespace V2RayGCon.Service
         {
             this.setting = setting;
             this.servers = servers;
-            this.cache = cache;
 
             codecs.Run(cache, setting);
         }

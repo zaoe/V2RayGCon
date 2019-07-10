@@ -113,10 +113,8 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripMenuItemStopSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSpeedTestOnSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItemDeleteServers = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDeleteAllServer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDeleteSelectedServers = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSelectedServersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemConfigEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -126,10 +124,12 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripMenuItemResize = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDownLoadV2rayCore = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemRemoveV2rayCore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItemRemoveV2rayCore = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllServersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelTotal = new System.Windows.Forms.ToolStripStatusLabel();
@@ -175,7 +175,6 @@ namespace V2RayGCon.Views.WinForms
             // toolStrip1
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonSelectAllCurPage,
             this.toolStripButtonInverseSelectionCurPage,
@@ -541,8 +540,8 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripMenuItemStopSelected,
             this.toolStripMenuItemSpeedTestOnSelected,
             this.toolStripSeparator1,
-            this.toolStripMenuItemDeleteServers,
-            this.refreshSummaryToolStripMenuItem});
+            this.refreshSummaryToolStripMenuItem,
+            this.deleteSelectedServersToolStripMenuItem});
             this.toolMenuItemServer.Name = "toolMenuItemServer";
             resources.ApplyResources(this.toolMenuItemServer, "toolMenuItemServer");
             // 
@@ -673,28 +672,15 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // toolStripMenuItemDeleteServers
-            // 
-            this.toolStripMenuItemDeleteServers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemDeleteAllServer,
-            this.toolStripMenuItemDeleteSelectedServers});
-            this.toolStripMenuItemDeleteServers.Name = "toolStripMenuItemDeleteServers";
-            resources.ApplyResources(this.toolStripMenuItemDeleteServers, "toolStripMenuItemDeleteServers");
-            // 
-            // toolStripMenuItemDeleteAllServer
-            // 
-            this.toolStripMenuItemDeleteAllServer.Name = "toolStripMenuItemDeleteAllServer";
-            resources.ApplyResources(this.toolStripMenuItemDeleteAllServer, "toolStripMenuItemDeleteAllServer");
-            // 
-            // toolStripMenuItemDeleteSelectedServers
-            // 
-            this.toolStripMenuItemDeleteSelectedServers.Name = "toolStripMenuItemDeleteSelectedServers";
-            resources.ApplyResources(this.toolStripMenuItemDeleteSelectedServers, "toolStripMenuItemDeleteSelectedServers");
-            // 
             // refreshSummaryToolStripMenuItem
             // 
             this.refreshSummaryToolStripMenuItem.Name = "refreshSummaryToolStripMenuItem";
             resources.ApplyResources(this.refreshSummaryToolStripMenuItem, "refreshSummaryToolStripMenuItem");
+            // 
+            // deleteSelectedServersToolStripMenuItem
+            // 
+            this.deleteSelectedServersToolStripMenuItem.Name = "deleteSelectedServersToolStripMenuItem";
+            resources.ApplyResources(this.deleteSelectedServersToolStripMenuItem, "deleteSelectedServersToolStripMenuItem");
             // 
             // windowToolStripMenuItem
             // 
@@ -742,10 +728,12 @@ namespace V2RayGCon.Views.WinForms
             // 
             this.aboutToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemDownLoadV2rayCore,
-            this.toolStripMenuItemRemoveV2rayCore,
             this.toolMenuItemCheckUpdate,
             this.toolMenuItemAbout,
-            this.toolMenuItemHelp});
+            this.toolMenuItemHelp,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItemRemoveV2rayCore,
+            this.deleteAllServersToolStripMenuItem});
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             // 
@@ -753,11 +741,6 @@ namespace V2RayGCon.Views.WinForms
             // 
             this.toolStripMenuItemDownLoadV2rayCore.Name = "toolStripMenuItemDownLoadV2rayCore";
             resources.ApplyResources(this.toolStripMenuItemDownLoadV2rayCore, "toolStripMenuItemDownLoadV2rayCore");
-            // 
-            // toolStripMenuItemRemoveV2rayCore
-            // 
-            this.toolStripMenuItemRemoveV2rayCore.Name = "toolStripMenuItemRemoveV2rayCore";
-            resources.ApplyResources(this.toolStripMenuItemRemoveV2rayCore, "toolStripMenuItemRemoveV2rayCore");
             // 
             // toolMenuItemCheckUpdate
             // 
@@ -774,9 +757,23 @@ namespace V2RayGCon.Views.WinForms
             this.toolMenuItemHelp.Name = "toolMenuItemHelp";
             resources.ApplyResources(this.toolMenuItemHelp, "toolMenuItemHelp");
             // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+            // 
+            // toolStripMenuItemRemoveV2rayCore
+            // 
+            this.toolStripMenuItemRemoveV2rayCore.Name = "toolStripMenuItemRemoveV2rayCore";
+            resources.ApplyResources(this.toolStripMenuItemRemoveV2rayCore, "toolStripMenuItemRemoveV2rayCore");
+            // 
+            // deleteAllServersToolStripMenuItem
+            // 
+            this.deleteAllServersToolStripMenuItem.Name = "deleteAllServersToolStripMenuItem";
+            resources.ApplyResources(this.deleteAllServersToolStripMenuItem, "deleteAllServersToolStripMenuItem");
+            // 
             // statusStrip1
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelTotal,
             this.toolStripStatusLabel1,
@@ -872,12 +869,9 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripMenuItem toolStripMenuItemRestartSelected;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem toolStripMenuItemSpeedTestOnSelected;
-        private ToolStripMenuItem toolStripMenuItemDeleteServers;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItemCopyAsV2cfgLink;
         private ToolStripMenuItem toolStripMenuItemCopyAsVmessLink;
-        private ToolStripMenuItem toolStripMenuItemDeleteAllServer;
-        private ToolStripMenuItem toolStripMenuItemDeleteSelectedServers;
         private ToolStripMenuItem toolStripMenuItemDownLoadV2rayCore;
         private ToolStripMenuItem toolStripMenuItemRemoveV2rayCore;
         private ToolStripMenuItem toolStripMenuItemCopyAsVmessSubscription;
@@ -953,5 +947,8 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripMenuItem toolStripMenuItemResize;
         private ToolStripMenuItem toolStripMenuItemCopyAsVeeSubscription;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripMenuItem deleteSelectedServersToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem5;
+        private ToolStripMenuItem deleteAllServersToolStripMenuItem;
     }
 }
