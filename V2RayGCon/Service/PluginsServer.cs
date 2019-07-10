@@ -111,21 +111,15 @@ namespace V2RayGCon.Service
             // Original design of plugins would load dll files from file system.
             // That is why loading logic looks so complex.
             var pluginList = new Dictionary<string, VgcApis.Models.Interfaces.IPlugin>();
-            var plugins = new VgcApis.Models.Interfaces.IPlugin[] {
+            var plugins = new List<VgcApis.Models.Interfaces.IPlugin>();
 
-#if !V2RAYGCON_LITE
-                new Luna.Luna(),
-#endif 
+            plugins.Add(new Luna.Luna());
+            plugins.Add(new Pacman.Pacman());
 
-                new Pacman.Pacman(),
+            // Many thanks to windows defender
+            plugins.Add(new ProxySetter.ProxySetter());
 
-#if !V2RAYGCON_LITE
-                // Many thanks to windows defender
-                new ProxySetter.ProxySetter(),
-#endif
-
-                new Statistics.Statistics(),
-            };
+            plugins.Add(new Statistics.Statistics());
 
             foreach (var plugin in plugins)
             {

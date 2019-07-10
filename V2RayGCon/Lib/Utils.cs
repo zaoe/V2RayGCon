@@ -923,6 +923,7 @@ namespace V2RayGCon.Lib
         public static long VisitWebPageSpeedTest(
             string url,
             int port,
+            int expectedSizeInKiB,
             int timeout)
         {
             if (string.IsNullOrEmpty(url))
@@ -931,14 +932,13 @@ namespace V2RayGCon.Lib
             }
 
             var maxTimeout = timeout > 0 ? timeout : VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
-
             long elasped = long.MaxValue;
             Stopwatch sw = new Stopwatch();
             sw.Reset();
             sw.Start();
             var html = Fetch(url, port, maxTimeout);
             sw.Stop();
-            if (!string.IsNullOrEmpty(html))
+            if (!string.IsNullOrEmpty(html) && html.Length >= Math.Max(0, expectedSizeInKiB * 1024))
             {
                 elasped = sw.ElapsedMilliseconds;
             }
@@ -1064,13 +1064,6 @@ namespace V2RayGCon.Lib
         #endregion
 
         #region files
-        public static string GetUserSettingsFullFileName()
-        {
-            var appDir = VgcApis.Libs.Utils.GetAppDir();
-            var fileName = Properties.Resources.PortableUserSettingsFilename;
-            var fullFileName = Path.Combine(appDir, fileName);
-            return fullFileName;
-        }
 
         public static string GetSha256SumFromFile(string file)
         {
@@ -1234,31 +1227,6 @@ namespace V2RayGCon.Lib
                 return (int)Math.Round(f);
             };
             return 0;
-        }
-
-        public static bool TryParseIPAddr(string address, out string ip, out int port)
-        {
-            ip = VgcApis.Models.Consts.Webs.LoopBackIP;
-            port = 1080;
-
-            int index = address.LastIndexOf(':');
-            if (index < 0)
-            {
-                return false;
-            }
-
-            var ipStr = address.Substring(0, index);
-            var portStr = address.Substring(index + 1);
-            var portInt = Clamp(Str2Int(portStr), 0, 65536);
-
-            if (string.IsNullOrEmpty(ipStr) || portInt == 0)
-            {
-                return false;
-            }
-
-            ip = ipStr;
-            port = portInt;
-            return true;
         }
 
         static string GenLinkPrefix(

@@ -6,6 +6,18 @@ namespace V2RayGCon.Model.Data
     {
         #region public properties
 
+        // FormOption->Defaults->Mode
+        public int CustomDefImportMode { get; set; } // Model.Data.Enum.ProxyTypes
+        public string CustomDefImportIp { get; set; }
+        public int CustomDefImportPort { get; set; }
+
+        // FormOption->Defaults->Speedtest
+        public string CustomSpeedtestUrl { get; set; }
+        public bool IsUseCustomSpeedtestSettings { get; set; }
+        public int CustomSpeedtestCycles { get; set; }
+        public int CustomSpeedtestExpectedSize { get; set; }
+        public int CustomSpeedtestTimeout { get; set; }
+
         // FormDownloadCore
         public bool isDownloadWin32V2RayCore { get; set; } = true;
         public List<string> V2RayCoreDownloadVersionList = null;
@@ -35,6 +47,18 @@ namespace V2RayGCon.Model.Data
 
         public UserSettings()
         {
+            // FormOption -> Defaults -> Mode
+            CustomDefImportMode = (int)Enum.ProxyTypes.HTTP;
+            CustomDefImportIp = VgcApis.Models.Consts.Webs.LoopBackIP;
+            CustomDefImportPort = VgcApis.Models.Consts.Webs.DefaultProxyPort;
+
+            // FormOption -> Defaults -> Speedtest
+            CustomSpeedtestUrl = VgcApis.Models.Consts.Webs.GoogleDotCom;
+            IsUseCustomSpeedtestSettings = false;
+            CustomSpeedtestCycles = 3;
+            CustomSpeedtestExpectedSize = 0;
+            CustomSpeedtestTimeout = VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
+
             ServerPanelPageSize = 7;
 
             isCheckUpdateWhenAppStart = false;

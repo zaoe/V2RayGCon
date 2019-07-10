@@ -1,4 +1,6 @@
-﻿namespace VgcApis.Models.Interfaces.Lua
+﻿using System.Collections.Generic;
+
+namespace VgcApis.Models.Interfaces.Lua
 {
     public interface ILuaMisc
     {
@@ -7,6 +9,12 @@
 
         // share among all scripts
         void WriteLocalStorage(string key, string value);
+
+        // remove a key from local storage
+        bool RemoveLocalStorage(string key);
+
+        // get all keys of local storage
+        List<string> LocalStorageKeys();
 
         #region encode decode
         // v2cfg://(b64Str)

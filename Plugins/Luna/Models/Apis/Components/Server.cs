@@ -23,6 +23,7 @@ namespace Luna.Models.Apis.Components
         public void ResetIndexQuiet() =>
             vgcServers.ResetIndexQuiet();
 
+        // expose for ILuaServer
         public long RunSpeedTest(string rawConfig) =>
             vgcConfigMgr.RunSpeedTest(rawConfig);
 
