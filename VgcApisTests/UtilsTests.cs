@@ -15,6 +15,22 @@ namespace VgcApisTests
     [TestClass]
     public class UtilsTests
     {
+        [DataTestMethod]
+        [DataRow(
+            @"c,,a,//---,中文,3,,2,1,//abc中文,中文,a,1,,中文,a,1",
+            @"c,,a,//---,3,中文,,1,2,//abc中文,1,a,中文,,1,a,中文")]
+        [DataRow(@"a,b,中文,3,2,1", @"1,2,3,a,b,中文")]
+        [DataRow(@"3,2,1", @"1,2,3")]
+        public void SortPacListTest(string source, string expStr)
+        {
+            var testList = source.Split(new char[] { ',' }, StringSplitOptions.None);
+            var expectList = expStr.Split(',');
+            var result = SortPacList(testList);
+
+            Assert.IsTrue(expectList.SequenceEqual(result));
+
+        }
+
         [TestMethod]
         public void ClumsyWriterTest()
         {
