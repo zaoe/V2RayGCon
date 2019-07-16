@@ -9,7 +9,8 @@ namespace V2RayGCon.Controller.OptionComponent
         Service.Setting setting;
 
         ComboBox cboxDefImportMode = null;
-        CheckBox chkSetSpeedtestIsUse = null;
+        CheckBox chkSetSpeedtestIsUse = null,
+            chkImportSsShareLink = null;
 
         TextBox tboxDefImportAddr = null,
             tboxSetSpeedtestUrl = null,
@@ -20,6 +21,7 @@ namespace V2RayGCon.Controller.OptionComponent
         public TabDefaults(
             ComboBox cboxDefImportMode,
             TextBox tboxDefImportAddr,
+            CheckBox chkImportSsShareLink,
 
             CheckBox chkSetSpeedtestIsUse,
             TextBox tboxSetSpeedtestUrl,
@@ -32,6 +34,7 @@ namespace V2RayGCon.Controller.OptionComponent
             // Do not put these lines of code into InitElement.
             this.cboxDefImportMode = cboxDefImportMode;
             this.tboxDefImportAddr = tboxDefImportAddr;
+            this.chkImportSsShareLink = chkImportSsShareLink;
 
             this.chkSetSpeedtestIsUse = chkSetSpeedtestIsUse;
             this.tboxSetSpeedtestUrl = tboxSetSpeedtestUrl;
@@ -45,6 +48,7 @@ namespace V2RayGCon.Controller.OptionComponent
         private void InitElement()
         {
             // mode
+            chkImportSsShareLink.Checked = setting.CustomDefImportSsShareLink;
             cboxDefImportMode.SelectedIndex = setting.CustomDefImportMode;
             tboxDefImportAddr.TextChanged += OnTboxImportAddrTextChanged;
             tboxDefImportAddr.Text = string.Format(
@@ -75,6 +79,7 @@ namespace V2RayGCon.Controller.OptionComponent
                 setting.CustomDefImportPort = port;
             }
             setting.CustomDefImportMode = cboxDefImportMode.SelectedIndex;
+            setting.CustomDefImportSsShareLink = chkImportSsShareLink.Checked;
 
             // speedtest
             setting.isUseCustomSpeedtestSettings = chkSetSpeedtestIsUse.Checked;
@@ -91,6 +96,7 @@ namespace V2RayGCon.Controller.OptionComponent
         {
             var success = VgcApis.Libs.Utils.TryParseIPAddr(tboxDefImportAddr.Text, out string ip, out int port);
             if (!success
+                || setting.CustomDefImportSsShareLink != chkImportSsShareLink.Checked
                 || setting.CustomDefImportIp != ip
                 || setting.CustomDefImportPort != port
                 || setting.CustomDefImportMode != cboxDefImportMode.SelectedIndex

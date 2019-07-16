@@ -83,6 +83,7 @@ namespace V2RayGCon.Views.WinForms
                     // def import share link mode
                     cboxDefImportMode,
                     tboxDefImportAddr,
+                    chkDefImportSsShareLink,
 
                     // speedtest 
                     chkDefSpeedtestIsUse,

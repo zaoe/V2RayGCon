@@ -58,12 +58,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageDefaults = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkDefImportSsShareLink = new System.Windows.Forms.CheckBox();
             this.tboxDefImportAddr = new System.Windows.Forms.TextBox();
             this.cboxDefImportMode = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tboxDefSpeedtestTimeout = new System.Windows.Forms.TextBox();
             this.tboxDefSpeedtestExpectedSize = new System.Windows.Forms.TextBox();
             this.tboxDefSpeedtestCycles = new System.Windows.Forms.TextBox();
@@ -72,6 +72,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPagePlugins = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.flyPluginsItemsContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -308,12 +309,20 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.chkDefImportSsShareLink);
             this.groupBox4.Controls.Add(this.tboxDefImportAddr);
             this.groupBox4.Controls.Add(this.cboxDefImportMode);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // chkDefImportSsShareLink
+            // 
+            resources.ApplyResources(this.chkDefImportSsShareLink, "chkDefImportSsShareLink");
+            this.chkDefImportSsShareLink.Name = "chkDefImportSsShareLink";
+            this.toolTip1.SetToolTip(this.chkDefImportSsShareLink, resources.GetString("chkDefImportSsShareLink.ToolTip"));
+            this.chkDefImportSsShareLink.UseVisualStyleBackColor = true;
             // 
             // tboxDefImportAddr
             // 
@@ -359,12 +368,6 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // tboxDefSpeedtestTimeout
             // 
@@ -414,6 +417,12 @@
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             this.toolTip1.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // tabPagePlugins
             // 
@@ -552,5 +561,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tboxDefSpeedtestTimeout;
+        private System.Windows.Forms.CheckBox chkDefImportSsShareLink;
     }
 }

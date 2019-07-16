@@ -7,6 +7,7 @@ namespace V2RayGCon.Model.Data
         #region public properties
 
         // FormOption->Defaults->Mode
+        public bool CustomDefImportSsShareLink { get; set; }
         public int CustomDefImportMode { get; set; } // Model.Data.Enum.ProxyTypes
         public string CustomDefImportIp { get; set; }
         public int CustomDefImportPort { get; set; }
@@ -48,6 +49,7 @@ namespace V2RayGCon.Model.Data
         public UserSettings()
         {
             // FormOption -> Defaults -> Mode
+            CustomDefImportSsShareLink = true;
             CustomDefImportMode = (int)Enum.ProxyTypes.HTTP;
             CustomDefImportIp = VgcApis.Models.Consts.Webs.LoopBackIP;
             CustomDefImportPort = VgcApis.Models.Consts.Webs.DefaultProxyPort;

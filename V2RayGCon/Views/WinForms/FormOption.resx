@@ -897,6 +897,36 @@
   <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="chkDefImportSsShareLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>597, 29</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 22</value>
+  </data>
+  <data name="chkDefImportSsShareLink.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Text" xml:space="preserve">
+    <value>SS</value>
+  </data>
+  <data name="chkDefImportSsShareLink.ToolTip" xml:space="preserve">
+    <value>Import shadowsocks share links.</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Name" xml:space="preserve">
+    <value>chkDefImportSsShareLink</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tboxDefImportAddr.Location" type="System.Drawing.Point, System.Drawing">
     <value>358, 26</value>
   </data>
@@ -922,7 +952,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;tboxDefImportAddr.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cboxDefImportMode.Items" xml:space="preserve">
     <value>Config</value>
@@ -955,7 +985,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;cboxDefImportMode.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -964,7 +994,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 32</value>
+    <value>255, 31</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
@@ -988,7 +1018,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1018,7 +1048,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 136</value>
@@ -1119,9 +1149,6 @@
   <data name="&gt;&gt;tboxDefSpeedtestCycles.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tboxDefSpeedtestUrl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="tboxDefSpeedtestUrl.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 27</value>
   </data>
@@ -1145,9 +1172,6 @@
   </data>
   <data name="&gt;&gt;tboxDefSpeedtestUrl.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="chkDefSpeedtestIsUse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="chkDefSpeedtestIsUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

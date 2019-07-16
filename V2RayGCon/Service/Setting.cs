@@ -81,6 +81,15 @@ namespace V2RayGCon.Service
             }
         }
 
+        public bool CustomDefImportSsShareLink
+        {
+            get => userSettings.CustomDefImportSsShareLink;
+            set
+            {
+                userSettings.CustomDefImportSsShareLink = value;
+            }
+        }
+
         public int CustomDefImportMode
         {
             get => VgcApis.Libs.Utils.Clamp(userSettings.CustomDefImportMode, 0, 4);
