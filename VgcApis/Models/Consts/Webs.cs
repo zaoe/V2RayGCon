@@ -8,7 +8,7 @@
             @"https://github.com/UudrSgMEZ/V2RayGCon/releases/download/{0}/V2RayGCon.zip";
 
         public static string LoopBackIP = System.Net.IPAddress.Loopback.ToString();
-        public static int DefaultProxyPort = 1080;
+        public static int DefaultProxyPort = 8080;
 
         public const string FakeRequestUrl = @"http://localhost:3000/pac/?&t=abc1234";
         public const string GoogleDotCom = @"https://www.google.com";

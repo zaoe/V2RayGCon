@@ -1240,6 +1240,9 @@ namespace V2RayGCon.Lib
             switch (linkType)
             {
                 case VgcApis.Models.Datas.Enum.LinkTypes.ss:
+                    pattern = GenLinkPrefix(linkType) + "://" +
+                        VgcApis.Models.Consts.Patterns.SsShareLinkContent;
+                    break;
                 case VgcApis.Models.Datas.Enum.LinkTypes.vmess:
                 case VgcApis.Models.Datas.Enum.LinkTypes.v2cfg:
                 case VgcApis.Models.Datas.Enum.LinkTypes.v:
