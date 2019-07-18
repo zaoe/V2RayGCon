@@ -11,6 +11,7 @@ namespace V2RayGCon.Controller.OptionComponent
         ComboBox cboxDefImportMode = null;
         CheckBox chkSetSpeedtestIsUse = null,
             chkImportSsShareLink = null,
+            chkImportIsFold = null,
             chkImportBypassCnSite = null,
             chkImportInjectGlobalImport = null;
 
@@ -24,6 +25,7 @@ namespace V2RayGCon.Controller.OptionComponent
             ComboBox cboxDefImportMode,
             TextBox tboxDefImportAddr,
             CheckBox chkImportSsShareLink,
+            CheckBox chkImportIsFold,
             CheckBox chkImportBypassCnSite,
             CheckBox chkImportInjectGlobalImport,
 
@@ -39,6 +41,7 @@ namespace V2RayGCon.Controller.OptionComponent
             this.cboxDefImportMode = cboxDefImportMode;
             this.tboxDefImportAddr = tboxDefImportAddr;
             this.chkImportSsShareLink = chkImportSsShareLink;
+            this.chkImportIsFold = chkImportIsFold;
             this.chkImportBypassCnSite = chkImportBypassCnSite;
             this.chkImportInjectGlobalImport = chkImportInjectGlobalImport;
 
@@ -56,6 +59,7 @@ namespace V2RayGCon.Controller.OptionComponent
             // mode
             chkImportBypassCnSite.Checked = setting.CustomDefImportBypassCnSite;
             chkImportInjectGlobalImport.Checked = setting.CustomDefImportGlobalImport;
+            chkImportIsFold.Checked = setting.CustomDefImportIsFold;
             chkImportSsShareLink.Checked = setting.CustomDefImportSsShareLink;
             cboxDefImportMode.SelectedIndex = setting.CustomDefImportMode;
             tboxDefImportAddr.TextChanged += OnTboxImportAddrTextChanged;
@@ -87,6 +91,7 @@ namespace V2RayGCon.Controller.OptionComponent
                 setting.CustomDefImportPort = port;
             }
             setting.CustomDefImportMode = cboxDefImportMode.SelectedIndex;
+            setting.CustomDefImportIsFold = chkImportIsFold.Checked;
             setting.CustomDefImportSsShareLink = chkImportSsShareLink.Checked;
             setting.CustomDefImportGlobalImport = chkImportInjectGlobalImport.Checked;
             setting.CustomDefImportBypassCnSite = chkImportBypassCnSite.Checked;
@@ -108,6 +113,7 @@ namespace V2RayGCon.Controller.OptionComponent
             if (!success
                 || setting.CustomDefImportGlobalImport != chkImportInjectGlobalImport.Checked
                 || setting.CustomDefImportBypassCnSite != chkImportBypassCnSite.Checked
+                || setting.CustomDefImportIsFold != chkImportIsFold.Checked
                 || setting.CustomDefImportSsShareLink != chkImportSsShareLink.Checked
                 || setting.CustomDefImportIp != ip
                 || setting.CustomDefImportPort != port

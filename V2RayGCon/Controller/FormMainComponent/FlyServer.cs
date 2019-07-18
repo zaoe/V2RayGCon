@@ -58,20 +58,17 @@ namespace V2RayGCon.Controller.FormMainComponent
         public List<VgcApis.Models.Interfaces.ICoreServCtrl> GetFilteredList()
         {
             var list = servers.GetAllServersOrderByIndex();
-            var keywords = (searchKeywords ?? "").Split(
-                new char[] { ' ', ',' },
-                StringSplitOptions.RemoveEmptyEntries);
+            var keyword = searchKeywords?.Replace(@" ", "");
 
-            if (keywords.Length < 1)
+            if (string.IsNullOrEmpty(keyword))
             {
                 return list.ToList();
             }
 
             return list
                 .Where(serv => serv.GetCoreStates().GetterInfoForSearch(
-                    infos => keywords.All(
-                        kw => infos.Any(
-                            info => VgcApis.Libs.Utils.PartialMatchCi(info, kw)))))
+                    infos => infos.Any(
+                        info => VgcApis.Libs.Utils.PartialMatchCi(info, keyword))))
                 .ToList();
         }
 
@@ -293,7 +290,7 @@ namespace V2RayGCon.Controller.FormMainComponent
 
                             RefreshUI();
                         },
-                        600);
+                        1000);
             }
 
             lazyShowSearchResultTimer.Start();

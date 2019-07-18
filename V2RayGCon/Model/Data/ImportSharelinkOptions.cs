@@ -8,6 +8,7 @@ namespace V2RayGCon.Model.Data
 {
     public class ImportSharelinkOptions
     {
+        public bool IsFold { get; set; } // single line mode
         public bool IsImportSsShareLink { get; set; }
         public bool IsInjectGlobalImport { get; set; }
         public bool IsBypassCnSite { get; set; }
@@ -18,6 +19,7 @@ namespace V2RayGCon.Model.Data
 
         public ImportSharelinkOptions()
         {
+            IsFold = false;
             IsImportSsShareLink = true;
             IsInjectGlobalImport = false;
             IsBypassCnSite = false;
@@ -30,6 +32,7 @@ namespace V2RayGCon.Model.Data
         public bool Equals(ImportSharelinkOptions target)
         {
             if (target == null
+                || IsFold != target.IsFold
                 || IsImportSsShareLink != target.IsImportSsShareLink
                 || IsInjectGlobalImport != target.IsInjectGlobalImport
                 || IsBypassCnSite != target.IsBypassCnSite

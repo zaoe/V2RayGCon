@@ -163,6 +163,32 @@ namespace V2RayGCon.Lib
             return result;
         }
 
+        public static string GetStreamSettingInfo(JObject config, string root)
+        {
+            var streamType = GetValue<string>(config, root + ".streamSettings.network")?.ToLower();
+            // "tcp" | "kcp" | "ws" | "http" | "domainsocket" | "quic"
+            string result;
+            switch (streamType)
+            {
+                case null:
+                    result = "";
+                    break;
+                case "domainsocket":
+                    result = "ds";
+                    break;
+                default:
+                    result = streamType;
+                    break;
+            }
+
+            var sec = GetValue<string>(config, root + ".streamSettings.security")?.ToLower();
+            if (sec != null && sec.Equals(@"tls"))
+            {
+                result += $".{sec}";
+            }
+            return result;
+        }
+
         public static string GetSummaryFromConfig(JObject config, string root)
         {
             var protocol = GetValue<string>(config, root + ".protocol")?.ToLower();
@@ -187,7 +213,11 @@ namespace V2RayGCon.Lib
             }
 
             string ip = GetValue<string>(config, ipKey);
-            return protocol + (string.IsNullOrEmpty(ip) ? "" : @"@" + ip);
+            string streamType = GetStreamSettingInfo(config, root);
+
+            return protocol
+                + (string.IsNullOrEmpty(streamType) ? "" : $".{streamType}")
+                + (string.IsNullOrEmpty(ip) ? "" : @"@" + ip);
         }
 
         static bool Contains(JProperty main, JProperty sub)

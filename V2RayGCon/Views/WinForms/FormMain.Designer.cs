@@ -35,21 +35,22 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.flyServerListContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddServerSimple = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonImportFromClipboard = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSelectAllCurPage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInverseSelectionCurPage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSelectNoneCurPage = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonAllServerSelectAll = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAllServerSelectNone = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonRestartSelected = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonStopSelected = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonModifySelected = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonRunSpeedTest = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSortSelectedBySpeedTestResult = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonFormOption = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonShowFormLog = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabelMarkFilter = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBoxMarkFilter = new System.Windows.Forms.ToolStripComboBox();
@@ -176,25 +177,43 @@ namespace V2RayGCon.Views.WinForms
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddServerSimple,
+            this.toolStripButtonImportFromClipboard,
+            this.toolStripSeparator2,
             this.toolStripButtonSelectAllCurPage,
             this.toolStripButtonInverseSelectionCurPage,
             this.toolStripButtonSelectNoneCurPage,
-            this.toolStripSeparator2,
             this.toolStripButtonAllServerSelectAll,
             this.toolStripButtonAllServerSelectNone,
             this.toolStripSeparator6,
-            this.toolStripButtonRestartSelected,
-            this.toolStripButtonStopSelected,
-            this.toolStripSeparator7,
             this.toolStripButtonModifySelected,
             this.toolStripButtonRunSpeedTest,
             this.toolStripButtonSortSelectedBySpeedTestResult,
             this.toolStripSeparator9,
             this.toolStripButtonFormOption,
+            this.toolStripButtonShowFormLog,
+            this.toolStripButtonHelp,
             this.toolStripSeparator10,
             this.toolStripLabelMarkFilter,
             this.toolStripComboBoxMarkFilter});
             this.toolStrip1.Name = "toolStrip1";
+            // 
+            // toolStripButtonAddServerSimple
+            // 
+            this.toolStripButtonAddServerSimple.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonAddServerSimple, "toolStripButtonAddServerSimple");
+            this.toolStripButtonAddServerSimple.Name = "toolStripButtonAddServerSimple";
+            // 
+            // toolStripButtonImportFromClipboard
+            // 
+            this.toolStripButtonImportFromClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonImportFromClipboard, "toolStripButtonImportFromClipboard");
+            this.toolStripButtonImportFromClipboard.Name = "toolStripButtonImportFromClipboard";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // toolStripButtonSelectAllCurPage
             // 
@@ -214,11 +233,6 @@ namespace V2RayGCon.Views.WinForms
             resources.ApplyResources(this.toolStripButtonSelectNoneCurPage, "toolStripButtonSelectNoneCurPage");
             this.toolStripButtonSelectNoneCurPage.Name = "toolStripButtonSelectNoneCurPage";
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
             // toolStripButtonAllServerSelectAll
             // 
             this.toolStripButtonAllServerSelectAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -235,23 +249,6 @@ namespace V2RayGCon.Views.WinForms
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-            // 
-            // toolStripButtonRestartSelected
-            // 
-            this.toolStripButtonRestartSelected.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButtonRestartSelected, "toolStripButtonRestartSelected");
-            this.toolStripButtonRestartSelected.Name = "toolStripButtonRestartSelected";
-            // 
-            // toolStripButtonStopSelected
-            // 
-            this.toolStripButtonStopSelected.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.toolStripButtonStopSelected, "toolStripButtonStopSelected");
-            this.toolStripButtonStopSelected.Name = "toolStripButtonStopSelected";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // toolStripButtonModifySelected
             // 
@@ -281,6 +278,18 @@ namespace V2RayGCon.Views.WinForms
             this.toolStripButtonFormOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolStripButtonFormOption, "toolStripButtonFormOption");
             this.toolStripButtonFormOption.Name = "toolStripButtonFormOption";
+            // 
+            // toolStripButtonHelp
+            // 
+            this.toolStripButtonHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonHelp, "toolStripButtonHelp");
+            this.toolStripButtonHelp.Name = "toolStripButtonHelp";
+            // 
+            // toolStripButtonShowFormLog
+            // 
+            this.toolStripButtonShowFormLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonShowFormLog, "toolStripButtonShowFormLog");
+            this.toolStripButtonShowFormLog.Name = "toolStripButtonShowFormLog";
             // 
             // toolStripSeparator10
             // 
@@ -895,9 +904,6 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripButton toolStripButtonAllServerSelectAll;
         private ToolStripButton toolStripButtonAllServerSelectNone;
         private ToolStripSeparator toolStripSeparator6;
-        private ToolStripButton toolStripButtonRestartSelected;
-        private ToolStripButton toolStripButtonStopSelected;
-        private ToolStripSeparator toolStripSeparator7;
         private ToolStripButton toolStripButtonModifySelected;
         private ToolStripButton toolStripButtonRunSpeedTest;
         private ToolStripButton toolStripButtonSortSelectedBySpeedTestResult;
@@ -950,5 +956,9 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripMenuItem deleteSelectedServersToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem5;
         private ToolStripMenuItem deleteAllServersToolStripMenuItem;
+        private ToolStripButton toolStripButtonAddServerSimple;
+        private ToolStripButton toolStripButtonHelp;
+        private ToolStripButton toolStripButtonImportFromClipboard;
+        private ToolStripButton toolStripButtonShowFormLog;
     }
 }

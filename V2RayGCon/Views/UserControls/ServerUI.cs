@@ -18,7 +18,7 @@ namespace V2RayGCon.Views.UserControls
 
         int[] formHeight;
         Bitmap[] foldingButtonIcons;
-        string[] keywords = null;
+        string keyword = null;
 
         public ServerUI(
             VgcApis.Models.Interfaces.ICoreServCtrl serverItem)
@@ -59,34 +59,25 @@ namespace V2RayGCon.Views.UserControls
         #region private method
         private void HighLightTitleWithKeywords()
         {
-            if (keywords == null)
-            {
-                return;
-            }
-
             VgcApis.Libs.UI.RunInUiThread(rtboxServerTitle, () =>
             {
                 var box = rtboxServerTitle;
                 var title = box.Text.ToLower();
-                var keyword = keywords.FirstOrDefault(
-                    s => !string.IsNullOrEmpty(s)
-                    && VgcApis.Libs.Utils.PartialMatchCi(title, s))?.ToLower();
 
-                if (keyword == null)
+                if (string.IsNullOrEmpty(keyword)
+                    || !VgcApis.Libs.Utils.PartialMatchCi(title, keyword))
                 {
                     return;
                 }
 
-                var highlight = Color.DeepPink;
-
                 int idxTitle = 0, idxKeyword = 0;
                 while (idxTitle < title.Length && idxKeyword < keyword.Length)
                 {
-                    if (title[idxTitle] == keyword[idxKeyword])
+                    if (title[idxTitle].CompareTo(keyword[idxKeyword]) == 0)
                     {
                         box.SelectionStart = idxTitle;
                         box.SelectionLength = 1;
-                        box.SelectionColor = highlight;
+                        box.SelectionBackColor = Color.Yellow;
                         idxKeyword++;
                     }
                     idxTitle++;
@@ -268,9 +259,11 @@ namespace V2RayGCon.Views.UserControls
         #region public method
         public void SetKeywords(string keywords)
         {
-            this.keywords = (keywords ?? "").Split(
-               new char[] { ' ', ',' },
-               StringSplitOptions.RemoveEmptyEntries);
+            this.keyword = keywords?.Replace(@" ", "")?.ToLower();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                return;
+            }
 
             VgcApis.Libs.Utils.RunInBackground(() =>
             {
@@ -428,6 +421,11 @@ namespace V2RayGCon.Views.UserControls
             Lib.UI.ResetComboBoxDropdownMenuWidth(cboxMark);
         }
 
+        private void Label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ServerListItem_MouseDown(this, e);
+        }
+
         private void lbStatus_MouseDown(object sender, MouseEventArgs e)
         {
             ServerListItem_MouseDown(this, e);
@@ -529,6 +527,9 @@ namespace V2RayGCon.Views.UserControls
                 VgcApis.Models.Datas.Enum.LinkTypes.v);
             Lib.Utils.CopyToClipboardAndPrompt(vee);
         }
+
         #endregion
+
+
     }
 }

@@ -74,9 +74,9 @@
             // 
             // lbStatus
             // 
+            resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.AutoEllipsis = true;
             this.lbStatus.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.Name = "lbStatus";
             this.toolTip1.SetToolTip(this.lbStatus, resources.GetString("lbStatus.ToolTip"));
             this.lbStatus.UseCompatibleTextRendering = true;
@@ -142,9 +142,9 @@
             // 
             // cboxMark
             // 
+            resources.ApplyResources(this.cboxMark, "cboxMark");
             this.cboxMark.Cursor = System.Windows.Forms.Cursors.Default;
             this.cboxMark.FormattingEnabled = true;
-            resources.ApplyResources(this.cboxMark, "cboxMark");
             this.cboxMark.Name = "cboxMark";
             this.toolTip1.SetToolTip(this.cboxMark, resources.GetString("cboxMark.ToolTip"));
             this.cboxMark.DropDown += new System.EventHandler(this.cboxMark_DropDown);
@@ -169,8 +169,8 @@
             // 
             // lbIsAutorun
             // 
-            this.lbIsAutorun.Cursor = System.Windows.Forms.Cursors.SizeAll;
             resources.ApplyResources(this.lbIsAutorun, "lbIsAutorun");
+            this.lbIsAutorun.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.lbIsAutorun.Name = "lbIsAutorun";
             this.toolTip1.SetToolTip(this.lbIsAutorun, resources.GetString("lbIsAutorun.ToolTip"));
             this.lbIsAutorun.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbIsAutorun_MouseDown);
@@ -361,11 +361,11 @@
             // 
             // rtboxServerTitle
             // 
+            resources.ApplyResources(this.rtboxServerTitle, "rtboxServerTitle");
             this.rtboxServerTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtboxServerTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.rtboxServerTitle.DetectUrls = false;
             this.rtboxServerTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.rtboxServerTitle, "rtboxServerTitle");
             this.rtboxServerTitle.Name = "rtboxServerTitle";
             this.rtboxServerTitle.ReadOnly = true;
             this.rtboxServerTitle.Click += new System.EventHandler(this.rtboxServerTitle_Click);

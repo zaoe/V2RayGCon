@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageDefaults = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkDefImportIsFold = new System.Windows.Forms.CheckBox();
             this.chkDefImportInjectGlobalImport = new System.Windows.Forms.CheckBox();
             this.chkDefImportBypassCnSite = new System.Windows.Forms.CheckBox();
             this.chkDefImportSsShareLink = new System.Windows.Forms.CheckBox();
@@ -327,6 +328,7 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.chkDefImportIsFold);
             this.groupBox4.Controls.Add(this.chkDefImportInjectGlobalImport);
             this.groupBox4.Controls.Add(this.chkDefImportBypassCnSite);
             this.groupBox4.Controls.Add(this.chkDefImportSsShareLink);
@@ -337,6 +339,13 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             this.toolTip1.SetToolTip(this.groupBox4, resources.GetString("groupBox4.ToolTip"));
+            // 
+            // chkDefImportIsFold
+            // 
+            resources.ApplyResources(this.chkDefImportIsFold, "chkDefImportIsFold");
+            this.chkDefImportIsFold.Name = "chkDefImportIsFold";
+            this.toolTip1.SetToolTip(this.chkDefImportIsFold, resources.GetString("chkDefImportIsFold.ToolTip"));
+            this.chkDefImportIsFold.UseVisualStyleBackColor = true;
             // 
             // chkDefImportInjectGlobalImport
             // 
@@ -605,5 +614,6 @@
         private System.Windows.Forms.CheckBox chkDefImportSsShareLink;
         private System.Windows.Forms.CheckBox chkDefImportInjectGlobalImport;
         private System.Windows.Forms.CheckBox chkDefImportBypassCnSite;
+        private System.Windows.Forms.CheckBox chkDefImportIsFold;
     }
 }

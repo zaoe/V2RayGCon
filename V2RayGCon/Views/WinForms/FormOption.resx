@@ -183,6 +183,9 @@
   <data name="&gt;&gt;chkSubsIsUseProxy.Parent" xml:space="preserve">
     <value>tabPageSubscribe</value>
   </data>
+  <data name="chkDefImportIsFold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 44</value>
+  </data>
   <data name="chkSetServStatistics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -273,8 +276,14 @@
   <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="chkDefImportIsFold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
   <data name="tabPageImport.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Custom URL</value>
   </data>
   <data name="&gt;&gt;flyImportPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -315,11 +324,11 @@
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 49</value>
   </data>
-  <data name="cboxSettingPageSize.Items3" xml:space="preserve">
-    <value>30</value>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 12</value>
   </data>
   <data name="&gt;&gt;chkDefImportInjectGlobalImport.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cboxSettingPageSize.Items1" xml:space="preserve">
     <value>10</value>
@@ -345,13 +354,16 @@
   <data name="&gt;&gt;chkSetUseV4.Parent" xml:space="preserve">
     <value>groupBox6</value>
   </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="chkDefImportIsFold.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnBakRestore.Text" xml:space="preserve">
     <value>Restore</value>
   </data>
   <data name="btnOptionExit.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
@@ -405,8 +417,8 @@
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 12</value>
+  <data name="chkDefSpeedtestIsUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
   </data>
   <data name="chkSetUpgradeUseProxy.Text" xml:space="preserve">
     <value>Use proxy</value>
@@ -427,6 +439,9 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="chkSetServAutotrack.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="chkSetUseV4.TabIndex" type="System.Int32, mscorlib">
@@ -483,8 +498,8 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="chkDefImportIsFold.ToolTip" xml:space="preserve">
+    <value>Fold server panel into single-line-mode.</value>
   </data>
   <data name="chkSetUseV4.Text" xml:space="preserve">
     <value>Prefer v4 format</value>
@@ -498,8 +513,8 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;tabPagePlugins.Name" xml:space="preserve">
-    <value>tabPagePlugins</value>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -570,11 +585,14 @@
   <data name="chkSetServAutotrack.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 18</value>
   </data>
-  <data name="cboxSettingLanguage.Items" xml:space="preserve">
-    <value>Auto</value>
+  <data name="chkDefImportIsFold.Text" xml:space="preserve">
+    <value>Fold</value>
   </data>
   <data name="btnBakBackup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
   <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -598,10 +616,10 @@
     <value>2</value>
   </data>
   <data name="chkDefImportInjectGlobalImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 44</value>
+    <value>256, 44</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Custom URL</value>
+  <data name="&gt;&gt;tboxDefSpeedtestExpectedSize.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
   <data name="chkDefSpeedtestIsUse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -613,7 +631,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkDefImportBypassCnSite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 44</value>
+    <value>172, 44</value>
   </data>
   <data name="&gt;&gt;flyImportPanel.Name" xml:space="preserve">
     <value>flyImportPanel</value>
@@ -891,6 +909,9 @@
   <data name="label8.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="chkDefImportIsFold.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="btnBakRestore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -906,8 +927,8 @@
   <data name="btnBakRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="flySubsUrlContainer.ToolTip" xml:space="preserve">
-    <value />
+  <data name="btnOptionExit.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cboxSettingPageSize.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -948,11 +969,11 @@
   <data name="chkSetServStatistics.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 18</value>
   </data>
-  <data name="&gt;&gt;tboxDefImportAddr.Parent" xml:space="preserve">
-    <value>groupBox4</value>
+  <data name="cboxSettingPageSize.Items3" xml:space="preserve">
+    <value>30</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="chkDefSpeedtestIsUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -965,6 +986,9 @@
   </data>
   <data name="&gt;&gt;chkSetUseV4.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.Name" xml:space="preserve">
+    <value>chkDefImportIsFold</value>
   </data>
   <data name="groupBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -992,9 +1016,6 @@
   </data>
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
-  </data>
-  <data name="chkDefSpeedtestIsUse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 16</value>
   </data>
   <data name="groupBox5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1068,8 +1089,14 @@
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>tabPagePlugins</value>
   </data>
+  <data name="&gt;&gt;tboxDefImportAddr.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
   <data name="tboxDefSpeedtestTimeout.Location" type="System.Drawing.Point, System.Drawing">
     <value>325, 43</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1113,6 +1140,9 @@
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="flySubsUrlContainer.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 360</value>
   </data>
@@ -1141,7 +1171,7 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkDefImportBypassCnSite.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1239,8 +1269,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>(1 - 100)</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;chkDefImportIsFold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cboxDefImportMode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1309,7 +1339,7 @@
     <value>tabPageDefaults</value>
   </data>
   <data name="&gt;&gt;tboxDefImportAddr.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;btnUpdateViaSubscription.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1401,9 +1431,6 @@
   <data name="chkSetUseV4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;chkSetUseV4.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1467,8 +1494,8 @@
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>189, 23</value>
   </data>
-  <data name="btnOptionExit.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="tabPageDefaults.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="cboxDefImportMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 20</value>
@@ -1483,7 +1510,7 @@
     <value>4</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1572,8 +1599,8 @@
   <data name="btnOptionSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;tabPagePlugins.Name" xml:space="preserve">
+    <value>tabPagePlugins</value>
   </data>
   <data name="cboxSettingPageSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 20</value>
@@ -1596,8 +1623,8 @@
   <data name="&gt;&gt;tabPageSubscribe.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="cboxSettingLanguage.Items" xml:space="preserve">
+    <value>Auto</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 12</value>
@@ -1647,6 +1674,9 @@
   <data name="chkDefImportSsShareLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <data name="cboxDefImportMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 18</value>
+  </data>
   <data name="&gt;&gt;chkSetSysPortable.Name" xml:space="preserve">
     <value>chkSetSysPortable</value>
   </data>
@@ -1683,8 +1713,8 @@
   <data name="cboxSettingLanguage.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabPageDefaults.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -1699,7 +1729,7 @@
     <value>toolTip1</value>
   </data>
   <data name="&gt;&gt;cboxDefImportMode.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1711,7 +1741,7 @@
     <value>Add import URL.</value>
   </data>
   <data name="&gt;&gt;chkDefImportSsShareLink.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnUpdateViaSubscription.Location" type="System.Drawing.Point, System.Drawing">
     <value>402, 34</value>
@@ -1719,8 +1749,8 @@
   <data name="&gt;&gt;chkDefImportBypassCnSite.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboxDefImportMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 18</value>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="chkSetServAutotrack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1794,8 +1824,8 @@
   <data name="&gt;&gt;cboxSettingPageSize.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tboxDefSpeedtestExpectedSize.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="&gt;&gt;chkDefImportIsFold.Parent" xml:space="preserve">
+    <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;tabPageImport.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
