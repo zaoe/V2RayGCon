@@ -645,7 +645,7 @@ namespace V2RayGCon.Lib
 
             var def = default(T) == null && typeof(T) == typeof(string) ?
                 (T)(object)string.Empty :
-                default(T);
+                default;
 
             if (key == null)
             {
@@ -851,7 +851,7 @@ namespace V2RayGCon.Lib
             List<Model.Data.SubscriptionItem> subscriptions,
             int proxyPort)
         {
-            Func<Model.Data.SubscriptionItem, string[]> worker = (subItem) =>
+            string[] worker(Model.Data.SubscriptionItem subItem)
             {
                 var url = subItem.url;
                 var mark = subItem.isSetMark ? subItem.alias : null;
@@ -879,7 +879,7 @@ namespace V2RayGCon.Lib
                 }
 
                 return new string[] { string.Join("\n", links), mark };
-            };
+            }
 
             return Lib.Utils.ExecuteInParallel(subscriptions, worker);
         }
@@ -1188,7 +1188,7 @@ namespace V2RayGCon.Lib
             return hash.ToString();
         }
 
-        static object genRandomNumberLocker = new object();
+        static readonly object genRandomNumberLocker = new object();
         public static string RandomHex(int length)
         {
             //  https://stackoverflow.com/questions/1344221/how-can-i-generate-random-alphanumeric-strings-in-c
