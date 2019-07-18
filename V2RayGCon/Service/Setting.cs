@@ -22,6 +22,7 @@ namespace V2RayGCon.Service
         Setting()
         {
             userSettings = LoadUserSettings();
+            userSettings.Normalized();  // replace null with empty object.
         }
 
         #region Properties
@@ -81,84 +82,112 @@ namespace V2RayGCon.Service
             }
         }
 
-        public bool CustomDefImportSsShareLink
+        public bool CustomDefImportGlobalImport
         {
-            get => userSettings.CustomDefImportSsShareLink;
+            get => userSettings.ImportOptions.IsInjectGlobalImport;
             set
             {
-                userSettings.CustomDefImportSsShareLink = value;
+                userSettings.ImportOptions.IsInjectGlobalImport = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool CustomDefImportBypassCnSite
+        {
+            get => userSettings.ImportOptions.IsBypassCnSite;
+            set
+            {
+                userSettings.ImportOptions.IsBypassCnSite = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool CustomDefImportSsShareLink
+        {
+            get => userSettings.ImportOptions.IsImportSsShareLink;
+            set
+            {
+                userSettings.ImportOptions.IsImportSsShareLink = value;
+                LazySaveUserSettings();
             }
         }
 
         public int CustomDefImportMode
         {
-            get => VgcApis.Libs.Utils.Clamp(userSettings.CustomDefImportMode, 0, 4);
+            get => VgcApis.Libs.Utils.Clamp(userSettings.ImportOptions.Mode, 0, 4);
             set
             {
-                userSettings.CustomDefImportMode =
-                    VgcApis.Libs.Utils.Clamp(value, 0, 4);
+                userSettings.ImportOptions.Mode = VgcApis.Libs.Utils.Clamp(value, 0, 4);
+                LazySaveUserSettings();
             }
         }
 
         public string CustomDefImportIp
         {
-            get => userSettings.CustomDefImportIp;
-            set => userSettings.CustomDefImportIp = value;
+            get => userSettings.ImportOptions.Ip;
+            set
+            {
+                userSettings.ImportOptions.Ip = value;
+                LazySaveUserSettings();
+            }
         }
 
         public int CustomDefImportPort
         {
-            get => userSettings.CustomDefImportPort;
-            set => userSettings.CustomDefImportPort = value;
+            get => userSettings.ImportOptions.Port;
+            set
+            {
+                userSettings.ImportOptions.Port = value;
+                LazySaveUserSettings();
+            }
         }
-
 
         public string CustomSpeedtestUrl
         {
-            get => userSettings.CustomSpeedtestUrl;
+            get => userSettings.SpeedtestOptions.Url;
             set
             {
-                userSettings.CustomSpeedtestUrl = value;
+                userSettings.SpeedtestOptions.Url = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestTimeout
         {
-            get => userSettings.CustomSpeedtestTimeout;
+            get => userSettings.SpeedtestOptions.Timeout;
             set
             {
-                userSettings.CustomSpeedtestTimeout = value;
+                userSettings.SpeedtestOptions.Timeout = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestExpectedSizeInKib
         {
-            get => userSettings.CustomSpeedtestExpectedSize;
+            get => userSettings.SpeedtestOptions.ExpectedSize;
             set
             {
-                userSettings.CustomSpeedtestExpectedSize = value;
+                userSettings.SpeedtestOptions.ExpectedSize = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestCycles
         {
-            get => userSettings.CustomSpeedtestCycles;
+            get => userSettings.SpeedtestOptions.Cycles;
             set
             {
-                userSettings.CustomSpeedtestCycles = value;
+                userSettings.SpeedtestOptions.Cycles = value;
                 LazySaveUserSettings();
             }
         }
 
         public bool isUseCustomSpeedtestSettings
         {
-            get => userSettings.IsUseCustomSpeedtestSettings;
+            get => userSettings.SpeedtestOptions.IsUse;
             set
             {
-                userSettings.IsUseCustomSpeedtestSettings = value;
+                userSettings.SpeedtestOptions.IsUse = value;
                 LazySaveUserSettings();
             }
         }

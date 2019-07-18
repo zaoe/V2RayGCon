@@ -84,6 +84,8 @@ namespace V2RayGCon.Views.WinForms
                     cboxDefImportMode,
                     tboxDefImportAddr,
                     chkDefImportSsShareLink,
+                    chkDefImportBypassCnSite,
+                    chkDefImportInjectGlobalImport,
 
                     // speedtest 
                     chkDefSpeedtestIsUse,

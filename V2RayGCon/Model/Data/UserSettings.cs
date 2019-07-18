@@ -7,17 +7,10 @@ namespace V2RayGCon.Model.Data
         #region public properties
 
         // FormOption->Defaults->Mode
-        public bool CustomDefImportSsShareLink { get; set; }
-        public int CustomDefImportMode { get; set; } // Model.Data.Enum.ProxyTypes
-        public string CustomDefImportIp { get; set; }
-        public int CustomDefImportPort { get; set; }
+        public ImportSharelinkOptions ImportOptions = null;
 
         // FormOption->Defaults->Speedtest
-        public string CustomSpeedtestUrl { get; set; }
-        public bool IsUseCustomSpeedtestSettings { get; set; }
-        public int CustomSpeedtestCycles { get; set; }
-        public int CustomSpeedtestExpectedSize { get; set; }
-        public int CustomSpeedtestTimeout { get; set; }
+        public SpeedTestOptions SpeedtestOptions = null;
 
         // FormDownloadCore
         public bool isDownloadWin32V2RayCore { get; set; } = true;
@@ -46,20 +39,10 @@ namespace V2RayGCon.Model.Data
         public string WinFormPosList { get; set; }
         #endregion
 
+
         public UserSettings()
         {
-            // FormOption -> Defaults -> Mode
-            CustomDefImportSsShareLink = true;
-            CustomDefImportMode = (int)Enum.ProxyTypes.HTTP;
-            CustomDefImportIp = VgcApis.Models.Consts.Webs.LoopBackIP;
-            CustomDefImportPort = VgcApis.Models.Consts.Webs.DefaultProxyPort;
-
-            // FormOption -> Defaults -> Speedtest
-            CustomSpeedtestUrl = VgcApis.Models.Consts.Webs.GoogleDotCom;
-            IsUseCustomSpeedtestSettings = false;
-            CustomSpeedtestCycles = 3;
-            CustomSpeedtestExpectedSize = 0;
-            CustomSpeedtestTimeout = VgcApis.Models.Consts.Intervals.SpeedTestTimeout;
+            Normalized();
 
             ServerPanelPageSize = 7;
 
@@ -84,5 +67,14 @@ namespace V2RayGCon.Model.Data
             ServerTracker = string.Empty;
             WinFormPosList = string.Empty;
         }
+
+        #region public methods
+        public void Normalized()
+        {
+            V2RayCoreDownloadVersionList = V2RayCoreDownloadVersionList ?? new List<string>();
+            ImportOptions = ImportOptions ?? new ImportSharelinkOptions();
+            SpeedtestOptions = SpeedtestOptions ?? new SpeedTestOptions();
+        }
+        #endregion
     }
 }

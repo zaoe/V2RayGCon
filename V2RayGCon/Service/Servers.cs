@@ -630,15 +630,18 @@ namespace V2RayGCon.Service
                 return false;
             }
 
-            var newServer = new Controller.CoreServerCtrl(
-                new VgcApis.Models.Datas.CoreInfo
-                {
-                    customInbType = setting.CustomDefImportMode,
-                    inbIp = setting.CustomDefImportIp,
-                    inbPort = setting.CustomDefImportPort,
-                    config = config,
-                    customMark = mark,
-                });
+            var coreInfo = new VgcApis.Models.Datas.CoreInfo
+            {
+                isInjectImport = setting.CustomDefImportGlobalImport,
+                isInjectSkipCNSite = setting.CustomDefImportBypassCnSite,
+                customInbType = setting.CustomDefImportMode,
+                inbIp = setting.CustomDefImportIp,
+                inbPort = setting.CustomDefImportPort,
+                config = config,
+                customMark = mark,
+            };
+
+            var newServer = new Controller.CoreServerCtrl(coreInfo);
             newServer.Run(cache, setting, configMgr, this);
 
             bool duplicated = true;
