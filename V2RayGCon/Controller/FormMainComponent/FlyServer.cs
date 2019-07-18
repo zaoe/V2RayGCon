@@ -322,7 +322,7 @@ namespace V2RayGCon.Controller.FormMainComponent
         private void ResizeFormMain()
         {
             var num = setting.serverPanelPageSize;
-            if (num < 1 || num > 10)
+            if (num < 1 || num > 16)
             {
                 return;
             }

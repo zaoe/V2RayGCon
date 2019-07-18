@@ -44,6 +44,7 @@
             this.lbIsAutorun = new System.Windows.Forms.Label();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnMultiboxing = new System.Windows.Forms.Button();
+            this.lbLastModify = new System.Windows.Forms.Label();
             this.ctxMenuStripMore = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,9 +75,9 @@
             // 
             // lbStatus
             // 
-            resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.AutoEllipsis = true;
             this.lbStatus.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.Name = "lbStatus";
             this.toolTip1.SetToolTip(this.lbStatus, resources.GetString("lbStatus.ToolTip"));
             this.lbStatus.UseCompatibleTextRendering = true;
@@ -142,9 +143,9 @@
             // 
             // cboxMark
             // 
-            resources.ApplyResources(this.cboxMark, "cboxMark");
             this.cboxMark.Cursor = System.Windows.Forms.Cursors.Default;
             this.cboxMark.FormattingEnabled = true;
+            resources.ApplyResources(this.cboxMark, "cboxMark");
             this.cboxMark.Name = "cboxMark";
             this.toolTip1.SetToolTip(this.cboxMark, resources.GetString("cboxMark.ToolTip"));
             this.cboxMark.DropDown += new System.EventHandler(this.cboxMark_DropDown);
@@ -169,8 +170,8 @@
             // 
             // lbIsAutorun
             // 
-            resources.ApplyResources(this.lbIsAutorun, "lbIsAutorun");
             this.lbIsAutorun.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            resources.ApplyResources(this.lbIsAutorun, "lbIsAutorun");
             this.lbIsAutorun.Name = "lbIsAutorun";
             this.toolTip1.SetToolTip(this.lbIsAutorun, resources.GetString("lbIsAutorun.ToolTip"));
             this.lbIsAutorun.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbIsAutorun_MouseDown);
@@ -192,6 +193,13 @@
             this.toolTip1.SetToolTip(this.btnMultiboxing, resources.GetString("btnMultiboxing.ToolTip"));
             this.btnMultiboxing.UseVisualStyleBackColor = true;
             this.btnMultiboxing.Click += new System.EventHandler(this.btnMultiboxing_Click);
+            // 
+            // lbLastModify
+            // 
+            resources.ApplyResources(this.lbLastModify, "lbLastModify");
+            this.lbLastModify.Name = "lbLastModify";
+            this.toolTip1.SetToolTip(this.lbLastModify, resources.GetString("lbLastModify.ToolTip"));
+            this.lbLastModify.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LbAddTimestamp_MouseDown);
             // 
             // ctxMenuStripMore
             // 
@@ -375,7 +383,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.rtboxServerTitle);
+            this.Controls.Add(this.lbLastModify);
             this.Controls.Add(this.btnMultiboxing);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.lbIsAutorun);
@@ -389,6 +397,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbRunning);
             this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.rtboxServerTitle);
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.Name = "ServerUI";
             this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
@@ -440,5 +449,6 @@
         private System.Windows.Forms.ToolStripMenuItem moveToBottomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vToolStripMenuItem;
+        private System.Windows.Forms.Label lbLastModify;
     }
 }

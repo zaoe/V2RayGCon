@@ -116,7 +116,21 @@ namespace V2RayGCon.Views.UserControls
                 UpdateFilterMarkBox();
                 UpdateBorderFoldingStat();
                 UpdateToolsTip();
+                UpdateLastModifyTimestamp();
             });
+        }
+
+        void UpdateLastModifyTimestamp()
+        {
+            var utcTicks = coreServCtrl.GetCoreStates().GetLastModifyTimestamp();
+            var date = new DateTime(utcTicks, DateTimeKind.Utc).ToLocalTime();
+
+            Lib.UI.UpdateControlOnDemand(lbLastModify, date.ToString(I18N.MMdd));
+            var tooltip = I18N.ModifyAt + date.ToLongDateString() + date.ToLongTimeString();
+            if (toolTip1.GetToolTip(lbLastModify) != tooltip)
+            {
+                toolTip1.SetToolTip(lbLastModify, tooltip);
+            }
         }
 
         private void UpdateServerOptionTickStat()
@@ -426,6 +440,11 @@ namespace V2RayGCon.Views.UserControls
             ServerListItem_MouseDown(this, e);
         }
 
+        private void LbAddTimestamp_MouseDown(object sender, MouseEventArgs e)
+        {
+            ServerListItem_MouseDown(this, e);
+        }
+
         private void lbStatus_MouseDown(object sender, MouseEventArgs e)
         {
             ServerListItem_MouseDown(this, e);
@@ -527,6 +546,7 @@ namespace V2RayGCon.Views.UserControls
                 VgcApis.Models.Datas.Enum.LinkTypes.v);
             Lib.Utils.CopyToClipboardAndPrompt(vee);
         }
+
 
         #endregion
 

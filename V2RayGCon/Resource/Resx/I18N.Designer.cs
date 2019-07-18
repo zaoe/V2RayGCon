@@ -1029,6 +1029,24 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 MM-dd 的本地化字符串。
+        /// </summary>
+        internal static string MMdd {
+            get {
+                return ResourceManager.GetString("MMdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Modify at  的本地化字符串。
+        /// </summary>
+        internal static string ModifyAt {
+            get {
+                return ResourceManager.GetString("ModifyAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Multiboxing 的本地化字符串。
         /// </summary>
         internal static string Multiboxing {

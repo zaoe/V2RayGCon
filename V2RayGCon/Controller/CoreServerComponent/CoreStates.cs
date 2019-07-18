@@ -130,6 +130,11 @@ namespace V2RayGCon.Controller.CoreServerComponent
 
         public string GetSummary() => coreInfo.summary;
 
+        public long GetLastModifyTimestamp() => coreInfo.dob;
+
+        public void SetLastModifyTimestamp(long utcTicks) =>
+            SetPropertyOnDemand(ref coreInfo.dob, utcTicks);
+
         public int GetFoldingState() => coreInfo.foldingLevel;
         public void SetFoldingState(int level) =>
             SetPropertyOnDemand(ref coreInfo.foldingLevel, level);

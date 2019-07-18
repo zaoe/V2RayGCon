@@ -118,18 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="lbStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 32</value>
+    <value>216, 32</value>
   </data>
   <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 21</value>
+    <value>92, 21</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbStatus.TabIndex" type="System.Int32, mscorlib">
@@ -196,7 +193,7 @@
     <value>113, 32</value>
   </data>
   <data name="tboxInboundAddr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
+    <value>97, 21</value>
   </data>
   <data name="tboxInboundAddr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -219,9 +216,6 @@
   <data name="&gt;&gt;tboxInboundAddr.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="btnMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -236,7 +230,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 6</value>
+    <value>439, 6</value>
   </data>
   <data name="btnMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -328,9 +322,6 @@
   <data name="&gt;&gt;chkSelected.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="btnStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnStart.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -347,7 +338,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 6</value>
+    <value>379, 6</value>
   </data>
   <data name="btnStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -373,11 +364,8 @@
   <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="cboxMark.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="cboxMark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 32</value>
+    <value>379, 32</value>
   </data>
   <data name="cboxMark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -439,9 +427,6 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="btnIsCollapse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnIsCollapse.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -463,7 +448,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnIsCollapse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 6</value>
+    <value>469, 6</value>
   </data>
   <data name="btnIsCollapse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -488,9 +473,6 @@
   </data>
   <data name="&gt;&gt;btnIsCollapse.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="lbIsAutorun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="lbIsAutorun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -528,9 +510,6 @@
   <data name="&gt;&gt;lbIsAutorun.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="btnStop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnStop.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -542,7 +521,7 @@
     <value>Stretch</value>
   </data>
   <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 6</value>
+    <value>419, 6</value>
   </data>
   <data name="btnStop.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -565,9 +544,6 @@
   <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnMultiboxing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="btnMultiboxing.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -584,7 +560,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnMultiboxing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 6</value>
+    <value>399, 6</value>
   </data>
   <data name="btnMultiboxing.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -606,6 +582,39 @@
   </data>
   <data name="&gt;&gt;btnMultiboxing.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="lbLastModify.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lbLastModify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 32</value>
+  </data>
+  <data name="lbLastModify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 21</value>
+  </data>
+  <data name="lbLastModify.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lbLastModify.Text" xml:space="preserve">
+    <value>04MM10DD</value>
+  </data>
+  <data name="lbLastModify.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lbLastModify.ToolTip" xml:space="preserve">
+    <value>This server's date of birth XD.</value>
+  </data>
+  <data name="&gt;&gt;lbLastModify.Name" xml:space="preserve">
+    <value>lbLastModify</value>
+  </data>
+  <data name="&gt;&gt;lbLastModify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbLastModify.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbLastModify.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="ctxMenuStripMore.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>119, 18</value>
@@ -809,7 +818,7 @@
     <value>None</value>
   </data>
   <data name="rtboxServerTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 13</value>
+    <value>318, 13</value>
   </data>
   <data name="rtboxServerTitle.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -827,7 +836,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtboxServerTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>15</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -836,7 +845,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 58</value>
+    <value>502, 62</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value>Drag and drop to adjust order.</value>

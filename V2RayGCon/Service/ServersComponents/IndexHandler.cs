@@ -31,6 +31,15 @@ namespace V2RayGCon.Service.ServersComponents
             }
         }
 
+        public void SortCoreServerCtrlListByLastModifyDate(
+         ref List<VgcApis.Models.Interfaces.ICoreServCtrl> coreList)
+        {
+            lock (writeLocker)
+            {
+                SortServerItemList(ref coreList, UtcTicksDecComparer);
+            }
+        }
+
         public void SortCoreServCtrlListBySummary(
            ref List<VgcApis.Models.Interfaces.ICoreServCtrl> coreList)
         {
@@ -85,6 +94,15 @@ namespace V2RayGCon.Service.ServersComponents
             var spa = a.GetCoreStates().GetSpeedTestResult();
             var spb = b.GetCoreStates().GetSpeedTestResult();
             return spa.CompareTo(spb);
+        }
+
+        int UtcTicksDecComparer(
+           VgcApis.Models.Interfaces.ICoreServCtrl a,
+           VgcApis.Models.Interfaces.ICoreServCtrl b)
+        {
+            var ticksA = a.GetCoreStates().GetLastModifyTimestamp();
+            var ticksB = b.GetCoreStates().GetLastModifyTimestamp();
+            return ticksB.CompareTo(ticksA);
         }
 
         int SummaryComparer(

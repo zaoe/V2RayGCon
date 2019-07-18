@@ -84,6 +84,16 @@ namespace V2RayGCon.Service
             RequireFormMainReload();
         }
 
+        public void SortSelectedByLastModifyDate()
+        {
+            lock (serverListWriteLock)
+            {
+                var selectedServers = queryHandler.GetSelectedServers().ToList();
+                indexHandler.SortCoreServerCtrlListByLastModifyDate(ref selectedServers);
+            }
+            RequireFormMainReload();
+        }
+
         public void SortSelectedBySummary()
         {
             lock (serverListWriteLock)
@@ -554,11 +564,24 @@ namespace V2RayGCon.Service
             var list = coreServList;
             AutoResetEvent isFinished = new AutoResetEvent(false);
 
+
             void worker(int index, Action next)
             {
+                var core = list[index];
+
                 try
                 {
-                    list[index].GetConfiger().UpdateSummaryThen(next);
+                    if (core.GetCoreStates().GetLastModifyTimestamp() == 0)
+                    {
+                        var utcTicks = DateTime.UtcNow.Ticks;
+                        core.GetCoreStates().SetLastModifyTimestamp(utcTicks);
+                    }
+                }
+                catch { }
+
+                try
+                {
+                    core.GetConfiger().UpdateSummaryThen(next);
                 }
                 catch
                 {
@@ -688,6 +711,7 @@ namespace V2RayGCon.Service
                 }
 
                 coreServList[index].GetConfiger().SetConfig(newConfig);
+                coreServList[index].GetCoreStates().SetLastModifyTimestamp(DateTime.UtcNow.Ticks);
                 return true;
             }
 

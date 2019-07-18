@@ -663,4 +663,10 @@ https://github.com/v2ray/v2ray-core</value>
   <data name="OrDisablePortableMode" xml:space="preserve">
     <value>或禁用便携模式。</value>
   </data>
+  <data name="ModifyAt" xml:space="preserve">
+    <value>修改于</value>
+  </data>
+  <data name="MMdd" xml:space="preserve">
+    <value>MM月dd日</value>
+  </data>
 </root>

@@ -278,7 +278,7 @@
     <value>折叠</value>
   </data>
   <data name="chkDefImportIsFold.ToolTip" xml:space="preserve">
-    <value>将服务器面板折叠成单选模式</value>
+    <value>将服务器面板折叠成单行模式</value>
   </data>
   <data name="chkDefImportInjectGlobalImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 16</value>

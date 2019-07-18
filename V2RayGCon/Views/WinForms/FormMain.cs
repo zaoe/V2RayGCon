@@ -222,10 +222,6 @@ namespace V2RayGCon.Views.WinForms
                 selectUntrackAllServersToolStripMenuItem));
 
             ctrl.Plug(new Controller.FormMainComponent.MenuItemsServer(
-                // for invoke ui refresh
-                //MenuStrip menuContainer,
-                mainMneuStrip,
-
                 //// misc
                 //ToolStripMenuItem refreshSummary,
                 //ToolStripMenuItem deleteAllServers,
@@ -266,6 +262,7 @@ namespace V2RayGCon.Views.WinForms
                 toolStripMenuItemFoldingPanel,
                 toolStripMenuItemExpansePanel,
                 toolStripMenuItemSortBySpeedTest,
+                toolStripMenuItemSortByDateT,
                 toolStripMenuItemSortBySummary));
 
             return ctrl;
