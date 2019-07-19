@@ -44,6 +44,7 @@
             this.chkSetCheckWhenStart = new System.Windows.Forms.CheckBox();
             this.chkSetUpgradeUseProxy = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnSetOpenStartupFolder = new System.Windows.Forms.Button();
             this.chkSetUseV4 = new System.Windows.Forms.CheckBox();
             this.chkSetSysPortable = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -204,10 +205,19 @@
             // groupBox6
             // 
             resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.btnSetOpenStartupFolder);
             this.groupBox6.Controls.Add(this.chkSetUseV4);
             this.groupBox6.Controls.Add(this.chkSetSysPortable);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            // 
+            // btnSetOpenStartupFolder
+            // 
+            resources.ApplyResources(this.btnSetOpenStartupFolder, "btnSetOpenStartupFolder");
+            this.btnSetOpenStartupFolder.Name = "btnSetOpenStartupFolder";
+            this.toolTip1.SetToolTip(this.btnSetOpenStartupFolder, resources.GetString("btnSetOpenStartupFolder.ToolTip"));
+            this.btnSetOpenStartupFolder.UseVisualStyleBackColor = true;
+            this.btnSetOpenStartupFolder.Click += new System.EventHandler(this.btnSetOpenStartupFolder_Click);
             // 
             // chkSetUseV4
             // 
@@ -592,5 +602,6 @@
         private System.Windows.Forms.CheckBox chkDefImportInjectGlobalImport;
         private System.Windows.Forms.CheckBox chkDefImportBypassCnSite;
         private System.Windows.Forms.CheckBox chkDefImportIsFold;
+        private System.Windows.Forms.Button btnSetOpenStartupFolder;
     }
 }

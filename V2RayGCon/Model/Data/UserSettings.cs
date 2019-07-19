@@ -44,7 +44,7 @@ namespace V2RayGCon.Model.Data
         {
             Normalized();
 
-            ServerPanelPageSize = 7;
+            ServerPanelPageSize = 8;
 
             isCheckUpdateWhenAppStart = false;
 
