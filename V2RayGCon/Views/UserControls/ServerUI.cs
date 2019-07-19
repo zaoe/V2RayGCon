@@ -126,7 +126,7 @@ namespace V2RayGCon.Views.UserControls
             var date = new DateTime(utcTicks, DateTimeKind.Utc).ToLocalTime();
 
             Lib.UI.UpdateControlOnDemand(lbLastModify, date.ToString(I18N.MMdd));
-            var tooltip = I18N.ModifyAt + date.ToLongDateString() + date.ToLongTimeString();
+            var tooltip = I18N.LastModified + date.ToLongDateString() + date.ToLongTimeString();
             if (toolTip1.GetToolTip(lbLastModify) != tooltip)
             {
                 toolTip1.SetToolTip(lbLastModify, tooltip);
@@ -169,12 +169,6 @@ namespace V2RayGCon.Views.UserControls
 
         private void UpdateToolsTip()
         {
-            var status = coreServCtrl.GetCoreStates().GetStatus();
-            if (toolTip1.GetToolTip(lbStatus) != status)
-            {
-                toolTip1.SetToolTip(lbStatus, status);
-            }
-
             var title = rtboxServerTitle.Text;
             if (toolTip1.GetToolTip(rtboxServerTitle) != title)
             {

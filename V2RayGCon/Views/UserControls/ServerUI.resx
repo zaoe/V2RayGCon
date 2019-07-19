@@ -587,7 +587,7 @@
     <value>Top, Right</value>
   </data>
   <data name="lbLastModify.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 32</value>
+    <value>320, 32</value>
   </data>
   <data name="lbLastModify.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 21</value>
@@ -596,7 +596,7 @@
     <value>17</value>
   </data>
   <data name="lbLastModify.Text" xml:space="preserve">
-    <value>04MM10DD</value>
+    <value>04月10日</value>
   </data>
   <data name="lbLastModify.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -805,8 +805,11 @@
   <data name="rtboxServerTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="rtboxServerTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt</value>
+  </data>
   <data name="rtboxServerTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 10</value>
+    <value>59, 9</value>
   </data>
   <data name="rtboxServerTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -818,7 +821,7 @@
     <value>None</value>
   </data>
   <data name="rtboxServerTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 13</value>
+    <value>322, 15</value>
   </data>
   <data name="rtboxServerTitle.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>

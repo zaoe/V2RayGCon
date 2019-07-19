@@ -68,6 +68,20 @@ namespace V2RayGCon.Views.WinForms
         }
 
         #region private method
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Lib.UI.Confirm(I18N.ConfirmExitApp))
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ToolStripButtonScanQrcode_Click(object sender, EventArgs e)
+        {
+            var notifier = Service.Notifier.Instance;
+            notifier.ScanQrcode();
+        }
+
         private void GenFormTitle()
         {
             var version = Lib.Utils.GetAssemblyVersion();
@@ -149,6 +163,9 @@ namespace V2RayGCon.Views.WinForms
                 toolStripMenuItemResize));
 
             ctrl.Plug(new Controller.FormMainComponent.MenuItemsBasic(
+                this,
+                pluginToolStripMenuItem,
+
                 toolMenuItemSimAddVmessServer,
                 toolMenuItemImportLinkFromClipboard,
                 toolMenuItemExportAllServerToFile,
@@ -277,12 +294,6 @@ namespace V2RayGCon.Views.WinForms
         }
         #endregion
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Lib.UI.Confirm(I18N.ConfirmExitApp))
-            {
-                Application.Exit();
-            }
-        }
+
     }
 }

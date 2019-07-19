@@ -37,6 +37,7 @@ namespace V2RayGCon.Views.WinForms
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddServerSimple = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonImportFromClipboard = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonScanQrcode = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSelectAllCurPage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInverseSelectionCurPage = new System.Windows.Forms.ToolStripButton();
@@ -124,6 +125,7 @@ namespace V2RayGCon.Views.WinForms
             this.toolMenuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItemResize = new System.Windows.Forms.ToolStripMenuItem();
+            this.pluginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDownLoadV2rayCore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,6 +202,7 @@ namespace V2RayGCon.Views.WinForms
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonAddServerSimple,
             this.toolStripButtonImportFromClipboard,
+            this.toolStripButtonScanQrcode,
             this.toolStripSeparator2,
             this.toolStripButtonSelectAllCurPage,
             this.toolStripButtonInverseSelectionCurPage,
@@ -231,6 +234,13 @@ namespace V2RayGCon.Views.WinForms
             resources.ApplyResources(this.toolStripButtonImportFromClipboard, "toolStripButtonImportFromClipboard");
             this.toolStripButtonImportFromClipboard.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonImportFromClipboard.Name = "toolStripButtonImportFromClipboard";
+            // 
+            // toolStripButtonScanQrcode
+            // 
+            resources.ApplyResources(this.toolStripButtonScanQrcode, "toolStripButtonScanQrcode");
+            this.toolStripButtonScanQrcode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonScanQrcode.Name = "toolStripButtonScanQrcode";
+            this.toolStripButtonScanQrcode.Click += new System.EventHandler(this.ToolStripButtonScanQrcode_Click);
             // 
             // toolStripSeparator2
             // 
@@ -337,6 +347,7 @@ namespace V2RayGCon.Views.WinForms
             this.selectToolStripMenuItem,
             this.toolMenuItemServer,
             this.windowToolStripMenuItem,
+            this.pluginToolStripMenuItem,
             this.aboutToolStripMenuItem1});
             this.mainMneuStrip.Name = "mainMneuStrip";
             this.toolTip1.SetToolTip(this.mainMneuStrip, resources.GetString("mainMneuStrip.ToolTip"));
@@ -762,6 +773,11 @@ namespace V2RayGCon.Views.WinForms
             resources.ApplyResources(this.toolStripMenuItemResize, "toolStripMenuItemResize");
             this.toolStripMenuItemResize.Name = "toolStripMenuItemResize";
             // 
+            // pluginToolStripMenuItem
+            // 
+            resources.ApplyResources(this.pluginToolStripMenuItem, "pluginToolStripMenuItem");
+            this.pluginToolStripMenuItem.Name = "pluginToolStripMenuItem";
+            // 
             // aboutToolStripMenuItem1
             // 
             resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
@@ -993,5 +1009,7 @@ namespace V2RayGCon.Views.WinForms
         private ToolStripButton toolStripButtonImportFromClipboard;
         private ToolStripButton toolStripButtonShowFormLog;
         private ToolStripMenuItem toolStripMenuItemSortByDateT;
+        private ToolStripButton toolStripButtonScanQrcode;
+        private ToolStripMenuItem pluginToolStripMenuItem;
     }
 }

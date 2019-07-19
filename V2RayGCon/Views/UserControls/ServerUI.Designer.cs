@@ -77,6 +77,7 @@
             // 
             this.lbStatus.AutoEllipsis = true;
             this.lbStatus.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.lbStatus.ForeColor = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.lbStatus, "lbStatus");
             this.lbStatus.Name = "lbStatus";
             this.toolTip1.SetToolTip(this.lbStatus, resources.GetString("lbStatus.ToolTip"));
@@ -87,6 +88,7 @@
             // 
             this.cboxInbound.Cursor = System.Windows.Forms.Cursors.Default;
             this.cboxInbound.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxInbound.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cboxInbound.FormattingEnabled = true;
             this.cboxInbound.Items.AddRange(new object[] {
             resources.GetString("cboxInbound.Items"),
@@ -100,6 +102,7 @@
             // tboxInboundAddr
             // 
             this.tboxInboundAddr.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tboxInboundAddr.ForeColor = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.tboxInboundAddr, "tboxInboundAddr");
             this.tboxInboundAddr.Name = "tboxInboundAddr";
             this.toolTip1.SetToolTip(this.tboxInboundAddr, resources.GetString("tboxInboundAddr.ToolTip"));
@@ -144,6 +147,7 @@
             // cboxMark
             // 
             this.cboxMark.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cboxMark.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cboxMark.FormattingEnabled = true;
             resources.ApplyResources(this.cboxMark, "cboxMark");
             this.cboxMark.Name = "cboxMark";
@@ -155,6 +159,7 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Name = "label4";
             this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDown);
@@ -171,6 +176,7 @@
             // lbIsAutorun
             // 
             this.lbIsAutorun.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.lbIsAutorun.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             resources.ApplyResources(this.lbIsAutorun, "lbIsAutorun");
             this.lbIsAutorun.Name = "lbIsAutorun";
             this.toolTip1.SetToolTip(this.lbIsAutorun, resources.GetString("lbIsAutorun.ToolTip"));
@@ -197,6 +203,7 @@
             // lbLastModify
             // 
             resources.ApplyResources(this.lbLastModify, "lbLastModify");
+            this.lbLastModify.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbLastModify.Name = "lbLastModify";
             this.toolTip1.SetToolTip(this.lbLastModify, resources.GetString("lbLastModify.ToolTip"));
             this.lbLastModify.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LbAddTimestamp_MouseDown);

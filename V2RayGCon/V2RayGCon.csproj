@@ -130,7 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Strings.cs" />
-    <Compile Include="Controller\OptionComponent\TabDefaults.cs" />
+    <Compile Include="Controller\FormOptionComponent\TabDefaults.cs" />
     <Compile Include="Model\Data\ImportSharelinkOptions.cs" />
     <Compile Include="Model\Data\SpeedTestOptions.cs" />
     <Compile Include="Model\Data\UpdateInfo.cs" />
@@ -155,11 +155,11 @@
     <Compile Include="Controller\FormMainComponent\MenuItemsBasic.cs" />
     <Compile Include="Controller\FormMainCtrl.cs" />
     <Compile Include="Controller\ConfigerComponent\Quick.cs" />
-    <Compile Include="Controller\OptionComponent\OptionComponentController.cs" />
-    <Compile Include="Controller\OptionComponent\Import.cs" />
-    <Compile Include="Controller\OptionComponent\TabPlugin.cs" />
-    <Compile Include="Controller\OptionComponent\TabSetting.cs" />
-    <Compile Include="Controller\OptionComponent\Subscription.cs" />
+    <Compile Include="Controller\FormOptionComponent\OptionComponentController.cs" />
+    <Compile Include="Controller\FormOptionComponent\Import.cs" />
+    <Compile Include="Controller\FormOptionComponent\TabPlugin.cs" />
+    <Compile Include="Controller\FormOptionComponent\TabSetting.cs" />
+    <Compile Include="Controller\FormOptionComponent\Subscription.cs" />
     <Compile Include="Controller\FormOptionCtrl.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Lib\Lua\ApiComponents\UtilsApi.cs" />
@@ -476,6 +476,7 @@
   <ItemGroup>
     <Content Include="icon_dark.ico" />
     <Content Include="Resource\Files\CSharp\ConfigJsonKeywords.txt" />
+    <None Include="Resource\Icon\FormMainToolStrip\ExpandScope_16x.png" />
     <None Include="Resource\Icon\TaskTray\Module_16x.png" />
     <None Include="Resource\Icon\ServerUI\StepOverArrow_16x.png" />
     <None Include="Resource\Icon\ServerUI\StepBackArrow_16x.png" />
@@ -505,7 +506,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\Files\templates\custom\" />
-    <Folder Include="Resource\Icon\FormMainToolStrip\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugins\Luna\Luna.csproj">
