@@ -49,6 +49,7 @@ namespace V2RayGCon.Service.ServersComponents
             }
         }
 
+
         public void ResetIndex()
         {
             var sortedServers = coreServList
@@ -109,9 +110,13 @@ namespace V2RayGCon.Service.ServersComponents
             VgcApis.Models.Interfaces.ICoreServCtrl a,
             VgcApis.Models.Interfaces.ICoreServCtrl b)
         {
-            var spa = a.GetCoreStates().GetSummary();
-            var spb = b.GetCoreStates().GetSummary();
-            return spa.CompareTo(spb);
+            var sma = a.GetCoreStates().GetSummary();
+            var smb = b.GetCoreStates().GetSummary();
+
+            var rsma = VgcApis.Libs.Utils.ReverseSummary(sma);
+            var rsmb = VgcApis.Libs.Utils.ReverseSummary(smb);
+
+            return rsma.CompareTo(rsmb);
         }
 
         void SortServerItemList(

@@ -17,6 +17,24 @@ namespace VgcApis.Libs
     public static class Utils
     {
         #region string
+        public static string ReverseSummary(string summary)
+        {
+
+            if (string.IsNullOrEmpty(summary))
+            {
+                return "";
+            }
+
+            const char separator = '@';
+            if (summary.IndexOf(separator) < 0)
+            {
+                return summary;
+            }
+
+            var rs = summary.Split(separator).Reverse();
+            return string.Join(separator.ToString(), rs);
+        }
+
         public static List<string> SortPacList(IEnumerable<string> pacList)
         {
             var tmpList = new List<string>();

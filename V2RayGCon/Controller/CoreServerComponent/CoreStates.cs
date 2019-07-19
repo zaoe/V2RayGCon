@@ -128,7 +128,7 @@ namespace V2RayGCon.Controller.CoreServerComponent
 
         public string GetMark() => coreInfo.customMark;
 
-        public string GetSummary() => coreInfo.summary;
+        public string GetSummary() => coreInfo.summary ?? @"";
 
         public long GetLastModifyTimestamp() => coreInfo.dob;
 

@@ -15,6 +15,22 @@ namespace VgcApisTests
     [TestClass]
     public class UtilsTests
     {
+
+        [DataTestMethod]
+        [DataRow("vmess.mkcp.tls@whatsurproblem.com", "whatsurproblem.com@vmess.mkcp.tls")]
+        [DataRow("vmess.ws.tls@1.2.3.4", "1.2.3.4@vmess.ws.tls")]
+        [DataRow("a@b@c", "c@b@a")]
+        [DataRow("a@b", "b@a")]
+        [DataRow("", "")]
+        [DataRow(null, "")]
+        [DataRow("a", "a")]
+        public void ReverseSummaryTest(string summary, string expect)
+        {
+            var result = ReverseSummary(summary);
+            Assert.AreEqual(expect, result);
+        }
+
+
         [DataTestMethod]
         [DataRow(
             @"c,,a,//---,中文,3,,2,1,//abc中文,中文,a,1,,中文,a,1",
