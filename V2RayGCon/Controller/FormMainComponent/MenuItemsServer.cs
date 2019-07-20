@@ -239,7 +239,7 @@ namespace V2RayGCon.Controller.FormMainComponent
             ToolStripMenuItem sortBySummary)
         {
             sortByDate.Click += ApplyActionOnSelectedServers(
-                () => servers.SortSelectedByLastModifyDate());
+                () => servers.SortSelectedByLastModifiedDate());
 
             sortBySummary.Click += ApplyActionOnSelectedServers(
                 () => servers.SortSelectedBySummary());

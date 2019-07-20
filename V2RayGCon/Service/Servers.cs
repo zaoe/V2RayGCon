@@ -84,7 +84,7 @@ namespace V2RayGCon.Service
             RequireFormMainReload();
         }
 
-        public void SortSelectedByLastModifyDate()
+        public void SortSelectedByLastModifiedDate()
         {
             lock (serverListWriteLock)
             {
@@ -571,10 +571,10 @@ namespace V2RayGCon.Service
 
                 try
                 {
-                    if (core.GetCoreStates().GetLastModifyTimestamp() == 0)
+                    if (core.GetCoreStates().GetLastModifiedUtcTicks() == 0)
                     {
                         var utcTicks = DateTime.UtcNow.Ticks;
-                        core.GetCoreStates().SetLastModifyTimestamp(utcTicks);
+                        core.GetCoreStates().SetLastModifiedUtcTicks(utcTicks);
                     }
                 }
                 catch { }
@@ -711,7 +711,7 @@ namespace V2RayGCon.Service
                 }
 
                 coreServList[index].GetConfiger().SetConfig(newConfig);
-                coreServList[index].GetCoreStates().SetLastModifyTimestamp(DateTime.UtcNow.Ticks);
+                coreServList[index].GetCoreStates().SetLastModifiedUtcTicks(DateTime.UtcNow.Ticks);
                 return true;
             }
 
@@ -850,14 +850,23 @@ namespace V2RayGCon.Service
                 return;
             }
 
-            VgcApis.Libs.Sys.FileLogger.Info("Services.Servers.Cleanup()");
-            serverSaver.DoItNow();
-            serverSaver.Quit();
+            VgcApis.Libs.Sys.FileLogger.Info("Services.Servers.Cleanup");
+
+            VgcApis.Libs.Sys.FileLogger.Info("Services.StopTracking");
+            lazyServerTrackingTimer?.Timeout();
             lazyServerTrackingTimer?.Release();
 
-            AutoResetEvent sayGoodbye = new AutoResetEvent(false);
-            StopAllServersThen(() => sayGoodbye.Set());
-            sayGoodbye.WaitOne();
+            VgcApis.Libs.Sys.FileLogger.Info("Services.SaveSettings");
+            serverSaver.DoItNow();
+            serverSaver.Quit();
+
+            VgcApis.Libs.Sys.FileLogger.Info("Stop cores quiet begin.");
+            var list = coreServList;
+            foreach (var core in list)
+            {
+                core.GetCoreCtrl().StopCoreQuiet();
+            }
+            VgcApis.Libs.Sys.FileLogger.Info("Stop cores quiet done.");
         }
 
         #endregion

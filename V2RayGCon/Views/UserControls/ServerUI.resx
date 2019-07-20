@@ -123,10 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 32</value>
+    <value>324, 45</value>
+  </data>
+  <data name="lbStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 21</value>
+    <value>139, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbStatus.TabIndex" type="System.Int32, mscorlib">
@@ -166,10 +169,13 @@
     <value>SOCKS</value>
   </data>
   <data name="cboxInbound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 32</value>
+    <value>60, 48</value>
+  </data>
+  <data name="cboxInbound.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cboxInbound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>97, 26</value>
   </data>
   <data name="cboxInbound.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -187,13 +193,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cboxInbound.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="tboxInboundAddr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 32</value>
+    <value>170, 47</value>
+  </data>
+  <data name="tboxInboundAddr.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="tboxInboundAddr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 21</value>
+    <value>144, 28</value>
   </data>
   <data name="tboxInboundAddr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -214,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tboxInboundAddr.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="btnMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -230,13 +239,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>439, 6</value>
-  </data>
-  <data name="btnMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>658, 9</value>
   </data>
   <data name="btnMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>30, 30</value>
   </data>
   <data name="btnMenu.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -254,7 +260,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMenu.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lbRunning.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 9pt, style=Bold</value>
@@ -263,10 +269,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbRunning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 6</value>
+    <value>14, 9</value>
+  </data>
+  <data name="lbRunning.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbRunning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 20</value>
+    <value>39, 30</value>
   </data>
   <data name="lbRunning.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -290,7 +299,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbRunning.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="chkSelected.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -299,10 +308,13 @@
     <value>NoControl</value>
   </data>
   <data name="chkSelected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 9</value>
+    <value>60, 14</value>
+  </data>
+  <data name="chkSelected.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="chkSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 14</value>
+    <value>22, 21</value>
   </data>
   <data name="chkSelected.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -320,7 +332,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chkSelected.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="btnStart.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -338,13 +350,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 6</value>
-  </data>
-  <data name="btnStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>568, 9</value>
   </data>
   <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>30, 30</value>
   </data>
   <data name="btnStart.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -362,16 +371,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cboxMark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 32</value>
-  </data>
-  <data name="cboxMark.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>568, 48</value>
   </data>
   <data name="cboxMark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
+    <value>118, 26</value>
   </data>
   <data name="cboxMark.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -389,7 +395,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cboxMark.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -398,10 +404,13 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 36</value>
+    <value>11, 52</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 12</value>
+    <value>44, 18</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -425,7 +434,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="btnIsCollapse.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -448,13 +457,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnIsCollapse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 6</value>
-  </data>
-  <data name="btnIsCollapse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>701, 9</value>
   </data>
   <data name="btnIsCollapse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>30, 30</value>
   </data>
   <data name="btnIsCollapse.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -472,19 +478,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnIsCollapse.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lbIsAutorun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lbIsAutorun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 32</value>
-  </data>
-  <data name="lbIsAutorun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>691, 45</value>
   </data>
   <data name="lbIsAutorun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 21</value>
+    <value>51, 32</value>
   </data>
   <data name="lbIsAutorun.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -508,7 +511,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbIsAutorun.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnStop.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -521,10 +524,13 @@
     <value>Stretch</value>
   </data>
   <data name="btnStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 6</value>
+    <value>628, 9</value>
+  </data>
+  <data name="btnStop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>30, 30</value>
   </data>
   <data name="btnStop.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -542,7 +548,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnStop.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnMultiboxing.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -560,10 +566,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnMultiboxing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 6</value>
+    <value>598, 9</value>
+  </data>
+  <data name="btnMultiboxing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnMultiboxing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>30, 30</value>
   </data>
   <data name="btnMultiboxing.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -581,16 +590,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMultiboxing.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lbLastModify.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>1</value>
   </data>
   <data name="lbLastModify.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 32</value>
+    <value>471, 45</value>
+  </data>
+  <data name="lbLastModify.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbLastModify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 21</value>
+    <value>90, 32</value>
   </data>
   <data name="lbLastModify.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -614,13 +623,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbLastModify.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>15</value>
   </data>
   <metadata name="ctxMenuStripMore.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>119, 18</value>
   </metadata>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
+    <value>216, 34</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
     <value>Start</value>
@@ -629,7 +638,7 @@
     <value>Stop all running servers and start this server.</value>
   </data>
   <data name="multiboxingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
+    <value>216, 34</value>
   </data>
   <data name="multiboxingToolStripMenuItem1.Text" xml:space="preserve">
     <value>Multiboxing</value>
@@ -638,7 +647,7 @@
     <value>Start this server along with other started server. Inbound port should not duplicate.</value>
   </data>
   <data name="stopToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
+    <value>216, 34</value>
   </data>
   <data name="stopToolStripMenuItem1.Text" xml:space="preserve">
     <value>Stop</value>
@@ -647,13 +656,13 @@
     <value>Stop this server.</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
     <value>Action</value>
   </data>
   <data name="moveToTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 22</value>
+    <value>174, 34</value>
   </data>
   <data name="moveToTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Top</value>
@@ -662,7 +671,7 @@
     <value>Move this server to top.</value>
   </data>
   <data name="moveToBottomToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 22</value>
+    <value>174, 34</value>
   </data>
   <data name="moveToBottomToolStripMenuItem.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -671,13 +680,13 @@
     <value>Move this server to bottom.</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Move</value>
   </data>
   <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>250, 34</value>
   </data>
   <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
     <value>Autorun</value>
@@ -686,7 +695,7 @@
     <value>Start this server along with this software.</value>
   </data>
   <data name="globalImportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>250, 34</value>
   </data>
   <data name="globalImportToolStripMenuItem.Text" xml:space="preserve">
     <value>Global import</value>
@@ -695,7 +704,7 @@
     <value>Inject global import when this server start.</value>
   </data>
   <data name="skipCNWebsiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>250, 34</value>
   </data>
   <data name="skipCNWebsiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Skip CN website</value>
@@ -704,7 +713,7 @@
     <value>Do not proxy CN website. For beginners only. Advanced users please edit section routing.</value>
   </data>
   <data name="untrackToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>250, 34</value>
   </data>
   <data name="untrackToolStripMenuItem.Text" xml:space="preserve">
     <value>Untrack</value>
@@ -713,16 +722,16 @@
     <value>Do not track this server.</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Setting</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 6</value>
+    <value>223, 6</value>
   </data>
   <data name="vToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>199, 34</value>
   </data>
   <data name="vToolStripMenuItem.Text" xml:space="preserve">
     <value>v:// ...</value>
@@ -731,7 +740,7 @@
     <value>Contain main config information.</value>
   </data>
   <data name="vmessToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>199, 34</value>
   </data>
   <data name="vmessToolStripMenuItem.Text" xml:space="preserve">
     <value>vmess:// ...</value>
@@ -740,7 +749,7 @@
     <value>Contain main config information.</value>
   </data>
   <data name="v2cfgToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>199, 34</value>
   </data>
   <data name="v2cfgToolStripMenuItem.Text" xml:space="preserve">
     <value>v2cfg:// ...</value>
@@ -749,19 +758,19 @@
     <value>Contain all config information.</value>
   </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="editToolStripMenuItem.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
   <data name="debugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="debugToolStripMenuItem.Text" xml:space="preserve">
     <value>Debug</value>
@@ -770,22 +779,22 @@
     <value>Final config for v2ray-core.</value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 6</value>
+    <value>223, 6</value>
   </data>
   <data name="logOfThisServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="logOfThisServerToolStripMenuItem.Text" xml:space="preserve">
     <value>Log of this server</value>
   </data>
   <data name="runSpeedTestToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
+    <value>226, 30</value>
   </data>
   <data name="runSpeedTestToolStripMenuItem1.Text" xml:space="preserve">
     <value>Run speed test</value>
@@ -794,7 +803,7 @@
     <value>The time it took to download webpage https://www.google.com.</value>
   </data>
   <data name="ctxMenuStripMore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 214</value>
+    <value>227, 286</value>
   </data>
   <data name="&gt;&gt;ctxMenuStripMore.Name" xml:space="preserve">
     <value>ctxMenuStripMore</value>
@@ -809,10 +818,7 @@
     <value>宋体, 9pt</value>
   </data>
   <data name="rtboxServerTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 9</value>
-  </data>
-  <data name="rtboxServerTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>88, 13</value>
   </data>
   <data name="rtboxServerTitle.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -821,7 +827,7 @@
     <value>None</value>
   </data>
   <data name="rtboxServerTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 15</value>
+    <value>483, 22</value>
   </data>
   <data name="rtboxServerTitle.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -839,16 +845,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtboxServerTitle.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+    <value>9, 18</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>502, 62</value>
+    <value>746, 86</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value>Drag and drop to adjust order.</value>

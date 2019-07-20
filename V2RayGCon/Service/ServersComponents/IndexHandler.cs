@@ -101,8 +101,8 @@ namespace V2RayGCon.Service.ServersComponents
            VgcApis.Models.Interfaces.ICoreServCtrl a,
            VgcApis.Models.Interfaces.ICoreServCtrl b)
         {
-            var ticksA = a.GetCoreStates().GetLastModifyTimestamp();
-            var ticksB = b.GetCoreStates().GetLastModifyTimestamp();
+            var ticksA = a.GetCoreStates().GetLastModifiedUtcTicks();
+            var ticksB = b.GetCoreStates().GetLastModifiedUtcTicks();
             return ticksB.CompareTo(ticksA);
         }
 

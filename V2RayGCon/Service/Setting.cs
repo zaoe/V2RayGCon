@@ -18,6 +18,8 @@ namespace V2RayGCon.Service
     {
         Model.Data.UserSettings userSettings;
 
+        string serializedUserSettingsCache = @"";
+
         // Singleton need this private ctor.
         Setting()
         {
@@ -672,13 +674,24 @@ namespace V2RayGCon.Service
 
         void SaveUserSettingsToFile(string content)
         {
+            if (content.Equals(serializedUserSettingsCache))
+            {
+                VgcApis.Libs.Sys.FileLogger.Info("User settings equal to cache, skip.");
+                return;
+            }
+
+            VgcApis.Libs.Sys.FileLogger.Info("Write user settings to file.");
             if (VgcApis.Libs.Utils.ClumsyWriter(
                 content,
                 Constants.Strings.MainUserSettingsFilename,
                 Constants.Strings.BackupUserSettingsFilename))
             {
+                serializedUserSettingsCache = content;
                 return;
             }
+
+            // main file or bak file write fail, clear cache
+            serializedUserSettingsCache = @"";
 
             if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
@@ -716,8 +729,14 @@ namespace V2RayGCon.Service
         Model.Data.UserSettings LoadUserSettingsFromFile()
         {
             // try to load userSettings.json
-            var result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
-                Constants.Strings.MainUserSettingsFilename);
+            Model.Data.UserSettings result = null;
+            try
+            {
+                var content = File.ReadAllText(Constants.Strings.MainUserSettingsFilename);
+                serializedUserSettingsCache = content;
+                result = JsonConvert.DeserializeObject<Model.Data.UserSettings>(content);
+            }
+            catch { }
 
             // try to load userSettings.bak
             if (result == null)

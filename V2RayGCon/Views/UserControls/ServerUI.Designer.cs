@@ -202,8 +202,8 @@
             // 
             // lbLastModify
             // 
-            resources.ApplyResources(this.lbLastModify, "lbLastModify");
             this.lbLastModify.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            resources.ApplyResources(this.lbLastModify, "lbLastModify");
             this.lbLastModify.Name = "lbLastModify";
             this.toolTip1.SetToolTip(this.lbLastModify, resources.GetString("lbLastModify.ToolTip"));
             this.lbLastModify.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LbAddTimestamp_MouseDown);
@@ -390,7 +390,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.lbLastModify);
             this.Controls.Add(this.btnMultiboxing);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.lbIsAutorun);
@@ -403,8 +402,9 @@
             this.Controls.Add(this.cboxInbound);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbRunning);
-            this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.rtboxServerTitle);
+            this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.lbLastModify);
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.Name = "ServerUI";
             this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));

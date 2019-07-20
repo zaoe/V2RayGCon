@@ -21,11 +21,11 @@
 
         public double index;
 
-        public long dob;
+        public long lastModifiedUtcTicks;
 
         public CoreInfo()
         {
-            dob = System.DateTime.UtcNow.Ticks;
+            lastModifiedUtcTicks = System.DateTime.UtcNow.Ticks;
 
             // new server will displays at the bottom
             index = double.MaxValue;
@@ -46,7 +46,7 @@
             uid = string.Empty;
 
 
-            customInbType = (int)Models.Datas.Enum.ProxyTypes.HTTP;
+            customInbType = (int)Enum.ProxyTypes.HTTP;
             inbIp = Consts.Webs.LoopBackIP;
             inbPort = Consts.Webs.DefaultProxyPort;
         }

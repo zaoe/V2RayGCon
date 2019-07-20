@@ -116,13 +116,13 @@ namespace V2RayGCon.Views.UserControls
                 UpdateFilterMarkBox();
                 UpdateBorderFoldingStat();
                 UpdateToolsTip();
-                UpdateLastModifyTimestamp();
+                UpdateLastModifiedLable();
             });
         }
 
-        void UpdateLastModifyTimestamp()
+        void UpdateLastModifiedLable()
         {
-            var utcTicks = coreServCtrl.GetCoreStates().GetLastModifyTimestamp();
+            var utcTicks = coreServCtrl.GetCoreStates().GetLastModifiedUtcTicks();
             var date = new DateTime(utcTicks, DateTimeKind.Utc).ToLocalTime();
 
             Lib.UI.UpdateControlOnDemand(lbLastModify, date.ToString(I18N.MMdd));
