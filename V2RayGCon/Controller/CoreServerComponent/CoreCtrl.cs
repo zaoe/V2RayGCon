@@ -69,6 +69,8 @@ namespace V2RayGCon.Controller.CoreServerComponent
             done.WaitOne();
         }
 
+        public void StopCoreQuiet() => coreServ.StopCore();
+
         public void StopCore()
         {
             AutoResetEvent done = new AutoResetEvent(false);

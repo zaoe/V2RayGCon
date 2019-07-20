@@ -225,6 +225,9 @@
   <data name="chkSubsIsUseProxy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkSubsIsUseProxy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="chkSubsIsUseProxy.Location" type="System.Drawing.Point, System.Drawing">
     <value>401, 63</value>
   </data>
@@ -238,7 +241,7 @@
     <value>Use proxy</value>
   </data>
   <data name="chkSubsIsUseProxy.ToolTip" xml:space="preserve">
-    <value>Randomly select a HTTP server for updating.</value>
+    <value>Use the first running HTTP server to update.</value>
   </data>
   <data name="&gt;&gt;chkSubsIsUseProxy.Name" xml:space="preserve">
     <value>chkSubsIsUseProxy</value>
@@ -451,7 +454,7 @@
     <value>4</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Update</value>
+    <value>V2RayGCon</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
@@ -467,6 +470,33 @@
   </data>
   <data name="groupBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="btnSetOpenStartupFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 15</value>
+  </data>
+  <data name="btnSetOpenStartupFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 23</value>
+  </data>
+  <data name="btnSetOpenStartupFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnSetOpenStartupFolder.Text" xml:space="preserve">
+    <value>Startup folder</value>
+  </data>
+  <data name="btnSetOpenStartupFolder.ToolTip" xml:space="preserve">
+    <value>Open shell:startup folder.</value>
+  </data>
+  <data name="&gt;&gt;btnSetOpenStartupFolder.Name" xml:space="preserve">
+    <value>btnSetOpenStartupFolder</value>
+  </data>
+  <data name="&gt;&gt;btnSetOpenStartupFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetOpenStartupFolder.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;btnSetOpenStartupFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="chkSetUseV4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -499,7 +529,7 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;chkSetUseV4.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="chkSetSysPortable.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -532,7 +562,7 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;chkSetSysPortable.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 143</value>
@@ -897,8 +927,137 @@
   <data name="&gt;&gt;tabPageSetting.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="chkDefImportIsFold.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkDefImportIsFold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 45</value>
+  </data>
+  <data name="chkDefImportIsFold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="chkDefImportIsFold.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="chkDefImportIsFold.Text" xml:space="preserve">
+    <value>Fold</value>
+  </data>
+  <data name="chkDefImportIsFold.ToolTip" xml:space="preserve">
+    <value>Fold server panel into single-line-mode.</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.Name" xml:space="preserve">
+    <value>chkDefImportIsFold</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportIsFold.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 45</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 16</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.Text" xml:space="preserve">
+    <value>Global import</value>
+  </data>
+  <data name="chkDefImportInjectGlobalImport.ToolTip" xml:space="preserve">
+    <value>Inject global imports.</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportInjectGlobalImport.Name" xml:space="preserve">
+    <value>chkDefImportInjectGlobalImport</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportInjectGlobalImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportInjectGlobalImport.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportInjectGlobalImport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 45</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 16</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.Text" xml:space="preserve">
+    <value>Bypass CN</value>
+  </data>
+  <data name="chkDefImportBypassCnSite.ToolTip" xml:space="preserve">
+    <value>Bypass CN sites.</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportBypassCnSite.Name" xml:space="preserve">
+    <value>chkDefImportBypassCnSite</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportBypassCnSite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportBypassCnSite.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportBypassCnSite.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkDefImportSsShareLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>398, 20</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 16</value>
+  </data>
+  <data name="chkDefImportSsShareLink.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkDefImportSsShareLink.Text" xml:space="preserve">
+    <value>SS</value>
+  </data>
+  <data name="chkDefImportSsShareLink.ToolTip" xml:space="preserve">
+    <value>Import shadowsocks share links.</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Name" xml:space="preserve">
+    <value>chkDefImportSsShareLink</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;chkDefImportSsShareLink.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tboxDefImportAddr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 17</value>
+    <value>239, 18</value>
   </data>
   <data name="tboxDefImportAddr.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -925,7 +1084,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;tboxDefImportAddr.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="cboxDefImportMode.Items" xml:space="preserve">
     <value>Config</value>
@@ -961,7 +1120,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;cboxDefImportMode.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -970,7 +1129,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 21</value>
+    <value>170, 22</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -997,13 +1156,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 21</value>
+    <value>15, 22</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1030,7 +1189,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 91</value>
@@ -1042,7 +1201,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 48</value>
+    <value>449, 68</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1065,41 +1224,8 @@
   <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 47</value>
-  </data>
-  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 12</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Timeout</value>
-  </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value>Timeout in milliseconds.</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tboxDefSpeedtestTimeout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 43</value>
+    <value>325, 43</value>
   </data>
   <data name="tboxDefSpeedtestTimeout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1123,10 +1249,10 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;tboxDefSpeedtestTimeout.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="tboxDefSpeedtestExpectedSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 43</value>
+    <value>207, 43</value>
   </data>
   <data name="tboxDefSpeedtestExpectedSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1150,7 +1276,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;tboxDefSpeedtestExpectedSize.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="tboxDefSpeedtestCycles.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 43</value>
@@ -1177,10 +1303,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;tboxDefSpeedtestCycles.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tboxDefSpeedtestUrl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>2</value>
   </data>
   <data name="tboxDefSpeedtestUrl.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 18</value>
@@ -1207,10 +1330,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;tboxDefSpeedtestUrl.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="chkDefSpeedtestIsUse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>3</value>
   </data>
   <data name="chkDefSpeedtestIsUse.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1219,7 +1339,7 @@
     <value>NoControl</value>
   </data>
   <data name="chkDefSpeedtestIsUse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 20</value>
+    <value>398, 20</value>
   </data>
   <data name="chkDefSpeedtestIsUse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1246,7 +1366,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;chkDefSpeedtestIsUse.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1255,7 +1375,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 47</value>
+    <value>144, 46</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1282,7 +1402,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1291,7 +1411,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 47</value>
+    <value>15, 46</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -1318,7 +1438,7 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1354,6 +1474,39 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 46</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 12</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>Timeout in milliseconds.</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
@@ -1423,13 +1576,13 @@
     <value>4, 360</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 12</value>
+    <value>389, 12</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>After checked and saved. Notification icon will display a plug-in menu.</value>
+    <value>A plugin menu will show up in form main if any plugin is in use.</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>

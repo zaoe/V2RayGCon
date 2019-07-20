@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 using V2RayGCon.Resource.Resx;
 
 namespace V2RayGCon.Views.WinForms
@@ -47,6 +48,7 @@ namespace V2RayGCon.Views.WinForms
         #endregion
 
         #region private method
+
         private Controller.FormOptionCtrl InitOptionCtrl()
         {
             var ctrl = new Controller.FormOptionCtrl();
@@ -83,6 +85,10 @@ namespace V2RayGCon.Views.WinForms
                     // def import share link mode
                     cboxDefImportMode,
                     tboxDefImportAddr,
+                    chkDefImportSsShareLink,
+                    chkDefImportIsFold,
+                    chkDefImportBypassCnSite,
+                    chkDefImportInjectGlobalImport,
 
                     // speedtest 
                     chkDefSpeedtestIsUse,
@@ -98,6 +104,11 @@ namespace V2RayGCon.Views.WinForms
         #endregion
 
         #region UI event
+        private void btnSetOpenStartupFolder_Click(object sender, System.EventArgs e)
+        {
+            Process.Start(@"shell:startup");
+        }
+
         private void btnOptionExit_Click(object sender, System.EventArgs e)
         {
             this.Close();
@@ -119,5 +130,7 @@ namespace V2RayGCon.Views.WinForms
             optionCtrl.RestoreOptions();
         }
         #endregion
+
+
     }
 }

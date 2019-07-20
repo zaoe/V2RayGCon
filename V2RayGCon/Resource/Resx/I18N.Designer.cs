@@ -956,6 +956,15 @@ namespace V2RayGCon.Resource.Resx {
         }
         
         /// <summary>
+        ///   查找类似 Last modified  的本地化字符串。
+        /// </summary>
+        internal static string LastModified {
+            get {
+                return ResourceManager.GetString("LastModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Last test is not finished yet. Please wait till test finish. 的本地化字符串。
         /// </summary>
         internal static string LastTestNoFinishYet {
@@ -1025,6 +1034,15 @@ namespace V2RayGCon.Resource.Resx {
         internal static string MainWin {
             get {
                 return ResourceManager.GetString("MainWin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MM-dd 的本地化字符串。
+        /// </summary>
+        internal static string MMdd {
+            get {
+                return ResourceManager.GetString("MMdd", resourceCulture);
             }
         }
         

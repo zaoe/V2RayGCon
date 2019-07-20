@@ -16,6 +16,50 @@ namespace VgcApis.Libs
 {
     public static class Utils
     {
+        #region string
+        public static string ReverseSummary(string summary)
+        {
+
+            if (string.IsNullOrEmpty(summary))
+            {
+                return "";
+            }
+
+            const char separator = '@';
+            if (summary.IndexOf(separator) < 0)
+            {
+                return summary;
+            }
+
+            var rs = summary.Split(separator).Reverse();
+            return string.Join(separator.ToString(), rs);
+        }
+
+        public static List<string> SortPacList(IEnumerable<string> pacList)
+        {
+            var tmpList = new List<string>();
+            var result = new List<string>();
+            foreach (var item in pacList)
+            {
+                if (!string.IsNullOrWhiteSpace(item)
+                    && !string.IsNullOrEmpty(item)
+                    && !item.StartsWith(@"//"))
+                {
+                    tmpList.Add(item);
+                    continue;
+                }
+
+                tmpList.Sort(StringComparer.Ordinal);
+                result.AddRange(tmpList);
+                result.Add(item);
+                tmpList.Clear();
+            }
+            tmpList.Sort(StringComparer.Ordinal);
+            result.AddRange(tmpList);
+            return result;
+        }
+
+        #endregion
 
         #region net
         public static bool TryParseIPAddr(string address, out string ip, out int port)

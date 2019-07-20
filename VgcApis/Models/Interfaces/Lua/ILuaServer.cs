@@ -17,6 +17,8 @@ namespace VgcApis.Models.Interfaces.Lua
         // download google.com
         long RunSpeedTest(string rawConfig);
         bool RunSpeedTestOnSelectedServers();
+
+        void SortSelectedServersByLastModifiedDate();
         void SortSelectedServersBySpeedTest();
         void SortSelectedServersBySummary();
 

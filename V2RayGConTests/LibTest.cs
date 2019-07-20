@@ -354,6 +354,9 @@ namespace V2RayGCon.Test
         [DataRow("ss://ZHVtbXkwMA==", "ss://ZHVtbXkwMA==")]
         [DataRow("ss://ZHVtbXkwMA", "ss://ZHVtbXkwMA")]
         [DataRow("ss://ZHVtbXkwMA===============", "ss://ZHVtbXkwMA===")]
+        [DataRow("ss://ZHVtbXkwMA==#abc.%20&_-中文", "ss://ZHVtbXkwMA==#abc.%20&_-")]
+        [DataRow("ss://ZHVtbXkwMA==#", "ss://ZHVtbXkwMA==")]
+        [DataRow("ss://ZHVtbXkwMA==#abc.%20&中_-文", "ss://ZHVtbXkwMA==#abc.%20&")]
         public void ExtractLinks_FromString(string source, string expect)
         {
             var result = ExtractLinks(source, VgcApis.Models.Datas.Enum.LinkTypes.ss);
