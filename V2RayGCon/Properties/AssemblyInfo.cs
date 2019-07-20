@@ -33,25 +33,10 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.11")]
+[assembly: AssemblyVersion("1.2.2.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 /*
- * 1.2.1.11 Cache userSetting.json (again).
- * 1.2.1.10 Add an open shell:startup folder button.
- * 1.2.1.9 Improve sort by summary.
- * 1.2.1.8 Add scan QR code tools strip button in form main.
- *         Add plugin menu in form main.
- * 1.2.1.7 Add last modify timestamp.
- *         Support sort by last modify timestamp.
- * 1.2.1.6 Update nuget packages.
- * 1.2.1.5 Improve search function.
- *         Show server's stream setting in title.
- *         Modify ServerUi.
- * 1.2.1.4 Add more default options.
- * 1.2.1.3 Support tag of ss share link.
- * 1.2.1.2 Add an option whether to import shadowsocks share links. 
- * 1.2.1.1 Add sort buttons in ProxySetter plug-in.
  */
 
 
