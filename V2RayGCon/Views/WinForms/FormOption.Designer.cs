@@ -44,6 +44,7 @@
             this.chkSetCheckWhenStart = new System.Windows.Forms.CheckBox();
             this.chkSetUpgradeUseProxy = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnSetOpenStartupFolder = new System.Windows.Forms.Button();
             this.chkSetUseV4 = new System.Windows.Forms.CheckBox();
             this.chkSetSysPortable = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -58,12 +59,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageDefaults = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkDefImportIsFold = new System.Windows.Forms.CheckBox();
+            this.chkDefImportInjectGlobalImport = new System.Windows.Forms.CheckBox();
+            this.chkDefImportBypassCnSite = new System.Windows.Forms.CheckBox();
+            this.chkDefImportSsShareLink = new System.Windows.Forms.CheckBox();
             this.tboxDefImportAddr = new System.Windows.Forms.TextBox();
             this.cboxDefImportMode = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tboxDefSpeedtestTimeout = new System.Windows.Forms.TextBox();
             this.tboxDefSpeedtestExpectedSize = new System.Windows.Forms.TextBox();
             this.tboxDefSpeedtestCycles = new System.Windows.Forms.TextBox();
@@ -72,6 +76,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPagePlugins = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.flyPluginsItemsContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -200,10 +205,19 @@
             // groupBox6
             // 
             resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.btnSetOpenStartupFolder);
             this.groupBox6.Controls.Add(this.chkSetUseV4);
             this.groupBox6.Controls.Add(this.chkSetSysPortable);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            // 
+            // btnSetOpenStartupFolder
+            // 
+            resources.ApplyResources(this.btnSetOpenStartupFolder, "btnSetOpenStartupFolder");
+            this.btnSetOpenStartupFolder.Name = "btnSetOpenStartupFolder";
+            this.toolTip1.SetToolTip(this.btnSetOpenStartupFolder, resources.GetString("btnSetOpenStartupFolder.ToolTip"));
+            this.btnSetOpenStartupFolder.UseVisualStyleBackColor = true;
+            this.btnSetOpenStartupFolder.Click += new System.EventHandler(this.btnSetOpenStartupFolder_Click);
             // 
             // chkSetUseV4
             // 
@@ -308,12 +322,44 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.chkDefImportIsFold);
+            this.groupBox4.Controls.Add(this.chkDefImportInjectGlobalImport);
+            this.groupBox4.Controls.Add(this.chkDefImportBypassCnSite);
+            this.groupBox4.Controls.Add(this.chkDefImportSsShareLink);
             this.groupBox4.Controls.Add(this.tboxDefImportAddr);
             this.groupBox4.Controls.Add(this.cboxDefImportMode);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // chkDefImportIsFold
+            // 
+            resources.ApplyResources(this.chkDefImportIsFold, "chkDefImportIsFold");
+            this.chkDefImportIsFold.Name = "chkDefImportIsFold";
+            this.toolTip1.SetToolTip(this.chkDefImportIsFold, resources.GetString("chkDefImportIsFold.ToolTip"));
+            this.chkDefImportIsFold.UseVisualStyleBackColor = true;
+            // 
+            // chkDefImportInjectGlobalImport
+            // 
+            resources.ApplyResources(this.chkDefImportInjectGlobalImport, "chkDefImportInjectGlobalImport");
+            this.chkDefImportInjectGlobalImport.Name = "chkDefImportInjectGlobalImport";
+            this.toolTip1.SetToolTip(this.chkDefImportInjectGlobalImport, resources.GetString("chkDefImportInjectGlobalImport.ToolTip"));
+            this.chkDefImportInjectGlobalImport.UseVisualStyleBackColor = true;
+            // 
+            // chkDefImportBypassCnSite
+            // 
+            resources.ApplyResources(this.chkDefImportBypassCnSite, "chkDefImportBypassCnSite");
+            this.chkDefImportBypassCnSite.Name = "chkDefImportBypassCnSite";
+            this.toolTip1.SetToolTip(this.chkDefImportBypassCnSite, resources.GetString("chkDefImportBypassCnSite.ToolTip"));
+            this.chkDefImportBypassCnSite.UseVisualStyleBackColor = true;
+            // 
+            // chkDefImportSsShareLink
+            // 
+            resources.ApplyResources(this.chkDefImportSsShareLink, "chkDefImportSsShareLink");
+            this.chkDefImportSsShareLink.Name = "chkDefImportSsShareLink";
+            this.toolTip1.SetToolTip(this.chkDefImportSsShareLink, resources.GetString("chkDefImportSsShareLink.ToolTip"));
+            this.chkDefImportSsShareLink.UseVisualStyleBackColor = true;
             // 
             // tboxDefImportAddr
             // 
@@ -359,12 +405,6 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // tboxDefSpeedtestTimeout
             // 
@@ -414,6 +454,12 @@
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             this.toolTip1.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // tabPagePlugins
             // 
@@ -552,5 +598,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tboxDefSpeedtestTimeout;
+        private System.Windows.Forms.CheckBox chkDefImportSsShareLink;
+        private System.Windows.Forms.CheckBox chkDefImportInjectGlobalImport;
+        private System.Windows.Forms.CheckBox chkDefImportBypassCnSite;
+        private System.Windows.Forms.CheckBox chkDefImportIsFold;
+        private System.Windows.Forms.Button btnSetOpenStartupFolder;
     }
 }

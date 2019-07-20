@@ -36,6 +36,9 @@ namespace Luna.Models.Apis.Components
         public void RequireFormMainReload() =>
             vgcServers.RequireFormMainReload();
 
+        public void SortSelectedServersByLastModifiedDate() =>
+            vgcServers.SortSelectedByLastModifiedDate();
+
         public void SortSelectedServersBySummary() =>
             vgcServers.SortSelectedBySummary();
 

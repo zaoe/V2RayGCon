@@ -68,6 +68,20 @@ namespace V2RayGCon.Views.WinForms
         }
 
         #region private method
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Lib.UI.Confirm(I18N.ConfirmExitApp))
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ToolStripButtonScanQrcode_Click(object sender, EventArgs e)
+        {
+            var notifier = Service.Notifier.Instance;
+            notifier.ScanQrcode();
+        }
+
         private void GenFormTitle()
         {
             var version = Lib.Utils.GetAssemblyVersion();
@@ -114,6 +128,9 @@ namespace V2RayGCon.Views.WinForms
                 }
             }
 
+            bind(toolStripButtonAddServerSimple, toolMenuItemSimAddVmessServer, false);
+            bind(toolStripButtonImportFromClipboard, toolMenuItemImportLinkFromClipboard, false);
+
             bind(toolStripButtonSelectAllCurPage, selectAllCurPageToolStripMenuItem);
             bind(toolStripButtonInverseSelectionCurPage, invertSelectionCurPageToolStripMenuItem);
             bind(toolStripButtonSelectNoneCurPage, selectNoneCurPageToolStripMenuItem1);
@@ -121,14 +138,13 @@ namespace V2RayGCon.Views.WinForms
             bind(toolStripButtonAllServerSelectAll, selectAllAllServersToolStripMenuItem);
             bind(toolStripButtonAllServerSelectNone, selectNoneAllServersToolStripMenuItem);
 
-            bind(toolStripButtonRestartSelected, toolStripMenuItemRestartSelected);
-            bind(toolStripButtonStopSelected, toolStripMenuItemStopSelected);
-
             bind(toolStripButtonModifySelected, toolStripMenuItemModifySettings, false);
             bind(toolStripButtonRunSpeedTest, toolStripMenuItemSpeedTestOnSelected);
             bind(toolStripButtonSortSelectedBySpeedTestResult, toolStripMenuItemSortBySpeedTest);
 
             bind(toolStripButtonFormOption, toolMenuItemOptions, false);
+            bind(toolStripButtonHelp, toolMenuItemHelp, false);
+            bind(toolStripButtonShowFormLog, toolMenuItemLog, false);
         }
 
         private Controller.FormMainCtrl InitFormMainCtrl()
@@ -147,6 +163,9 @@ namespace V2RayGCon.Views.WinForms
                 toolStripMenuItemResize));
 
             ctrl.Plug(new Controller.FormMainComponent.MenuItemsBasic(
+                this,
+                pluginToolStripMenuItem,
+
                 toolMenuItemSimAddVmessServer,
                 toolMenuItemImportLinkFromClipboard,
                 toolMenuItemExportAllServerToFile,
@@ -220,10 +239,6 @@ namespace V2RayGCon.Views.WinForms
                 selectUntrackAllServersToolStripMenuItem));
 
             ctrl.Plug(new Controller.FormMainComponent.MenuItemsServer(
-                // for invoke ui refresh
-                //MenuStrip menuContainer,
-                mainMneuStrip,
-
                 //// misc
                 //ToolStripMenuItem refreshSummary,
                 //ToolStripMenuItem deleteAllServers,
@@ -264,6 +279,7 @@ namespace V2RayGCon.Views.WinForms
                 toolStripMenuItemFoldingPanel,
                 toolStripMenuItemExpansePanel,
                 toolStripMenuItemSortBySpeedTest,
+                toolStripMenuItemSortByDateT,
                 toolStripMenuItemSortBySummary));
 
             return ctrl;
@@ -278,12 +294,6 @@ namespace V2RayGCon.Views.WinForms
         }
         #endregion
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Lib.UI.Confirm(I18N.ConfirmExitApp))
-            {
-                Application.Exit();
-            }
-        }
+
     }
 }

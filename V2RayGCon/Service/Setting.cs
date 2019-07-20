@@ -18,10 +18,13 @@ namespace V2RayGCon.Service
     {
         Model.Data.UserSettings userSettings;
 
+        string serializedUserSettingsCache = @"";
+
         // Singleton need this private ctor.
         Setting()
         {
             userSettings = LoadUserSettings();
+            userSettings.Normalized();  // replace null with empty object.
         }
 
         #region Properties
@@ -81,75 +84,122 @@ namespace V2RayGCon.Service
             }
         }
 
-        public int CustomDefImportMode
+        public bool CustomDefImportGlobalImport
         {
-            get => VgcApis.Libs.Utils.Clamp(userSettings.CustomDefImportMode, 0, 4);
+            get => userSettings.ImportOptions.IsInjectGlobalImport;
             set
             {
-                userSettings.CustomDefImportMode =
-                    VgcApis.Libs.Utils.Clamp(value, 0, 4);
+                userSettings.ImportOptions.IsInjectGlobalImport = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool CustomDefImportBypassCnSite
+        {
+            get => userSettings.ImportOptions.IsBypassCnSite;
+            set
+            {
+                userSettings.ImportOptions.IsBypassCnSite = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool CustomDefImportIsFold
+        {
+            get => userSettings.ImportOptions.IsFold;
+            set
+            {
+                userSettings.ImportOptions.IsFold = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public bool CustomDefImportSsShareLink
+        {
+            get => userSettings.ImportOptions.IsImportSsShareLink;
+            set
+            {
+                userSettings.ImportOptions.IsImportSsShareLink = value;
+                LazySaveUserSettings();
+            }
+        }
+
+        public int CustomDefImportMode
+        {
+            get => VgcApis.Libs.Utils.Clamp(userSettings.ImportOptions.Mode, 0, 4);
+            set
+            {
+                userSettings.ImportOptions.Mode = VgcApis.Libs.Utils.Clamp(value, 0, 4);
+                LazySaveUserSettings();
             }
         }
 
         public string CustomDefImportIp
         {
-            get => userSettings.CustomDefImportIp;
-            set => userSettings.CustomDefImportIp = value;
+            get => userSettings.ImportOptions.Ip;
+            set
+            {
+                userSettings.ImportOptions.Ip = value;
+                LazySaveUserSettings();
+            }
         }
 
         public int CustomDefImportPort
         {
-            get => userSettings.CustomDefImportPort;
-            set => userSettings.CustomDefImportPort = value;
+            get => userSettings.ImportOptions.Port;
+            set
+            {
+                userSettings.ImportOptions.Port = value;
+                LazySaveUserSettings();
+            }
         }
-
 
         public string CustomSpeedtestUrl
         {
-            get => userSettings.CustomSpeedtestUrl;
+            get => userSettings.SpeedtestOptions.Url;
             set
             {
-                userSettings.CustomSpeedtestUrl = value;
+                userSettings.SpeedtestOptions.Url = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestTimeout
         {
-            get => userSettings.CustomSpeedtestTimeout;
+            get => userSettings.SpeedtestOptions.Timeout;
             set
             {
-                userSettings.CustomSpeedtestTimeout = value;
+                userSettings.SpeedtestOptions.Timeout = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestExpectedSizeInKib
         {
-            get => userSettings.CustomSpeedtestExpectedSize;
+            get => userSettings.SpeedtestOptions.ExpectedSize;
             set
             {
-                userSettings.CustomSpeedtestExpectedSize = value;
+                userSettings.SpeedtestOptions.ExpectedSize = value;
                 LazySaveUserSettings();
             }
         }
 
         public int CustomSpeedtestCycles
         {
-            get => userSettings.CustomSpeedtestCycles;
+            get => userSettings.SpeedtestOptions.Cycles;
             set
             {
-                userSettings.CustomSpeedtestCycles = value;
+                userSettings.SpeedtestOptions.Cycles = value;
                 LazySaveUserSettings();
             }
         }
 
         public bool isUseCustomSpeedtestSettings
         {
-            get => userSettings.IsUseCustomSpeedtestSettings;
+            get => userSettings.SpeedtestOptions.IsUse;
             set
             {
-                userSettings.IsUseCustomSpeedtestSettings = value;
+                userSettings.SpeedtestOptions.IsUse = value;
                 LazySaveUserSettings();
             }
         }
@@ -624,13 +674,24 @@ namespace V2RayGCon.Service
 
         void SaveUserSettingsToFile(string content)
         {
+            if (content.Equals(serializedUserSettingsCache))
+            {
+                VgcApis.Libs.Sys.FileLogger.Info("User settings equal to cache, skip.");
+                return;
+            }
+
+            VgcApis.Libs.Sys.FileLogger.Info("Write user settings to file.");
             if (VgcApis.Libs.Utils.ClumsyWriter(
                 content,
                 Constants.Strings.MainUserSettingsFilename,
                 Constants.Strings.BackupUserSettingsFilename))
             {
+                serializedUserSettingsCache = content;
                 return;
             }
+
+            // main file or bak file write fail, clear cache
+            serializedUserSettingsCache = @"";
 
             if (ShutdownReason == VgcApis.Models.Datas.Enum.ShutdownReasons.CloseByUser)
             {
@@ -668,8 +729,14 @@ namespace V2RayGCon.Service
         Model.Data.UserSettings LoadUserSettingsFromFile()
         {
             // try to load userSettings.json
-            var result = VgcApis.Libs.Utils.LoadAndParseJsonFile<Model.Data.UserSettings>(
-                Constants.Strings.MainUserSettingsFilename);
+            Model.Data.UserSettings result = null;
+            try
+            {
+                var content = File.ReadAllText(Constants.Strings.MainUserSettingsFilename);
+                serializedUserSettingsCache = content;
+                result = JsonConvert.DeserializeObject<Model.Data.UserSettings>(content);
+            }
+            catch { }
 
             // try to load userSettings.bak
             if (result == null)
