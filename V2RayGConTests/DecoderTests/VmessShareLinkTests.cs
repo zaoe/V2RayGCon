@@ -85,5 +85,20 @@ namespace V2RayGCon.Test.DecoderTests
                 Assert.IsTrue(vmess.Equals(data.Item1));
             }
         }
+
+        [TestMethod]
+        public void DecodeVmessFailTest()
+        {
+            var errorVmess = new V2RayGCon.Model.Data.Vmess
+            {
+                id = "1234",  // invalid GUID
+                port = "1234",
+                add = "1.2.3.4",
+            };
+
+            var vmessLink = errorVmess.ToVmessLink();
+            var vmessDecode = Lib.Utils.VmessLink2Vmess(vmessLink);
+            Assert.IsNull(vmessDecode);
+        }
     }
 }
