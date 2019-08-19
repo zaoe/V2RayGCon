@@ -21,6 +21,10 @@ namespace V2RayGCon.Views.UserControls
             this.OnDeleted = OnDeleted;
         }
 
+        public bool IsUse() => chkIsUse.Checked;
+
+        public void SetIsUse(bool val) => chkIsUse.Checked = val;
+
         public Model.Data.SubscriptionItem GetValue()
         {
             return new Model.Data.SubscriptionItem
