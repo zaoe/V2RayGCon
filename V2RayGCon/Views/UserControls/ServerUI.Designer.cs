@@ -376,10 +376,10 @@
             // 
             // rtboxServerTitle
             // 
-            resources.ApplyResources(this.rtboxServerTitle, "rtboxServerTitle");
             this.rtboxServerTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtboxServerTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.rtboxServerTitle.DetectUrls = false;
+            resources.ApplyResources(this.rtboxServerTitle, "rtboxServerTitle");
             this.rtboxServerTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.rtboxServerTitle.Name = "rtboxServerTitle";
             this.rtboxServerTitle.ReadOnly = true;
@@ -390,14 +390,13 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.tboxInboundAddr);
+            this.Controls.Add(this.cboxMark);
             this.Controls.Add(this.btnMultiboxing);
             this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.lbIsAutorun);
             this.Controls.Add(this.btnIsCollapse);
-            this.Controls.Add(this.cboxMark);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.chkSelected);
-            this.Controls.Add(this.tboxInboundAddr);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.cboxInbound);
             this.Controls.Add(this.label4);
@@ -405,6 +404,7 @@
             this.Controls.Add(this.rtboxServerTitle);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.lbLastModify);
+            this.Controls.Add(this.lbIsAutorun);
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.Name = "ServerUI";
             this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));

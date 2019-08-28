@@ -37,6 +37,8 @@ namespace V2RayGCon.Views.WinForms
         string formTitle;
         bool isShowPanel;
 
+        ScintillaNET.Scintilla editor;
+
         public FormConfiger(string originalConfigString = null)
         {
             setting = Service.Setting.Instance;
@@ -64,7 +66,7 @@ namespace V2RayGCon.Views.WinForms
 
             chkIsV4.Checked = setting.isUseV4;
 
-            var editor = configer
+            editor = configer
                 .GetComponent<Controller.ConfigerComponet.Editor>()
                 .GetEditor();
 
@@ -75,8 +77,7 @@ namespace V2RayGCon.Views.WinForms
             {
                 if (!configer.IsConfigSaved())
                 {
-                    a.Cancel = !Lib.UI.Confirm(
-                        I18N.ConfirmCloseWinWithoutSave);
+                    a.Cancel = !Lib.UI.Confirm(I18N.ConfirmCloseWinWithoutSave);
                 }
             };
 
@@ -84,10 +85,11 @@ namespace V2RayGCon.Views.WinForms
             {
                 formSearch?.Close();
                 editor.Click -= OnMouseLeaveToolsPanel;
+                toolsPanelController.Dispose();
                 servers.OnRequireMenuUpdate -= MenuUpdateHandler;
                 configer.Cleanup();
+                editor?.Dispose();
                 setting.SaveFormRect(this);
-                toolsPanelController.Dispose();
                 setting.LazyGC();
             };
 
