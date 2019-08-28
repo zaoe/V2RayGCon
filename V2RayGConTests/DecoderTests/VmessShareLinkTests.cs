@@ -19,7 +19,7 @@ namespace V2RayGCon.Test.DecoderTests
                 v = "2",
                 add = "1.2.3.4",
                 port = "1234",
-                id = "0",
+                id = Guid.NewGuid().ToString(),
                 ps = "standard",
             };
 
@@ -30,11 +30,12 @@ namespace V2RayGCon.Test.DecoderTests
                 v = "2",
                 add = "1.2.3.4",
                 port = "1234",
-                id = "0",
-                ps = "standard",
+                id = Guid.NewGuid().ToString(),
+                ps = "non-standard",
             };
 
-            var linkNonStandard = vmessStandard.ToVmessLink().Replace(@"=", @"");
+            var linkNonStandard = vmessNonStandard.ToVmessLink().Replace(@"=", @"");
+
             data.Add(new Tuple<Model.Data.Vmess, string>(vmessStandard, linkStandard));
             data.Add(new Tuple<Model.Data.Vmess, string>(vmessNonStandard, linkNonStandard));
             return data;
