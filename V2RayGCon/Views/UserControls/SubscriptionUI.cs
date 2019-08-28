@@ -61,7 +61,7 @@ namespace V2RayGCon.Views.UserControls
         #region private method
         private void UrlListItem_MouseDown(object sender, MouseEventArgs e)
         {
-            Cursor.Current = Lib.UI.CreateCursorIconFromUserControl(this);
+            // Cursor.Current = Lib.UI.CreateCursorIconFromUserControl(this);
             DoDragDrop((SubscriptionUI)sender, DragDropEffects.Move);
         }
         #endregion
