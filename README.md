@@ -11,6 +11,8 @@
 
 仅自用。Self-use only!  
 
+[下载 download](https://github.com/UudrSgMEZ/V2RayGCon/releases/latest)  
+
 ### 演示 Demo
 ![Demo v1.1.10 GIF](https://github.com/UudrSgMEZ/V2RayGCon/raw/master/screenshot/demo1.1.10.gif)  
   
