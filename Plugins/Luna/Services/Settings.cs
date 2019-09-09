@@ -1,5 +1,7 @@
-﻿using ScintillaNET;
+﻿using AutocompleteMenuNS;
+using ScintillaNET;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Luna.Services
 {
@@ -10,13 +12,12 @@ namespace Luna.Services
         VgcApis.Models.IServices.ISettingsService vgcSetting;
         readonly string pluginName = Properties.Resources.Name;
         Models.Data.UserSettings userSettings;
-        VgcApis.Libs.Tasks.LazyGuy bookKeeper;
         Libs.LuaSnippet.LuaAcm luaAcm;
 
         public Settings() { }
 
         #region internal methods
-        public void AttachSnippetsTo(Scintilla editor) =>
+        public AutocompleteMenu AttachSnippetsTo(Scintilla editor) =>
             luaAcm?.BindToEditor(editor);
         #endregion
 
@@ -28,7 +29,7 @@ namespace Luna.Services
         }
 
         bool isDisposing = false;
-        public bool IsShutdown() => isDisposing || vgcSetting.IsShutdown();
+        public bool IsShutdown() => isDisposing || vgcSetting.IsClosing();
 
         public void SetIsDisposing(bool value) => isDisposing = value;
 
@@ -43,11 +44,6 @@ namespace Luna.Services
                     pluginName, vgcSetting);
 
             userSettings.NormalizeData();
-
-            bookKeeper = new VgcApis.Libs.Tasks.LazyGuy(
-                SaveUserSettingsNow, 30000);
-
-            bookKeeper.DoItLater();
         }
 
         public string GetLuaShareMemory(string key)
@@ -60,33 +56,46 @@ namespace Luna.Services
         }
 
         readonly object shareMemoryLocker = new object();
+        public bool RemoveShareMemory(string key)
+        {
+            bool success;
+            lock (shareMemoryLocker)
+            {
+                success = userSettings.luaShareMemory.Remove(key);
+            }
+            SaveUserSettingsNow();
+            return success;
+        }
+
+        public List<string> ShareMemoryKeys()
+        {
+            lock (shareMemoryLocker)
+            {
+                return userSettings.luaShareMemory.Keys.ToList();
+            }
+        }
+
         public void SetLuaShareMemory(string key, string value)
         {
             lock (shareMemoryLocker)
             {
                 userSettings.luaShareMemory[key] = value;
             }
-            SaveSettings();
+            SaveUserSettingsNow();
         }
 
         public List<Models.Data.LuaCoreSetting> GetLuaCoreSettings() =>
             userSettings.luaServers;
 
-        public void SaveSettings() =>
-            bookKeeper.DoItLater();
         #endregion
 
         #region protected methods
         protected override void Cleanup()
         {
             luaAcm?.Dispose();
-            bookKeeper.DoItNow();
-            bookKeeper.Quit();
         }
-        #endregion
 
-        #region private methods
-        void SaveUserSettingsNow() =>
+        public void SaveUserSettingsNow() =>
             VgcApis.Libs.Utils.SavePluginSetting(
                 pluginName, userSettings, vgcSetting);
 

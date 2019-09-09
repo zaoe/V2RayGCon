@@ -134,7 +134,7 @@
     <value>Luna</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>0.0.20</value>
-    <comment>Add function RunCustomSpeedTest.</comment>
+    <value>0.1.1</value>
+    <comment>fix a bug in modules/reader</comment>
   </data>
 </root>

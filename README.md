@@ -5,21 +5,23 @@
 [3]: https://img.shields.io/github/release/UudrSgMEZ/V2RayGCon.svg "Release Badge"
 [4]: https://github.com/UudrSgMEZ/V2RayGCon/releases/latest "Releases"
 [5]: https://img.shields.io/github/downloads/UudrSgMEZ/V2RayGCon/total.svg "Total Downloads Badge"
-[6]: https://github.com/UudrSgMEZ/V2RayGCon/releases/latest "Releases"
+[6]: https://www.somsubhra.com/github-release-stats/?username=UudrSgMEZ&repository=V2RayGCon "Download Details"
 [7]: https://img.shields.io/github/license/UudrSgMEZ/V2RayGCon.svg "Licence Badge"
 [8]: https://github.com/UudrSgMEZ/V2RayGCon/blob/master/LICENSE "Licence"
 
-仅自用  
-Self-use only!  
-  
-使用前注意备份服务器数据！  
-这个版本数据格式有变动，旧服务器信息会丢失。  
-  
-Please backup servers config first!  
-This version use a new data format, original servers config will lost.  
+仅自用。Self-use only!  
+
+[下载 download](https://github.com/UudrSgMEZ/V2RayGCon/releases/latest)  
 
 ### 演示 Demo
 ![Demo v1.1.10 GIF](https://github.com/UudrSgMEZ/V2RayGCon/raw/master/screenshot/demo1.1.10.gif)  
+
+### 佛系更新说明
+经过无数个日夜的奋战，我开发出了 ~谁用谁发财手机壳~ 一个科学上网软件。  
+但是特征明显、效率低下还传承了我的软件一贯的炒鸡难用风格，所以并不打算公布出来。  
+在这里说主要是告诉大家，这个项目将进入佛系更新阶段。  
+具体来说issue会回复得慢些，更新会少些。  
+2019-09
   
 ### 引用按字母排序 References in alphabetical order  
 [2dust/v2rayN](https://github.com/2dust/v2rayN) vmess分享链接及订阅格式  
