@@ -15,6 +15,13 @@
 
 ### 演示 Demo
 ![Demo v1.1.10 GIF](https://github.com/UudrSgMEZ/V2RayGCon/raw/master/screenshot/demo1.1.10.gif)  
+
+### 佛系更新说明
+经过无数个日夜的奋战，我开发出了 ~谁用谁发财手机壳~ 一个科学上网软件。  
+但是特征明显、效率低下还传承了我的软件一贯的炒鸡难用风格，所以并不打算公布出来。  
+在这里说主要是告诉大家，这个项目将进入佛系更新阶段。  
+具体来说issue会回复得慢些，更新会少些。  
+2019-09
   
 ### 引用按字母排序 References in alphabetical order  
 [2dust/v2rayN](https://github.com/2dust/v2rayN) vmess分享链接及订阅格式  
